@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+a{
+  text-decoration: none;
+}
+
+/* Estilos del navbar */
+main{
+  padding: 90px 0px 0px;
+}
+nav {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #f4f4f4;
+  color: #000000;
+  padding: 10px;
+  position: fixed;
+}
+
+.navbar {
+  width: 85%;
+  max-width: 1550px;
+  margin: 0% auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search input {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  width: 500px;
+  height: 30px;
+  border-radius: 6px;
+  padding-left: 15px;
+}
+
+.search button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.login-btn button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+/* Estilos de la sección de introducción */
+.introduction {
+  height: 500px;
+  margin-bottom: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+      1deg,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url(../IMG/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60% 100%;
+}
+
+.container {
+  height: 200px;
+  width: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0% 10%;
+  color: white;
+}
+
+.container h2 {
+  font-size: 50px;
+  margin: 20px 0px;
+}
+
+/* Estilos de la sección de productos */
+
+.products {
+  width: 100%;
+  height: auto;
+}
+.products h1 {
+  padding: 20px 0px;
+  font-size: 30px;
+  border-bottom: solid 1.5px #505050;
+  border-top: solid 1.5px #505050;
+}
+.products-items {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0px;
+}
+.product-card {
+  width: 600px;
+  height: 170px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.p-img {
+  width: 40%;
+  margin-right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-img img{
+  max-width: 100%;
+  max-height: 100%;
+}
+.info-card{
+  text-align: start;
+  max-width: 50%;
+}
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product-card p {
+  font-size: 14px;
+}
+
+.product-card span {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-card button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Estilos del carrito */
+.cart {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+.cart h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.cart-items {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-items li {
+  margin-bottom: 5px;
+}
+
+.cart button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  margin-top: 10px;
+}
+
+/* Estilos para el pie de página */
+
+footer {
+  background: #333;
+  color: #fff;
+  padding: 30px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 20PX auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-cta {
+  width: 40%;
+}
+
+.footer-cta form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-cta input[type="email"] {
+  padding: 10px;
+  border: none;
+  width: 70%;
+}
+
+.footer-cta button {
+  background: #0077ff;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  background: #222;
+  padding: 20px;
+  text-align: center;
+}

@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classment Academy</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <a href="login.html"><img src="IMG/logo.png" width="100px" alt=""></a>
+            <div class="search">
+                <input type="text" id="searchInput" placeholder="mas que cursos, oportunidades">
+                <button onclick="searchProducts()">Buscar</button>
+            </div>
+          
+            
+                <button onclick="openCart()">Carrito</button>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section class="introduction">
+            <div class="container">
+               
+            </div>
+        </section>
+        <section class="products">
+            <h1>Los mejores cursos para sacarle el mayor provecho al talento que llevas dentro</h1>
+            <div class="products-items">
+                <div class="product-card">
+                    <div class="p-img">
+                        <img src="IMG/boxeo.jpg" alt="Clase de boxeo">
+                    </div>
+                    <div class="info-card">
+                        <h3>Clase de boxeo - boxing  club</h3>
+                        <p>Tenemos los mejores profesionales para convertirte en un super humano</p>
+                        <span>$80.000 COP x mes</span>
+                        <button onclick="addToCart('clase boxeo - boxing club', 80000)">Agregar al carrito</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="p-img">
+                        <img src="IMG/gofit.jpeg" alt="gofit">
+                    </div>
+                    <div class="info-card">
+                        <h3>Go fit </h3>
+                        <p>entrenamiento fisico personalizado + clases de zumba.</p>
+                        <span>70.000 COP x mes</span>
+                        <button onclick="addToCart('gofit', 70000)">Agregar al carrito</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="p-img">
+                        <img src="IMG/taekwondo.jpg" alt="taekwondo">
+                    </div>
+                    <div class="info-card">
+                        <h3>Clases de taekwondo</h3>
+                        <p>Entrena con los mejores expertos en bogotá y saca a flote tus habilidades.</p>
+                        <span>22.000 COP x mes</span>
+                        <button onclick="addToCart('Clases de taekwondo', 22000)">Agregar al carrito</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="p-img">
+                        <img src="IMG/karatekid.jpg" alt="taekwondo para chicos">
+                    </div>
+                    <div class="info-card">
+                        <h3>Karate para chicos</h3>
+                        <p>Brindamos el mejor servicio, para que tu pequeño aprenda lo mejor de las artes marciales.</p>
+                        <span>25.000 COP x  mes</span>
+                        <button onclick="addToCart('karate para chicos', 25000)">Agregar al carrito</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="p-img">
+                        <img src="IMG/canto.jpg" alt="Canto">
+                    </div>
+                    <div class="info-card">
+                        <h3>Clases de canto</h3>
+                        <p>Disponible para todas las edades.</p>
+                        <span>25.000 COP x mes</span>
+                        <button onclick="addToCart('Clases de canto', 25000)">Agregar al carrito</button>
+                    </div>
+                </div>
+             
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section>
+            <div class="footer-container">
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <p>Teléfono: +57 321 2376552</p>
+                    <p>Correo: classmentacademy@gmail.com</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Términos de uso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-cta">
+                    <p>Suscríbete para recibir noticias:</p>
+                    <form>
+                        <input type="email" placeholder="Email">
+                        <button>Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2023 classment academy</p>
+            </div>
+        </section>
+    </footer>
+
+    <div id="cart" class="cart">
+        <h3>Carrito de Compras</h3>
+        <ul id="cart-items">
+           
+        </ul>
+        <button onclick="closeCart()">Cerrar Carrito</button>
+    </div>
+    <script src="JS/script.js"></script>
+    
+</body>
+
+</html>
