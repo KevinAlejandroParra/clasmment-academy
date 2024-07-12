@@ -1,140 +1,87 @@
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classment Academy</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <title>Inicio | Classment Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/eb36e646d1.js" crossorigin="anonymous"></script>    
+    <link rel="shortcut icon" href="IMG/logo.png" type="image/x-icon">
 </head>
-
 <body>
-    <nav>
-        <div class="navbar">
-            <a href="login.html"><img src="IMG/logo.png" width="100px" alt=""></a>
-            <div class="search">
-                <input type="text" id="searchInput" placeholder="mas que cursos, oportunidades">
-                <button onclick="searchProducts()">Buscar</button>
+    <header class="w-full bg-gray-100 p-2">
+        <div class="w-full max-w-[1200px] flex justify-between items-center mx-auto">
+
+            <!-- Sección de búsqueda -->
+            <a href="login.html" class="h-[40px] w-auto">
+                <img src="IMG/logo.png" class="object-cover h-full w-full ">
+            </a>
+
+            <!-- Sección de búsqueda -->
+            <div class="flex gap-0 hidden md:block">
+                <input type="text" id="searchInput" placeholder="mas que cursos, oportunidades" class="px-2 py-1 rounded-l-lg min-w-[300px]">
+                <button onclick="searchProducts()" class="px-2 py-1 rounded-r-lg bg-gray-800 text-gray-50 font-semibold">Buscar</button>
             </div>
-          
-            
-                <button onclick="openCart()">Carrito</button>
+            <!-- Sección de cuenta -->
+            <div>
+                <a href="login.html">                    
+                    <p class="duration-300 hover:text-yellow-400 hover:scale-[1.05]">
+                        <i class="fa-solid fa-right-to-bracket mr-2"></i>
+                        Ingresa
+                    </p>
+                </a>
             </div>
         </div>
-    </nav>
+    </header>
+    
     <main>
-        <section class="introduction">
-            <div class="container">
-               
-            </div>
-        </section>
-        <section class="products">
-            <h1>Los mejores cursos para sacarle el mayor provecho al talento que llevas dentro</h1>
-            <div class="products-items">
-                <div class="product-card">
-                    <div class="p-img">
-                        <img src="IMG/boxeo.jpg" alt="Clase de boxeo">
-                    </div>
-                    <div class="info-card">
-                        <h3>Clase de boxeo - boxing  club</h3>
-                        <p>Tenemos los mejores profesionales para convertirte en un super humano</p>
-                        <span>$80.000 COP x mes</span>
-                        <button onclick="addToCart('clase boxeo - boxing club', 80000)">Agregar al carrito</button>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="p-img">
-                        <img src="IMG/gofit.jpeg" alt="gofit">
-                    </div>
-                    <div class="info-card">
-                        <h3>Go fit </h3>
-                        <p>entrenamiento fisico personalizado + clases de zumba.</p>
-                        <span>70.000 COP x mes</span>
-                        <button onclick="addToCart('gofit', 70000)">Agregar al carrito</button>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="p-img">
-                        <img src="IMG/taekwondo.jpg" alt="taekwondo">
-                    </div>
-                    <div class="info-card">
-                        <h3>Clases de taekwondo</h3>
-                        <p>Entrena con los mejores expertos en bogotá y saca a flote tus habilidades.</p>
-                        <span>22.000 COP x mes</span>
-                        <button onclick="addToCart('Clases de taekwondo', 22000)">Agregar al carrito</button>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="p-img">
-                        <img src="IMG/karatekid.jpg" alt="taekwondo para chicos">
-                    </div>
-                    <div class="info-card">
-                        <h3>Karate para chicos</h3>
-                        <p>Brindamos el mejor servicio, para que tu pequeño aprenda lo mejor de las artes marciales.</p>
-                        <span>25.000 COP x  mes</span>
-                        <button onclick="addToCart('karate para chicos', 25000)">Agregar al carrito</button>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="p-img">
-                        <img src="IMG/canto.jpg" alt="Canto">
-                    </div>
-                    <div class="info-card">
-                        <h3>Clases de canto</h3>
-                        <p>Disponible para todas las edades.</p>
-                        <span>25.000 COP x mes</span>
-                        <button onclick="addToCart('Clases de canto', 25000)">Agregar al carrito</button>
-                    </div>
-                </div>
-             
-            </div>
-        </section>
-    </main>
-    <footer>
+        <!-- Sección de inicio -->
         <section>
-            <div class="footer-container">
+            <div class="w-full max-w-[1200px] flex justify-between items-center mx-auto my-5 relative">
+                <div class="absolute inset-0 bg-gradient-to-b from-black to-black opacity-[20%]"></div>
+                <img src="IMG/bg.jpg" alt="" class="max-h-[550px] w-full">
+            </div>
+        </section>
+
+        <section>
+            <div class="w-full max-w-[1200px] flex justify-between items-center mx-auto my-5 relative">
+                 <!-- AQUÍ DEBE IR LA PARTE DE CURSOS -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-800 text-zinc-50 p-2">
+        <div class="w-full max-w-[1200px] mx-auto flex flex-col gap-8 items-center justify-center py-6 text-center">
+            <div class="w-full flex flex-col md:flex-row justify-between items-center">
                 <div class="footer-contact">
-                    <h3>Contacto</h3>
+                    <h3 class="font-bold text-xl tracking-tight">Contacto</h3>
                     <p>Teléfono: +57 321 2376552</p>
                     <p>Correo: classmentacademy@gmail.com</p>
                 </div>
                 
                 <div class="footer-links">
-                    <h3>Legal</h3>
+                    <h3 class="font-bold text-xl tracking-tight">Legal</h3>
                     <ul>
                         <li><a href="#">Política de privacidad</a></li>
                         <li><a href="#">Términos de uso</a></li>
                     </ul>
                 </div>
-                <div class="footer-cta">
+                <div class="flex flex-col justify-center items-center space-y-4">
                     <p>Suscríbete para recibir noticias:</p>
                     <form>
-                        <input type="email" placeholder="Email">
-                        <button>Suscribirse</button>
+                        <input type="email" placeholder="Email" class="px-2 py-1 rounded-md">
+                        <button class="font-semibold border-2 border-white rounded-md  px-2 py-1">Suscribirse</button>
                     </form>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>Copyright © 2023 classment academy</p>
+            <!-- Copyright -->
+            <div class="bg-zinc-950 w-full p-2 flex items-center justify-center rounded-full font-semibold shadow-lg">
+                <p>Copyright &copy; 2023 classment academy</p>
             </div>
-        </section>
+        </div>
     </footer>
-
-    <div id="cart" class="cart">
-        <h3>Carrito de Compras</h3>
-        <ul id="cart-items">
-           
-        </ul>
-        <button onclick="closeCart()">Cerrar Carrito</button>
-    </div>
-    <script src="JS/script.js"></script>
-    
 </body>
-
 </html>
