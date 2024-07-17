@@ -8,7 +8,7 @@ USE `classment-academy`;
 -- Estructura de tabla para la tabla `usuario`
 --
 
-CREATE TABLE `usuario` (
+CREATE TABLE `usuarios` (
   `usuario_documento` DECIMAL(10, 0) NOT NULL PRIMARY KEY,
   `usuario_tipo_documento` ENUM('CC', 'CE', 'TI', 'PPN', 'NIT', 'SSN', 'EIN') NOT NULL,
   `usuario_nombre` VARCHAR(100) NOT NULL,
@@ -16,6 +16,7 @@ CREATE TABLE `usuario` (
   `usuario_correo` VARCHAR(80) NOT NULL UNIQUE,
   `usuario_telefono` DECIMAL(10, 0),
   `usuario_direccion` TEXT,
+  `usuario_password` TEXT, 
   `usuario_nacimiento` DATE NOT NULL,
   `usuario_imagen_url` VARCHAR(255) NOT NULL DEFAULT '/IMG/usuarios/nf.jpg',
   `usuario_fecha` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
