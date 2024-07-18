@@ -139,13 +139,13 @@ foreach ( $result as $escuela) {
                     <p>Suscríbete para recibir noticias:</p>
                     <form>
                         <input type="email" placeholder="Email" class="px-2 py-1 rounded-md">
-                        <button class="font-semibold border-2 border-white rounded-md  px-2 py-1">Suscribirse</button>
+                        <button class="font-semibold border-2 border-white rounded-md  px-2 py-1">Enviar</button>
                     </form>
                 </div>
             </div>
             <!-- Copyright -->
             <div class="bg-zinc-950 w-full p-2 flex items-center justify-center rounded-full font-semibold shadow-lg">
-                <p>Copyright &copy; 2023 classment academy</p>
+                <p>Copyright &copy; 2024 classment academy</p>
             </div>
         </div>
     </footer>

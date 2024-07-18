@@ -11,6 +11,7 @@
     <input type="text" name="usuario_nombre" placeholder="nombres"> 
     <input type="text" name="usuario_apellido"placeholder="apellidos">
     <input type="email" name="usuario_correo"placeholder="correo electronico">
+    <input type="password" name="usuario_password"placeholder="clave">
     
 
     <select name="usuario_tipo_documento"> 
