@@ -77,16 +77,14 @@ CREATE TABLE `cursos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO `cursos` (`curso_id`, `curso_nombre`, `curso_descripcion`, `curso_precio`, `curso_profesor`, `curso_imagen_url`, `escuela_id`) VALUES
-(1, 'Asesoría nutricional', 'Asesoría nutricional con enfoque en hábitos saludables y dietas personalizadas.', 50000, 'Juan Pérez', '/IMG/cursos/1.jpg', 1),
+(1, 'Asesoría Nutricional', 'Asesoría nutricional con enfoque en hábitos saludables y dietas personalizadas.', 50000, 'Juan Pérez', '/IMG/cursos/1.jpg', 1),
 (2, 'Taekwondo', 'Curso de taekwondo para aprender técnicas de defensa y disciplina.', 60000, 'Maria López', '/IMG/cursos/2.jpg', 2),
 (3, 'Master Class', 'Clase magistral sobre temas avanzados en el campo seleccionado.', 70000, 'Alejandro Cifuentes', '/IMG/cursos/3.jpg', 3),
-(4, 'Entrenamiento Funcional', 'Curso intensivo de entrenamiento funcional para mejorar la condición física.', 80000, 'Carlos Martínez', '/IMG/cursos/nf.jpg', 1),
-(5, 'Defensa Personal', 'Técnicas de defensa personal para todas las edades y niveles.', 70000, 'Lucía Fernández', '/IMG/cursos/nf.jpg', 2),
-(6, 'Marketing Digital', 'Estrategias avanzadas de marketing digital para aumentar la visibilidad en línea.', 90000, 'Sofía Ramírez', '/IMG/cursos/nf.jpg', 3),
-(7, 'Yoga para principiantes', 'Curso de yoga diseñado para personas sin experiencia previa.', 50000, 'Ana García', '/IMG/cursos/nf.jpg', 1),
-(8, 'Fotografía Profesional', 'Aprende técnicas profesionales para capturar imágenes impactantes.', 100000, 'Miguel Torres', '/IMG/cursos/nf.jpg', 3),
-(9, 'Pilates', 'Mejora tu flexibilidad y fuerza muscular con ejercicios de pilates.', 60000, 'Laura González', '/IMG/cursos/nf.jpg', 1),
-(10, 'Boxeo', 'Entrenamiento de boxeo que incluye técnicas de golpeo y defensa.', 65000, 'Diego Hernández', '/IMG/cursos/nf.jpg', 2);
+(4, 'Entrenamiento Funcional', 'Curso intensivo de entrenamiento funcional para mejorar la condición física.', 80000, 'Carlos Martínez', '/IMG/cursos/entrenamiento.jpg', 1),
+(5, 'Defensa Personal', 'Técnicas de defensa personal para todos los niveles.', 70000, 'Lucía Fernández', '/IMG/cursos/defensa_personal.jpg', 2),
+(6, 'Yoga', 'Curso de yoga diseñado para personas sin experiencia previa.', 50000, 'Ana García', '/IMG/cursos/yoga.jpg', 1),
+(7, 'Fotografía Profesional', 'Aprende técnicas profesionales para capturar imágenes impactantes.', 100000, 'Miguel Torres', '/IMG/cursos/fotografia.jpg', 3),
+(8, 'Taekwondo Para Chicos', 'Entrenamiento de defensa personal que incluye técnicas de golpeo y defensa.', 65000, 'Diego Hernández', '/IMG/cursos/taekwondo_ninos.jpg', 2);
 
 -- --------------------------------------------------------
 
