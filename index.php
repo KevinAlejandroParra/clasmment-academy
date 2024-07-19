@@ -75,12 +75,23 @@ foreach ( $result as $escuela) {
     
     <main>
         <!-- Sección de inicio -->
-        <section>
-            <div class="w-full max-w-[1200px] flex justify-between items-center mx-auto my-5 relative">
-                <div class="absolute inset-0 bg-gradient-to-b from-black to-black opacity-[20%]"></div>
-                <img src="IMG/bg.jpg" alt="" class="max-h-[550px] w-full">
-            </div>
-        </section>
+            <section >
+                    
+        <p class=" font-sans text-5xl font-bold tracking-wide text-left text-yellow-400 txt flex ml-36 mt-16">Tiempo libre? <br> </p>    
+        <p class=" font-sans text-3xl font-bold tracking-wide text-left text-black txt ml-36 mt-8"> Multiples habilidades, todas reunidas <br> en un solo lugar, busca la que más <br> eleve tu potencial!
+        </p>    
+        <br>
+        <div class=" ml-36 w-full max-w-md flex items-center border border-gray-300 rounded-lg overflow-hidden shadow-lg">
+        <div class="flex items-center px-3 bg-white">
+        <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+        </div>
+        <input type="text" id="searchInput" placeholder="Ejemplo: Defensa Personal" class="px-4 py-2 w-full outline-none text-gray-700">
+        <button onclick="searchProducts()" class="px-4 py-2 bg-yellow-500 text-white font-semibold">Buscar</button>
+    </div>
+    </div>
+
+    </section>
+
 
         <!-- AQUÍ DEBE IR LA PARTE DE CURSOS -->
         <section>
