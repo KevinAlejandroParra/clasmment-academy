@@ -52,18 +52,13 @@ foreach ( $result as $escuela) {
         <div class="w-full max-w-[1200px] flex justify-between items-center mx-auto">
 
             <!-- Sección de búsqueda -->
-            <a href="login.html" class="h-[40px] w-auto">
+            <a href="login.php" class="h-[40px] w-auto">
                 <img src="IMG/logo.png" class="object-cover h-full w-full ">
             </a>
 
-            <!-- Sección de búsqueda -->
-            <div class="flex gap-0 hidden md:block">
-                <input type="text" id="searchInput" placeholder="mas que cursos, oportunidades" class="px-2 py-1 rounded-l-lg min-w-[300px]">
-                <button onclick="searchProducts()" class="px-2 py-1 rounded-r-lg bg-gray-800 text-gray-50 font-semibold">Buscar</button>
-            </div>
             <!-- Sección de cuenta -->
             <div>
-                <a href="login.html">                    
+                <a href="login.php">                    
                     <p class="duration-300 hover:text-yellow-400 hover:scale-[1.05]">
                         <i class="fa-solid fa-right-to-bracket mr-2"></i>
                         Ingresa
@@ -75,23 +70,28 @@ foreach ( $result as $escuela) {
     
     <main>
         <!-- Sección de inicio -->
-            <section >
-                    
-        <p class=" font-sans text-5xl font-bold tracking-wide text-left text-yellow-400 txt flex ml-36 mt-16">Tiempo libre? <br> </p>    
-        <p class=" font-sans text-3xl font-bold tracking-wide text-left text-black txt ml-36 mt-8"> Multiples habilidades, todas reunidas <br> en un solo lugar, busca la que más <br> eleve tu potencial!
-        </p>    
-        <br>
-        <div class=" ml-36 w-full max-w-md flex items-center border border-gray-300 rounded-lg overflow-hidden shadow-lg">
-        <div class="flex items-center px-3 bg-white">
-        <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+        <div class="mx-auto max-w-[900px] px-5 mt-16">
+    <div class="flex items-center justify-between">
+        <div class="w-1/2 mr-8">
+            <p class="font-sans text-5xl font-bold tracking-wide text-yellow-400 mb-6">¿Tiempo libre?</p>
+            <p class="font-sans text-3xl font-bold tracking-wide text-black mb-8">
+                Multiples habilidades, todas reunidas 
+                en un solo lugar, busca la que más 
+                eleve tu potencial!
+            </p>
+            <div class="w-full max-w-md flex items-center border border-gray-300 rounded-lg overflow-hidden shadow-lg mb-8">
+                <div class="flex items-center px-3 bg-white">
+                    <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+                </div>
+                <input type="text" id="searchInput" placeholder="Ejemplo: Defensa Personal" class="px-3 py-4 w-full outline-none text-gray-700">
+                <button onclick="searchProducts()" class="px-4 py-4 bg-yellow-500 text-white font-semibold">Buscar</button>
+            </div>
         </div>
-        <input type="text" id="searchInput" placeholder="Ejemplo: Defensa Personal" class="px-4 py-2 w-full outline-none text-gray-700">
-        <button onclick="searchProducts()" class="px-4 py-2 bg-yellow-500 text-white font-semibold">Buscar</button>
+        <div class="w-1/2 ml-16">
+            <img src="IMG/banner.jpg" class="object-cover h-full w-full rounded-lg" alt="Banner">
+        </div>
     </div>
-    </div>
-
-    </section>
-
+</div>
 
         <!-- AQUÍ DEBE IR LA PARTE DE CURSOS -->
         <section>
