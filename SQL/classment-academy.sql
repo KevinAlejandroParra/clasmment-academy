@@ -55,6 +55,11 @@ CREATE TABLE `cursos` (
   `curso_capacidad_maxima` INT NOT NULL,
   `curso_edad_minima` INT NOT NULL DEFAULT 0,
   `curso_imagen_url` VARCHAR(255) DEFAULT '/IMG/cursos/nf.jpg',
+
+
+  -- PENDIENTE POR AGREGAR LA GALERIA DEL CURSO`
+
+
   `curso_fecha_inicio` DATE NOT NULL,
   `curso_fecha_fin` DATE NOT NULL,
   `curso_estado` ENUM('activo', 'inactivo', 'completo') DEFAULT 'activo',
@@ -174,22 +179,24 @@ CREATE INDEX idx_mensaje_destinatario ON `mensajes` (`destinatario_documento`, `
 
 -- Datos de prueba para la tabla `escuelas`
 INSERT INTO `escuelas` (`escuela_nombre`, `escuela_descripcion`, `escuela_telefono`, `escuela_direccion`) VALUES
-('Escuela de Artes', 'Formación en artes plásticas y visuales', '1234567890', 'Calle 123, Ciudad A'),
+('GO FIT', 'Entrenamineto y acondicionamente fisico', '1234567890', 'Calle 123, Bogota D.C.'),
 ('Academia de Música', 'Enseñanza de instrumentos y teoría musical', '9876543210', 'Avenida 456, Ciudad B'),
 ('Centro de Idiomas', 'Cursos de idiomas para todos los niveles', '5555555555', 'Plaza Principal, Ciudad C');
 
 -- Datos de prueba para la tabla `usuarios`
-INSERT INTO `usuarios` (`usuario_documento`, `usuario_tipo_documento`, `usuario_nombre`, `usuario_apellido`, `usuario_correo`, `usuario_password`, `usuario_telefono`, `usuario_direccion`, `usuario_nacimiento`, `rol_id`, `escuela_id`) VALUES
-('1001001001', 'CC', 'Juan', 'Pérez', 'juan.perez@email.com', 'password123', '3001234567', 'Calle 789, Ciudad A', '1990-05-15', 1, 1),
-('1002002002', 'CC', 'María', 'González', 'maria.gonzalez@email.com', 'password456', '3009876543', 'Avenida 012, Ciudad B', '1985-10-20', 2, 2),
-('1003003003', 'CC', 'Carlos', 'Rodríguez', 'carlos.rodriguez@email.com', 'password789', '3005555555', 'Carrera 345, Ciudad C', '1988-03-25', 3, 3),
-('1004004004', 'CC', 'Ana', 'Martínez', 'ana.martinez@email.com', 'passwordabc', '3007777777', 'Diagonal 678, Ciudad A', '1992-12-10', 4, 1);
+INSERT INTO `usuarios` (`usuario_documento`, `usuario_tipo_documento`, `usuario_nombre`, `usuario_apellido`, `usuario_correo`, `usuario_password`, `usuario_telefono`, `usuario_direccion`, `usuario_nacimiento`, `usuario_imagen_url`, `rol_id`, `escuela_id`) VALUES
+('1001001001', 'CC', 'Juan', 'Pérez', 'juan.perez@email.com', 'password123', '3001234567', 'Calle 789, Ciudad A', '1990-05-15', 'IMG/usuarios/nf.jpg', 1, 1),
+('1002002002', 'CC', 'Chris ', 'Bumstead', 'cbum@email.com', 'password456', '3009876543', 'Avenida 012, Ciudad B', '1985-10-20', 'IMG/usuarios/coach_1.png', 2, 2),
+('1003003003', 'CC', 'Carlos', 'Rodríguez', 'carlos.rodriguez@email.com', 'password789', '3005555555', 'Carrera 345, Ciudad C', '1988-03-25', 'IMG/usuarios/nf.jpg', 3, 3),
+('1004004004', 'CC', 'Ana', 'Martínez', 'ana.martinez@email.com', 'passwordabc', '3007777777', 'Diagonal 678, Ciudad A', '1992-12-10', 'IMG/usuarios/nf.jpg', 4, 1);
 
 -- Datos de prueba para la tabla `cursos`
-INSERT INTO `cursos` (`curso_nombre`, `curso_descripcion`, `curso_precio`, `curso_cupos`, `curso_capacidad_maxima`, `curso_edad_minima`, `curso_fecha_inicio`, `curso_fecha_fin`, `escuela_id`, `curso_direccion`) VALUES
-('Pintura al Óleo', 'Curso básico de pintura al óleo', 500000, 15, 20, 16, '2024-08-01', '2024-12-15', 1, 'Salón 101, Escuela de Artes'),
-('Piano Avanzado', 'Clases avanzadas de piano', 750000, 10, 12, 18, '2024-09-01', '2025-02-28', 2, 'Sala de Música, Academia de Música'),
-('Inglés Intermedio', 'Curso de inglés nivel B1-B2', 600000, 20, 25, 14, '2024-07-15', '2024-12-20', 3, 'Aula 203, Centro de Idiomas');
+
+  INSERT INTO `cursos` (`curso_nombre`, `curso_descripcion`, `curso_precio`, `curso_cupos`, `curso_capacidad_maxima`, `curso_edad_minima`, `curso_imagen_url`, `curso_fecha_inicio`, `curso_fecha_fin`, `escuela_id`, `curso_direccion`) VALUES
+('Entrenamiento personal', 'Asesorias de entrenamiento personal para lograr tus obejetivos', 500000, 15, 20, 16, 'IMG/cursos/entrenamiento.jpg', '2024-08-01', '2024-12-15', 1, 'GO FIT, Carrera 45b,diagonal 60 Sur'),
+('Piano Avanzado', 'Clases avanzadas de piano', 750000, 10, 12, 18, 'IMG/cursos/piano.jpg', '2024-09-01', '2025-02-28', 2, 'Sala de Música, Academia de Música'),
+('Inglés Intermedio', 'Curso de inglés nivel B1-B2', 600000, 20, 25, 14, 'IMG/cursos/ingles.jpg', '2024-07-15', '2024-12-20', 3, 'Aula 203, Centro de Idiomas');
+
 
 -- Datos de prueba para la tabla `horarios`
 INSERT INTO `horarios` (`curso_id`, `horario_dia_semana`, `horario_hora_inicio`, `horario_hora_fin`) VALUES
