@@ -94,7 +94,7 @@
         <div class="flex flex-col w-1/2">
             <label for="escuela_id" class="text-sm font-semibold text-white">Selecciona una escuela</label>
             <select name="escuela_id" id="escuela_id" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-white" required>
-                <option value="4">No tengo</option>
+                <option value="4">no aplica</option>
                 <option value="1">Go Fit</option>
                 <option value="2">Soy Fitness</option>
                 <option value="3">Taekwondo</option>

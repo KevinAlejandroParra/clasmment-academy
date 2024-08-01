@@ -1,5 +1,5 @@
         <?php
-
+            session_start(); 
         // IMPORTAR CONEXIÓN
         require "./PHP/conexion.php";
 
@@ -60,24 +60,29 @@
             <link rel="shortcut icon" href="IMG/logo_mini.png" type="image/x-icon">
         </head>
         <body>
-            <header class="w-full bg-gray-100 p-2">
-                <div class="w-full max-w-[1200px] flex justify-between items-center mx-auto">
-                    <!-- Sección de búsqueda -->
-                    <a href="login.php" class="h-[40px] w-auto">
-                        <img src="IMG/logo.png" class="object-cover h-full w-full ">
-                    </a>
+    <header class="w-full bg-gray-100 p-2">
+        <div class="w-full max-w-[1200px] flex justify-between items-center mx-auto">
+            <!-- Sección de búsqueda -->
+            <a href="index.php" class="h-[40px] w-auto">
+                <img src="IMG/logo.png" class="object-cover h-full w-full">
+            </a>
 
-                    <!-- Sección de cuenta -->
-                    <div>
-                        <a href="login.php">                    
-                            <p class="duration-300 hover:text-yellow-400 hover:scale-[1.05]">
-                                <i class="fa-solid fa-right-to-bracket mr-2"></i>
-                                Ingresa
-                            </p>
-                        </a>
-                    </div>
-                </div>
-            </header>
+            <!-- Sección de cuenta -->
+            <div>
+                <?php if(isset($_SESSION['usuario_documento'])): ?>
+                    <a href="perfil_usuario.php" class="flex items-center space-x-2 duration-300 hover:text-yellow-400 hover:scale-[1.05]">
+                        <i class="fas fa-user-circle text-2xl"></i>
+                        <span>Mi Perfil</span>
+                    </a>
+                <?php else: ?>
+                    <a href="login.php" class="flex items-center space-x-2 duration-300 hover:text-yellow-400 hover:scale-[1.05]">
+                        <i class="fas fa-sign-in-alt text-2xl"></i>
+                        <span>Ingresa</span>
+                    </a>
+                <?php endif; ?>
+            </div>
+        </div>
+    </header>
         
             <main>
                 <!-- Sección de inicio -->
@@ -143,7 +148,51 @@
                     </div>
                 </section>
             </main>
-
+            <section id="sobre-nosotros" class="bg-white py-16">
+    <div class="w-full max-w-[1200px] mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12 text-yellow-400">Sobre Nosotros</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h3 class="text-2xl font-semibold mb-4 text-yellow-600">Objetivo General</h3>
+                <p class="text-gray-700 mb-6">Desarrollar un sistema de información para las instituciones ubicadas en las localidades de Bosa y Ciudad Bolívar, ofreciendo una mejor gestión de horarios, inscripciones y registro de operaciones.</p>
+                <div class="flex items-center justify-center">
+                    <i class="fas fa-bullseye text-5xl text-yellow-500"></i>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h3 class="text-2xl font-semibold mb-4 text-yellow-600">Justificación</h3>
+                <ul class="text-gray-700 space-y-4">
+                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Brindamos visibilidad a escuelas pequeñas, generando equidad y nuevas oportunidades.</li>
+                    <li><i class="fas fa-brain text-blue-500 mr-2"></i>Fomentamos el desarrollo de habilidades sociales, emocionales y cognitivas.</li>
+                    <li><i class="fas fa-users text-purple-500 mr-2"></i>Facilitamos la interacción entre comunidades para descubrir actividades y colaborar.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="mt-12">
+            <h3 class="text-2xl font-semibold mb-6 text-center text-yellow-600">Creadores del Proyecto</h3>
+            <div class="flex flex-wrap justify-center gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center w-64">
+                    <img src="IMG/nosotros.png" alt="Daniel Josué Peña Puentes" class="rounded-full mx-auto mb-4">
+                    <h4 class="font-semibold text-lg">Daniel Josué Peña Puentes</h4>
+                    <p class="text-gray-600">Desarrollador</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center w-64">
+                    <img src="IMG/nosotros.png" alt="Kevin Alejandro Parra Cifuentes" class="rounded-full mx-auto mb-4">
+                    <h4 class="font-semibold text-lg">Kevin Alejandro Parra Cifuentes</h4>
+                    <p class="text-gray-600">Desarrollador</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center w-64">
+                    <img src="IMG/nosotros.png" alt="Daniel Sneither Bernal Gómez" class="rounded-full mx-auto mb-4">
+                    <h4 class="font-semibold text-lg">Daniel Sneither Bernal Gómez</h4>
+                    <p class="text-gray-600">Desarrollador</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
             <!-- Footer -->
             <footer class="bg-zinc-800 text-zinc-50 p-2">
                 <div class="w-full max-w-[1200px] mx-auto flex flex-col gap-8 items-center justify-center py-6 text-center">
