@@ -42,8 +42,6 @@ CREATE TABLE `usuarios` (
   FOREIGN KEY (`escuela_id`) REFERENCES `escuelas`(`escuela_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Se agrega un índice para mejorar el rendimiento de las búsquedas por correo electrónico
-CREATE INDEX idx_usuario_correo ON `usuarios` (`usuario_correo`);
 
 -- Estructura de la tabla `cursos`
 CREATE TABLE `cursos` (
@@ -158,6 +156,7 @@ CREATE TABLE `mensajes` (
 
 -- Se insertan roles iniciales
 INSERT INTO `roles` (`rol_nombre`) VALUES
+('invitado'),
 ('alumno'),
 ('profesor'),
 ('coordinador'),
@@ -180,8 +179,9 @@ CREATE INDEX idx_mensaje_destinatario ON `mensajes` (`destinatario_documento`, `
 -- Datos de prueba para la tabla `escuelas`
 INSERT INTO `escuelas` (`escuela_nombre`, `escuela_descripcion`, `escuela_telefono`, `escuela_direccion`) VALUES
 ('GO FIT', 'Entrenamineto y acondicionamente fisico', '1234567890', 'Calle 123, Bogota D.C.'),
-('Academia de Música', 'Enseñanza de instrumentos y teoría musical', '9876543210', 'Avenida 456, Ciudad B'),
-('Centro de Idiomas', 'Cursos de idiomas para todos los niveles', '5555555555', 'Plaza Principal, Ciudad C');
+('Soy Fitness', 'Yoga, Pilates y mas', '9876543210', 'Avenida 456, primera de mayo con boyaca'),
+('Taekwondo', 'Cursos de taekwondo para todos los niveles', '5555555555', 'Plaza Principal, Carrera 10 con circunvalar');
+('No aplica', 'no aplica', '5435236527','no aplica');
 
 -- Datos de prueba para la tabla `usuarios`
 INSERT INTO `usuarios` (`usuario_documento`, `usuario_tipo_documento`, `usuario_nombre`, `usuario_apellido`, `usuario_correo`, `usuario_password`, `usuario_telefono`, `usuario_direccion`, `usuario_nacimiento`, `usuario_imagen_url`, `rol_id`, `escuela_id`) VALUES
@@ -192,11 +192,19 @@ INSERT INTO `usuarios` (`usuario_documento`, `usuario_tipo_documento`, `usuario_
 
 -- Datos de prueba para la tabla `cursos`
 
-  INSERT INTO `cursos` (`curso_nombre`, `curso_descripcion`, `curso_precio`, `curso_cupos`, `curso_capacidad_maxima`, `curso_edad_minima`, `curso_imagen_url`, `curso_fecha_inicio`, `curso_fecha_fin`, `escuela_id`, `curso_direccion`) VALUES
+-- Cursos para GO FIT
+INSERT INTO `cursos` (`curso_nombre`, `curso_descripcion`, `curso_precio`, `curso_cupos`, `curso_capacidad_maxima`, `curso_edad_minima`, `curso_imagen_url`, `curso_fecha_inicio`, `curso_fecha_fin`, `escuela_id`, `curso_direccion`) VALUES
 ('Entrenamiento personal', 'Asesorias de entrenamiento personal para lograr tus obejetivos', 500000, 15, 20, 16, 'IMG/cursos/entrenamiento.jpg', '2024-08-01', '2024-12-15', 1, 'GO FIT, Carrera 45b,diagonal 60 Sur'),
-('Piano Avanzado', 'Clases avanzadas de piano', 750000, 10, 12, 18, 'IMG/cursos/piano.jpg', '2024-09-01', '2025-02-28', 2, 'Sala de Música, Academia de Música'),
-('Inglés Intermedio', 'Curso de inglés nivel B1-B2', 600000, 20, 25, 14, 'IMG/cursos/ingles.jpg', '2024-07-15', '2024-12-20', 3, 'Aula 203, Centro de Idiomas');
+('Entrenamiento Funcional', 'Clases de entrenamiento funcional para mejorar tu rendimiento físico', 600000, 20, 25, 16, 'IMG/cursos/entrenamiento-funcional.jpg', '2024-08-01', '2024-12-15', 1, 'GO FIT, Carrera 45b, diagonal 60 Sur'),
+('Defensa Personal', 'Programa de defensa personal para mejorar tu resistencia', 500000, 15, 20, 14, 'IMG/cursos/defensa_personal.jpg', '2024-09-01', '2025-01-15', 1, 'GO FIT, Carrera 45b, diagonal 60 Sur'),
 
+-- Cursos para Soy Fitness
+('Entrenamiento de Fuerza', 'Clases de entrenamiento de fuerza para tonificar el cuerpo', 650000, 15, 20, 18, 'IMG/cursos/entrenamiento_fuerza.jpeg', '2024-08-15', '2024-12-15', 2, 'Soy Fitness, Calle 45, Ciudad B'),
+('Zumba', 'Clases de Zumba para quemar calorías y divertirse', 400000, 20, 25, 16, 'IMG/cursos/zumba.jpg', '2024-09-01', '2025-02-28', 2, 'Soy Fitness, Calle 45, Ciudad B'),
+
+-- Cursos para Taekwondo
+('Taekwondo Básico', 'Curso de taekwondo para principiantes', 500000, 20, 25, 8, 'IMG/cursos/taekwondo_ninos.jpg', '2024-07-15', '2024-12-20', 3, 'Aula 203, Taekwondo'),
+('Taekwondo Avanzado', 'Curso avanzado de taekwondo para competidores', 700000, 15, 20, 10, 'IMG/cursos/2.jpg', '2024-08-01', '2025-01-15', 3, 'Aula 203, Taekwondo');
 
 -- Datos de prueba para la tabla `horarios`
 INSERT INTO `horarios` (`curso_id`, `horario_dia_semana`, `horario_hora_inicio`, `horario_hora_fin`) VALUES

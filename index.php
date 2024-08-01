@@ -57,7 +57,7 @@
             <title>Inicio | Classment Academy</title>
             <script src="https://cdn.tailwindcss.com"></script>
             <script src="https://kit.fontawesome.com/eb36e646d1.js" crossorigin="anonymous"></script>    
-            <link rel="shortcut icon" href="IMG/logo.png" type="image/x-icon">
+            <link rel="shortcut icon" href="IMG/logo_mini.png" type="image/x-icon">
         </head>
         <body>
             <header class="w-full bg-gray-100 p-2">
