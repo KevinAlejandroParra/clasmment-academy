@@ -41,7 +41,11 @@ CREATE TABLE `usuarios` (
   FOREIGN KEY (`rol_id`) REFERENCES `roles`(`rol_id`),
   FOREIGN KEY (`escuela_id`) REFERENCES `escuelas`(`escuela_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
+ 
+-- Estructura de la tabla `recuperaciones`
+ALTER TABLE usuarios
+ADD COLUMN reset_token VARCHAR(64) NULL,
+ADD COLUMN reset_token_expiry DATETIME NULL;
 
 -- Estructura de la tabla `cursos`
 CREATE TABLE `cursos` (
