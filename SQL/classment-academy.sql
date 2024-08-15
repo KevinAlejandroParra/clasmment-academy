@@ -43,9 +43,21 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
  
 -- Estructura de la tabla `recuperaciones`
-ALTER TABLE usuarios
-ADD COLUMN reset_token VARCHAR(64) NULL,
-ADD COLUMN reset_token_expiry DATETIME NULL;
+CREATE TABLE `recuperacion_cuentas` (
+    `recuperacion_id` INT PRIMARY KEY AUTO_INCREMENT,
+    `usuario_documento` INT NOT NULL,
+    `token` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(255) NOT NULL,
+    `fecha_creacion` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `fecha_expiracion` TIMESTAMP DEFAULT DATE_ADD(CURRENT_TIMESTAMP, INTERVAL 1 HOUR)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+ALTER TABLE `recuperacion_cuentas`
+ADD CONSTRAINT `fk_recuperacion_cuentas_usuarios` 
+FOREIGN KEY (`usuario_docuemnto`) 
+REFERENCES `usuarios`(`usuario_documento`)
+ON UPDATE CASCADE
+ON DELETE CASCADE;
 
 -- Estructura de la tabla `cursos`
 CREATE TABLE `cursos` (
