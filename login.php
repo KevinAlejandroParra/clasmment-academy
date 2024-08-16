@@ -97,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     
                     <div class="text-center">
                         <p class="text-sm text-gray-300">¿No tienes una cuenta? <a href="register.php" class="text-yellow-500 hover:text-yellow-400 transition duration-300">Regístrate</a></p>
-                        <a href="/PHP/recovery_form.php" class="text-white hover:text-yellow-400"> ¿Olvidaste tu contraseña?</a>
+                        <a href="/PHP/recovery.php" class="text-white hover:text-yellow-400"> ¿Olvidaste tu contraseña?</a>
                     </div>
                 </div>
             </div>

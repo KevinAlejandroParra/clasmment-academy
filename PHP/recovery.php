@@ -1,50 +1,23 @@
-<?php 
-require "conexion.php";
-
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
-
-
-require_once (__DIR__ . '/PHPMailer/Exception.php');
-require_once (__DIR__ . '/PHPMailer/PHPMailer.php');
-require_once (__DIR__ . '/PHPMailer/SMTP.php');
-
-
-
-
-//verificar que el usuario exista o este activo
-$usuario_correo = isset($_POST['usuario_correo']) ? $_POST['usuario_correo'] : null;
-
-
-
-if($result->num_rows > 0){
-  $mail = new PHPMailer(true);
-
-try {
-  $mail->isSMTP();
-  $mail->Host = 'smtp.gmail.com';
-  $mail->SMTPAuth = true;
-  $mail->Username = 'classmentacademy@gmail.com';
-  $mail->Password = 'p c f c k w y y d g x v w s l x';
-  $mail->SMTPSecure = 'tls';
-  $mail->Port = 587;
-
-    $mail->setFrom('CORREO_ELECTRONICO_FROM', 'NOMBRE_FORM');
-    $mail->addAddress('CORREO_ELECTRONICO_PARA','NOMBRE_ELECTRONICO_PARA');
-    $mail->isHTML(true);
-    $mail->Subject = 'Recuperación de contraseña';
-    $mail->Body    = 'Hola, este es un correo generado para solicitar tu recuperación de contraseña, por favor, visita la página de <a href="localhost/spending_tracker/change_password.php?id='.$row['id'].'">Recuperación de contraseña</a>';
-
-    $mail->send();
-    header("Location: ../index.php?message=ok");
-} catch (Exception $e) {
-  header("Location: ../index.php?message=error");
-}
-
-}else{
-  header("Location: ../index.php?message=not_found");
-}
-
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/style.css">
+  <title>recupera tu clave</title>
+</head>
+<body class="text-center">
+    
+<main class="form-signin w-100 m-auto">
+  <form action="mail.php" method="POST">
+    <h1>Classment Academy</h1>
+    <h2 class="h3 mb-3 fw-normal">Por favor, inicia sesión</h2>
+    <div class="form-floating my-3">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
+      <label for="floatingInput">Correo electrónico</label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Recuperar contraseña</button>
+  </form>
+</main>
