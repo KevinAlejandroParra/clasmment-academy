@@ -36,17 +36,19 @@ if ($usuario_correo) {
         $mail = new PHPMailer(true);
         try {
             $mail->isSMTP();
+            $mail->CharSet = 'UTF-8';
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
             $mail->Username = 'classmentacademy@gmail.com';
-            $mail->Password = 'pcfc kwyy dgxv wslx';
+            $mail->Password = 'v o e y c f c y c r b m n s x y';
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
             $mail->setFrom('classmentacademy@gmail.com', 'Classment Academy');
             $mail->addAddress($usuario_correo, $usuario_nombre);
             $mail->isHTML(true);
             $mail->Subject = 'Recuperación de contraseña';
-            $mail->Body    = "Hola $usuario_nombre, <br><br>Has solicitado recuperar tu contraseña. Por favor, visita el siguiente enlace para restablecer tu contraseña: <br><br><a href='reset_password.php?token=$token'>Restablecer contraseña</a><br><br>Este enlace expirará en 1 hora.<br><br>Si no has solicitado este cambio, por favor ignora este correo.";
+            $mail->Body    = "Hola $usuario_nombre, <br><br>Has solicitado recuperar tu contraseña. Por favor, visita el siguiente enlace para restablecer tu contraseña: <br><br><a href='http://localhost:3000/PHP/reset_password.php?token=$token'>Restablecer contraseña</a><br><br>Este enlace expirará en 1 hora.<br><br>Si no has solicitado este cambio, por favor ignora este correo.";
+            $mail->AltBody = 'hola puedes revisar este enlace para restablecer tu contraseña: http://localhost:3000/PHP/reset_password.php?token=' . $token;
             $mail->send();
             echo 'Se ha enviado un correo con instrucciones para restablecer tu contraseña.';
         } catch (Exception $e) {
