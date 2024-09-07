@@ -1,14 +1,15 @@
 <?php
-// declaro variables
-$hostname = "localhost";
+$servername = "localhost";
 $username = "root";
 $password = "";
-$database = "classment-academy";
 
-// creo conexión
-$conn = mysqli_connect($hostname, $username, $password, $database);
-
-// verifico conexión
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
+try {
+  $conn = new PDO("mysql:host=$servername;dbname=classment-academy", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  echo "Connected successfully";
+} catch(PDOException $e) {
+  echo "Connection failed: " . $e->getMessage();
 }
+?>
+
