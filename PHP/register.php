@@ -50,7 +50,7 @@ try {
 
         $stmt = $conn->prepare($insert_query);
 
-        $stmt->bindValue(':documento', $usuario_documento, PDO::PARAM_STR);
+        $stmt->bindValue(':documento', $usuario_documento, PDO::PARAM_INT);
         $stmt->bindValue(':tipo_documento', $usuario_tipo_documento, PDO::PARAM_STR);
         $stmt->bindValue(':nombre', $usuario_nombre, PDO::PARAM_STR);
         $stmt->bindValue(':apellido', $usuario_apellido, PDO::PARAM_STR);
