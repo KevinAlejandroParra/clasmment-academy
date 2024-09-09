@@ -1,27 +1,35 @@
 <!DOCTYPE html>
-<html lang="es">
+<html data-theme="black" lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Classment Academy</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="shortcut icon" href="IMG/logo_mini.png" type="image/x-icon">
-    <style>
-        .bg-blur {
-            backdrop-filter: blur(5px);
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="shortcut icon" href="../IMG/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    .gradient-circle {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(50px);
+    }
+  </style>
 </head>
-<body class="bg-black min-h-screen flex items-center justify-center">
-<div class="w-full min-h-screen bg-cover bg-center flex items-center justify-center px-4" style="background-image: url(IMG/back_login.png);">
-    <div class="w-full max-w-6xl flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
-    </div>
-    <a href="index.php" class="absolute top-4 left-4 bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded-lg transition duration-200 flex items-center space-x-2 shadow-lg">
-        <i class="fas fa-arrow-left"></i>
-        <span>Volver</span>
-    </a>
+
+<body class="bg-black min-h-screen relative overflow-hidden">
+ 
+  <!-- Sección Hero -->
+  <section class="flex items-center justify-center relative pl-24" data-aos="fade-up">
+    <!-- Círculos de gradiente -->
+    <div class="gradient-circle w-32 h-32 bg-orange-300 top-10 left-10 opacity-50"></div>
+    <div class="gradient-circle w-64 h-64 bg-orange-400 top-10 right-10 opacity-30"></div>
+    <div class="gradient-circle w-64 h-64 bg-orange-300 bottom-10 left-10 opacity-30"></div>
+    <div class="gradient-circle w-64 h-64 bg-orange-300 bottom-10 right-1/4 opacity-30"></div>
+
+    <a href="index.php"><button class="absolute left-12 top-12 btn bg-black-900 text-white font-bold  rounded-lg transition duration-200"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i>Regresar</button> </a>
     <div class="w-full max-w-2xl p-8">
         <div class="bg-blur p-8 rounded-xl shadow-2xl space-y-6">
             <div class="text-center">
@@ -112,3 +120,14 @@
 </div>
 
 </form>
+
+ </section>
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000
+    });
+  </script>
+</body>
+
+</html>

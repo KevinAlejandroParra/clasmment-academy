@@ -76,12 +76,7 @@ try {
         $conn->rollBack();
     }
     $error = "Error de base de datos: " . $e->getMessage();
-} catch (Exception $e) {
-    if (isset($conn) && $conn->inTransaction()) {
-        $conn->rollBack();
-    }
-    $error = "Error: " . $e->getMessage();
-} finally {
+}  finally {
     // Cerrar la conexión
     $conn = null;
 }
