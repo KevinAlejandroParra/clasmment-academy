@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         } else {
             echo "Correo electrónico o contraseña incorrectos";
         }
-  
+
 }
 ?>
 <!DOCTYPE html>
