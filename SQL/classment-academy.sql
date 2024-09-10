@@ -37,7 +37,7 @@ CREATE TABLE `usuarios` (
   `usuario_ultima_actualizacion` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `usuario_estado` ENUM('activo', 'inactivo') DEFAULT 'activo',
   `rol_id` INT NOT NULL,
-  `escuela_id` INT,
+  `escuela_id` INT NOT NULL,
   FOREIGN KEY (`rol_id`) REFERENCES `roles`(`rol_id`),
   FOREIGN KEY (`escuela_id`) REFERENCES `escuelas`(`escuela_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
