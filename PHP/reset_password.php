@@ -48,41 +48,90 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html data-theme="black" lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restablecer Contraseña</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <h2 class="mb-4">Restablecer Contraseña</h2>
-                
-                <?php if ($error): ?>
-                    <div class="alert alert-danger"><?php echo $error; ?></div>
-                <?php endif; ?>
-
-                <?php if ($success): ?>
-                    <div class="alert alert-success"><?php echo $success; ?></div>
-                <?php else: ?>
-                    <form method="POST" action="">
-                        <input type="hidden" name="token" value="<?php echo htmlspecialchars($token); ?>">
-                        <div class="mb-3">
-                            <label for="new_password" class="form-label">Nueva Contraseña</label>
-                            <input type="password" class="form-control" id="new_password" name="new_password" required>
+    <title>Tu Perfil - Classment Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    </head>
+    <body>
+    <body class="bg-black min-h-screen relative overflow-hidden justify-center">
+    <!-- Barra de navegación -->
+    <div class="container mx-auto p-4">
+      <div class="navbar bg-transparent flex justify-between">
+        <div class="navbar-start">
+          <a href="index.php" class="btn btn-ghost">
+            <img src="../IMG/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
+            <h1 class="text-2xl font-bold" data-aos="zoom-in">Classment Academy</h1>
+          </a>
+        </div>
+        <div class="navbar-end hidden lg:flex pl-10pr-32" data-aos="zoom-in">
+          <ul class="menu menu-horizontal px-1" data-aos="zoom-in">
+            <li><a href="index.php">Inicio</a></li>
+            <li>
+              <details>
+                <summary>Servicios</summary>
+                <ul class="p-2 bg-base-100">
+                  <li><a href="escuelas.php">Escuelas</a></li>
+                  <li><a href="cursos.php">Cursos</a></li>
+                </ul>
+              </details>
+            </li>
+            <li><a href="nosotros.php">Nosotros</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+        <div class="container mx-auto p-4">
+            <div class="flex items-center justify-center">
+                <div class="w-full max-w-5xl p-8">
+                    <div class="bg-black pr-10 rounded-lg backdrop-blur-lg shadow-lg space-y-6">   
+                        <div class="flex flex-row items-center ">
+                            <div class="w-1/2  flex justify-start">
+                                <img
+                                src="../IMG/design/futbolista.png"
+                                class="max-w-sm pr-10 h-auto" data-aos="zoom-in" />
+                            </div>
+                            <div class="w-1/2 px-10 mt-4">
+                                <form method="POST" action="">
+                                    <input type="hidden" name="token" value="<?php echo htmlspecialchars($token); ?>">
+                                    <h2 class="text-3xl font-bold text-center">Restablecer Contraseña</h2>
+                                    <div class="form-control mt-6">
+                                        <label class="label">
+                                            <span class="label-text">Nueva Contraseña</span>
+                                        </label>
+                                        <input type="password" placeholder="Ingresa tu nueva contraseña" class="input input-bordered" name="new_password" required />
+                                    </div>
+                                    <div class="form-control mt-6">
+                                        <label class="label">
+                                            <span class="label-text">Confirmar Nueva Contraseña</span>
+                                        </label>
+                                        <input type="password" placeholder="Confirma tu nueva contraseña" class="input input-bordered" name="confirm_password" required />
+                                    </div>
+                                    <div class="mt-6">
+                                        <button class="w-full btn btn-lg bg-orange-500 " type="submit">Restablecer Contraseña</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="confirm_password" class="form-label">Confirmar Nueva Contraseña</label>
-                            <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Restablecer Contraseña</button>
-                    </form>
-                <?php endif; ?>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </body>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000
+    });
+  </script>
 </body>
+
 </html>
+
+
+
