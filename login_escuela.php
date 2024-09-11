@@ -133,7 +133,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 <div class="space-y-2">
                     <label for="escuela_password" class="text-sm font-semibold text-orange-400">Contraseña</label>
                       <div class="relative">
-                         <input type="password" id="usuario_password" name="usuario_password" placeholder="Contraseña" 
+                         <input type="password" id="escuela_password" name="escuela_password" placeholder="Contraseña" 
                          class="w-full px-4 py-3 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
                          <i class="fa fa-lock absolute top-1/2 right-3 transform -translate-y-1/2 text-yellow-500"></i>
                       </div>
@@ -147,7 +147,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 
             </form>
             <div class="text-center">
-                <p class="text-sm text-gray-400">¿Aún no has registrado tu escuela? <a href="register_escuela_vista.php" class="text-orange-400 hover:text-orange-300">Regísrate aquí</a></p>
+                <p class="text-sm text-gray-400">¿Aún no has registrado tu escuela? <a href="register_escuela.php" class="text-orange-400 hover:text-orange-300">Regísrate aquí</a></p>
             </div>
 
         </div>
