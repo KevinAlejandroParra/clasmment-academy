@@ -66,6 +66,9 @@ try {
 
         // Confirmar la transacción
         $conn->commit();
+         // Redirigir a login.php
+         header("Location: ../login.php");
+         exit(); // Asegurarse de que no se ejecute código adicional después de la redirección
 
         // Mensaje de éxito
         $mensaje = "Usuario registrado con éxito.";

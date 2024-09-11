@@ -31,7 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $_SESSION['usuario_nacimiento'] = $usuario['usuario_nacimiento'];
                 $_SESSION['usuario_imagen_url'] = $usuario['usuario_imagen_url'];
 
-
                 echo "Inicio de sesión exitoso";
                 // Redirigir a la página principal o dashboard
                 header("Location: index.php");

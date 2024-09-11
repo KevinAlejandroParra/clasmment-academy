@@ -1,3 +1,8 @@
+<?php
+            session_start(); 
+        // IMPORTAR CONEXIÓN
+        require "./PHP/conexion.php";
+?>        
 <!DOCTYPE html>
 <html data-theme="black" lang="en">
 
