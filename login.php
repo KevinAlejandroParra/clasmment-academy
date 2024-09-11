@@ -1,3 +1,50 @@
+<?php
+session_start();
+require "PHP/conexion.php";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+        $user = $_POST['usuario_correo'];
+        $pass = $_POST['usuario_password'];
+
+        $usuarios_query = "SELECT * FROM usuarios WHERE usuario_correo = :correo AND usuario_estado = :estado";
+        $stmt = $conn->prepare($usuarios_query);
+        $stmt->bindValue(":correo", $user, PDO::PARAM_STR);
+        $stmt->bindValue(":estado", "activo", PDO::PARAM_STR);
+        $stmt->execute();
+
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($usuario) {
+            // Verificar la contraseña usando password_verify()
+            if (password_verify($pass, $usuario['usuario_password'])) {
+
+                // guardar la info del usuario en la sesion
+                $_SESSION['usuario_documento'] = $usuario['usuario_documento'];
+                $_SESSION['usuario_nombre'] = $usuario['usuario_nombre'];
+                $_SESSION['usuario_apellido'] = $usuario['usuario_apellido'];
+                $_SESSION['rol_id'] = $usuario['rol_id'];
+                $_SESSION['escuela_id'] = $usuario['escuela_id'];
+                $_SESSION['usuario_correo'] = $usuario['usuario_correo'];
+                $_SESSION['usuario_telefono'] = $usuario['usuario_telefono'];
+                $_SESSION['usuario_direccion'] = $usuario['usuario_direccion'];
+                $_SESSION['usuario_nacimiento'] = $usuario['usuario_nacimiento'];
+                $_SESSION['usuario_imagen_url'] = $usuario['usuario_imagen_url'];
+
+
+                echo "Inicio de sesión exitoso";
+                // Redirigir a la página principal o dashboard
+                header("Location: index.php");
+                exit;
+            } else {
+                echo "Correo electrónico o contraseña incorrectos";
+            }
+        } else {
+            echo "Correo electrónico o contraseña incorrectos";
+        }
+
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -67,7 +114,7 @@
    <!-- Contenedor principal para centrar el login -->
    <div class="flex items-center justify-center min-h-screen relative z-10">
     <div class="w-full max-w-lg p-8">
-      <div class="bg-gradient-to-b from-gray-600/70 to-black/70 p-10 rounded-lg backdrop-blur-lg shadow-lg space-y-6">
+      <div class="bg-black shadow-2xl shadow-orange-400/60 border-solid border-t-2 border-l-2 border-orange-400 p-10 rounded-lg backdrop-blur-lg shadow-lg space-y-6">
         <div class="text-center">
           <h2 class="font-bold text-3xl text-gray-200">Bienvenido de nuevo</h2>
           <p class="text-sm mt-2 text-orange-400">Inicia sesión para continuar</p>
@@ -89,8 +136,7 @@
                   <i class="fa fa-lock absolute top-1/2 right-3 transform -translate-y-1/2 text-yellow-500"></i>
               </div>
          </div>
-         
-         <a href="recovery.php" class="text-sm mt-2 text-orange-400">¿Olvidaste tu contraseña?</a>
+         <a href="/PHP/recovery.php" class="text-sm mt-2 text-orange-400">¿Olvidaste tu contraseña?</a>
              
            <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
              Iniciar Sesión

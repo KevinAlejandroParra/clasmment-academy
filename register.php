@@ -68,34 +68,34 @@
       <!-- Contenedor principal para centrar el registro -->
 <div class="flex items-center justify-center min-h-screen relative z-10">
     <div class="w-full max-w-2xl p-8">
-      <div class="bg-gradient-to-b from-gray-600/70 to-black/70 p-10 rounded-lg backdrop-blur-lg shadow-lg space-y-6">
+      <div class="bg-black shadow-2xl shadow-orange-400/60 border-solid border-t-2 border-l-2 border-orange-400 p-10 rounded-lg backdrop-blur-lg shadow-lg space-y-6">
         <div class="text-center">
           <h2 class="font-bold text-xl text-white">Regístrate</h2>
         </div>
         <form action="PHP/register.php" method="post" class="space-y-4">
           <div class="flex space-x-2">
             <div class="flex flex-col w-1/2">
-              <label for="usuario_nombre" class="text-sm font-semibold text-white">Nombres</label>
+              <label for="usuario_nombre" class="text-sm font-semibold text-orange-400">Nombres</label>
               <input type="text" id="usuario_nombre" name="usuario_nombre" placeholder="Nombres" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
             </div>
             <div class="flex flex-col w-1/2">
-              <label for="usuario_apellido" class="text-sm font-semibold text-white">Apellidos</label>
+              <label for="usuario_apellido" class="text-sm font-semibold text-orange-400">Apellidos</label>
               <input type="text" id="usuario_apellido" name="usuario_apellido" placeholder="Apellidos" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
             </div>
           </div>
           <div class="flex space-x-2">
             <div class="flex flex-col w-1/2">
-              <label for="usuario_correo" class="text-sm font-semibold text-white">Correo Electrónico</label>
+              <label for="usuario_correo" class="text-sm font-semibold text-orange-400">Correo Electrónico</label>
               <input type="email" id="usuario_correo" name="usuario_correo" placeholder="Correo Electrónico" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
             </div>
             <div class="flex flex-col w-1/2">
-              <label for="usuario_password" class="text-sm font-semibold text-white">Clave</label>
+              <label for="usuario_password" class="text-sm font-semibold text-orange-400">Clave</label>
               <input type="password" id="usuario_password" name="usuario_password" placeholder="Clave" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
             </div>
           </div>
           <div class="flex space-x-2">
             <div class="flex flex-col w-1/2">
-              <label for="usuario_tipo_documento" class="text-sm font-semibold text-white">Tipo de Documento</label>
+              <label for="usuario_tipo_documento" class="text-sm font-semibold text-orange-400">Tipo de Documento</label>
               <select id="usuario_tipo_documento" name="usuario_tipo_documento" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
                 <option value="CC">Cédula de Ciudadanía</option>
                 <option value="CE">Cédula de Extranjería</option>
@@ -107,28 +107,28 @@
               </select>
             </div>
             <div class="flex flex-col w-1/2">
-              <label for="usuario_documento" class="text-sm font-semibold text-white">Número de Documento</label>
+              <label for="usuario_documento" class="text-sm font-semibold text-orange-400">Número de Documento</label>
               <input type="text" id="usuario_documento" name="usuario_documento" placeholder="Documento" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
             </div>
           </div>
           <div class="flex space-x-2">
             <div class="flex flex-col w-1/2">
-              <label for="usuario_nacimiento" class="text-sm font-semibold text-white">Fecha de Nacimiento</label>
+              <label for="usuario_nacimiento" class="text-sm font-semibold text-orange-400">Fecha de Nacimiento</label>
               <input type="date" id="usuario_nacimiento" name="usuario_nacimiento" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
             </div>
             <div class="flex flex-col w-1/2">
-              <label for="usuario_telefono" class="text-sm font-semibold text-white">Teléfono</label>
+              <label for="usuario_telefono" class="text-sm font-semibold text-orange-400">Teléfono</label>
               <input type="tel" id="usuario_telefono" name="usuario_telefono" placeholder="Teléfono" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white">
             </div>
           </div>
           <div class="flex flex-col space-y-4">
-            <label for="usuario_direccion" class="text-sm font-semibold text-white">Dirección</label>
+            <label for="usuario_direccion" class="text-sm font-semibold text-orange-400">Dirección</label>
             <input type="text" id="usuario_direccion" name="usuario_direccion" placeholder="Dirección" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
           </div>
   
           <div class="flex space-x-4">
             <div class="flex flex-col w-1/2">
-              <label for="rol_id" class="text-sm font-semibold text-white">Selecciona un rol</label>
+              <label for="rol_id" class="text-sm font-semibold text-orange-400">Selecciona un rol</label>
               <select name="rol_id" id="rol_id" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
                 <option value="1">Invitado</option>
                 <option value="2">Alumno</option>
@@ -137,7 +137,7 @@
               </select>
             </div>
             <div class="flex flex-col w-1/2">
-              <label for="escuela_id" class="text-sm font-semibold text-white">Selecciona una escuela</label>
+              <label for="escuela_id" class="text-sm font-semibold text-orange-400">Selecciona una escuela</label>
               <select name="escuela_id" id="escuela_id" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
                 <option value="4">no aplica</option>
                 <option value="1">Go Fit</option>
@@ -152,7 +152,7 @@
           </button>
   
           <div class="text-center">
-            <p class="text-xl text-white">¿Ya tienes una cuenta? <a href="login.php" class="text-orange-400 hover:text-orange-300">Inicia sesión</a></p>
+            <p class="text-sm text-gray-400">¿Ya tienes una cuenta? <a href="login.php" class="text-orange-400 hover:text-orange-300">Inicia sesión</a></p>
           </div>
         </form>
       </div>
