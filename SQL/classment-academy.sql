@@ -13,9 +13,12 @@ CREATE TABLE `roles` (
 CREATE TABLE `escuelas` (
   `escuela_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `escuela_nombre` VARCHAR(100) NOT NULL,
+  `escuela_documento` ENUM ('NIT') NOT NULL,  
   `escuela_descripcion` TEXT,
   `escuela_telefono` VARCHAR(20) NOT NULL,
   `escuela_direccion` TEXT NOT NULL,
+  `escuela_correo` VARCHAR (100)  NOT NULL,
+  `escuela_password`  VARCHAR (255) NOT NULL,
   `escuela_imagen_url` VARCHAR(255) DEFAULT '/IMG/escuelas/nf.jpg',
   `escuela_fecha_creacion` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   `escuela_estado` ENUM('activo', 'inactivo') DEFAULT 'activo'
