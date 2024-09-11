@@ -152,7 +152,7 @@
           </button>
   
           <div class="text-center">
-            <p class="text-sm text-gray-400">¿Ya tienes una cuenta? <a href="login.php" class="text-orange-400 hover:text-orange-300">Inicia sesión</a></p>
+            <p class="text-sm text-gray-400">¿Ya tienes una cuenta? <a href="login.php" class="text-sm text-orange-400">Inicia sesión</a></p>
           </div>
         </form>
       </div>

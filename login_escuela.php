@@ -113,8 +113,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 
   <!--Contenedor de login-->
   <div class="flex items-center justify-center min-h-screen relative z-10">
-    <div class="w-full-w-lg- p-8">
-        <div class="bg-gradient-to-b from-gray-600/70 to-black/70 p-10 rounded-lg backdrop-blur-lg shadow-lg space-y-6">
+    <div class="w-full max-w-lg p-8">
+        <div class="bg-black shadow-2xl shadow-orange-400/60 border-solid border-t-2 border-l-2 border-orange-400 p-10 rounded-lg backdrop-blur-lg shadow-lg space-y-6">
             <div class="text-center">
                 <h2 class="font-bold text-3xl text-gray-200">Bienvenido de nuevo</h2>
                 <p class="text-sm mt-2 text-orange-400">Inicia Sesión para administrar tu escuela</p>
