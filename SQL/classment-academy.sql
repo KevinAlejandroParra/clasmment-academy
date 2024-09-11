@@ -194,7 +194,7 @@ INSERT INTO `escuelas` (`escuela_nombre`, `escuela_descripcion`, `escuela_telefo
 -- Datos de prueba para la tabla `usuarios`
 INSERT INTO `usuarios` (`usuario_documento`, `usuario_tipo_documento`, `usuario_nombre`, `usuario_apellido`, `usuario_correo`, `usuario_password`, `usuario_telefono`, `usuario_direccion`, `usuario_nacimiento`, `usuario_imagen_url`, `rol_id`, `escuela_id`) VALUES
 ('1001001001', 'CC', 'Juan', 'Pérez', 'luisparra5380@gmail.com', 'password123', '3001234567', 'Calle 789, Ciudad A', '1990-05-15', 'IMG/usuarios/nf.jpg', 1, 1),
-('1002002002', 'CC', 'Chris ', 'Bumstead', 'cbum@email.com', 'password456', '3009876543', 'Avenida 012, Ciudad B', '1985-10-20', 'IMG/usuarios/coach_1.png', 3, 2),
+('1002002002', 'CC', 'Chris ', 'Bumstead', 'cbum@email.com', 'cbum', '3009876543', 'Avenida 012, Ciudad C USA', '1985-10-20', '1726022704_coach_1.png', 3, 2),
 ('1003003003', 'CC', 'Carlos', 'Rodríguez', 'carlos.rodriguez@email.com', 'password789', '3005555555', 'Carrera 345, Ciudad C', '1988-03-25', 'IMG/usuarios/nf.jpg', 3, 3),
 ('1004004004', 'CC', 'Ana', 'Martínez', 'ana.martinez@email.com', 'passwordabc', '3007777777', 'Diagonal 678, Ciudad A', '1992-12-10', 'IMG/usuarios/nf.jpg', 4, 1);
 
