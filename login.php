@@ -136,7 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                   <i class="fa fa-lock absolute top-1/2 right-3 transform -translate-y-1/2 text-yellow-500"></i>
               </div>
          </div>
-         <a href="/PHP/recovery.php" class="text-sm mt-2 text-orange-400">¿Olvidaste tu contraseña?</a>
+         <a href="recovery.php" class="text-sm mt-2 text-orange-400">¿Olvidaste tu contraseña?</a>
              
            <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
              Iniciar Sesión

@@ -14,22 +14,19 @@ use PHPMailer\PHPMailer\SMTP;
 $usuario_correo = isset($_POST['email']) ? $_POST['email'] : null;
 
 if ($usuario_correo) {
-    $sql = "SELECT usuario_documento, usuario_nombre FROM usuarios WHERE usuario_correo = '$usuario_correo' ";
-    $result = $conn->query($sql);
+    $stmt = $conn->prepare("SELECT usuario_documento, usuario_nombre FROM usuarios WHERE usuario_correo = :correo");
+    $stmt->execute(['correo' => $usuario_correo]);
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
+    if ($stmt->rowCount() > 0) {
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
         $usuario_documento = $row['usuario_documento'];
         $usuario_nombre = $row['usuario_nombre'];
 
         // Generar token único
         $token = bin2hex(random_bytes(50));
-      // En recovery.php, después de generar el token
-      $token = bin2hex(random_bytes(50));
-      $sql_insert = "INSERT INTO recuperacion_cuentas (usuario_documento, token, email) VALUES (?, ?, ?)";
-      $stmt_insert = $conn->prepare($sql_insert);
-      $stmt_insert->bind_param("sss", $usuario_documento, $token, $usuario_correo);
-      $stmt_insert->execute();
+
+        $stmt_insert = $conn->prepare("INSERT INTO recuperacion_cuentas (usuario_documento, token, email) VALUES (:documento, :token, :correo)");
+        $stmt_insert->execute(['documento' => $usuario_documento, 'token' => $token, 'correo' => $usuario_correo]);
 
 
 

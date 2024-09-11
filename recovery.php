@@ -11,7 +11,7 @@
 <body class="text-center">
     
 <main class="form-signin w-100 m-auto">
-  <form action="mail.php" method="POST">
+  <form action="PHP/mail.php" method="POST">
     <h1>Classment Academy</h1>
     <h2 class="h3 mb-3 fw-normal">Por favor, inicia sesión</h2>
     <div class="form-floating my-3">

@@ -13,28 +13,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($new_password && $confirm_password && $token) {
         if ($new_password === $confirm_password) {
             // Verificar si el token es válido y no ha expirado
-            $sql = "SELECT usuario_documento FROM recuperacion_cuentas WHERE token = ? AND fecha_expiracion > NOW()";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("s", $token);
-            $stmt->execute();
-            $result = $stmt->get_result();
+            $stmt = $conn->prepare("SELECT usuario_documento FROM recuperacion_cuentas WHERE token = :token AND fecha_expiracion > NOW()");
+            $stmt->execute(['token' => $token]);
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                $usuario_documento = $row['usuario_documento'];
+            if ($result) {
+                $usuario_documento = $result['usuario_documento'];
 
                 // Actualizar la contraseña
                 $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
-                $update_sql = "UPDATE usuarios SET usuario_password = ? WHERE usuario_documento = ?";
+                $update_sql = "UPDATE usuarios SET usuario_password = :password WHERE usuario_documento = :documento";
                 $update_stmt = $conn->prepare($update_sql);
-                $update_stmt->bind_param("ss", $hashed_password, $usuario_documento);
-                
-                if ($update_stmt->execute()) {
-                    // Eliminar el token usado
-                    $delete_sql = "DELETE FROM recuperacion_cuentas WHERE token = ?";
-                    $delete_stmt = $conn->prepare($delete_sql);
-                    $delete_stmt->bind_param("s", $token);
-                    $delete_stmt->execute();
+                $update_stmt->execute(['password' => $hashed_password, 'documento' => $usuario_documento]);
+
+                // Eliminar el token usado
+                $delete_sql = "DELETE FROM recuperacion_cuentas WHERE token = :token";
+                $delete_stmt = $conn->prepare($delete_sql);
+                $delete_stmt->execute(['token' => $token]);
 
                     $success = "Tu contraseña ha sido actualizada exitosamente. Ahora puedes iniciar sesión con tu nueva contraseña.";
                 } else {
@@ -49,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $error = "Por favor, completa todos los campos.";
     }
-}
+
 ?>
 
 <!DOCTYPE html>
