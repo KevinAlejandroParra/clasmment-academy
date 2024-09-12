@@ -1,7 +1,17 @@
 <?php
-            session_start(); 
-        // IMPORTAR CONEXIÓN
+        session_start(); 
         require "./PHP/conexion.php";
+
+        $stmt = $conn->prepare("
+        SELECT c.curso_id, c.curso_nombre, c.curso_descripcion, c.curso_imagen_url, c.curso_precio, 
+               e.escuela_nombre, e.escuela_id
+        FROM cursos c
+        INNER JOIN escuelas e ON c.escuela_id = e.escuela_id
+        WHERE c.curso_estado = 'activo'
+        LIMIT 5
+    ");
+    $stmt->execute();
+    $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>        
 <!DOCTYPE html>
 <html data-theme="black" lang="en">
@@ -15,7 +25,7 @@
   <link rel="shortcut icon" href="../IMG/logo.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <style>
+  <  <style>
     .gradient-circle {
       position: absolute;
       border-radius: 50%;
@@ -23,8 +33,8 @@
     }
 
     .hero-section {
-      min-height: 70vh;
-      padding-top: 120px; /* Añadir espacio para el navbar */
+      min-height: 100vh;
+      padding-top: 80px; /* Ajustado para dar espacio al navbar fijo */
     }
 
     .navbar {
@@ -32,12 +42,22 @@
       top: 0;
       left: 0;
       right: 0;
-      z-index: 50; /* Asegura que el navbar esté por encima de otros elementos */
+      z-index: 50;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-y: auto; /* Permite el scroll vertical */
+    }
+
+    main {
+      position: relative;
+      z-index: 10;
     }
   </style>
 </head>
 
-<body class="bg-black min-h-screen relative overflow-hidden">
+<body class="bg-black relative">
   <!-- Navbar -->
   <div class="navbar bg-transparent py-4"> <!-- Navbar transparente -->
   <div class="navbar-start flex justify-center">
@@ -114,7 +134,7 @@
       </div>
     </div>
   </div>
-
+<main>
   <!-- Sección Hero -->
   <section class="hero-section flex items-center justify-center relative pl-24" data-aos="fade-up">
     <!-- Círculos de gradiente -->
@@ -141,6 +161,31 @@
   </div>
 </div>
   </section>
+     <!-- Course Carousel Section -->
+     <div class="carousel w-full" data-aos="fade-up">
+      <?php foreach ($courses as $index => $course): ?>
+        <div id="course<?= $index ?>" class="carousel-item relative w-full flex justify-center items-center">
+          <div class="card w-98 bg-base-100 shadow-xl">
+            <figure><img src="<?= htmlspecialchars($course['curso_imagen_url']) ?>" alt="<?= htmlspecialchars($course['curso_nombre']) ?>" class="w-full h-48 object-cover" /></figure>
+            <div class="card-body">
+              <h2 class="card-title text-orange-400"><?= htmlspecialchars($course['curso_nombre']) ?></h2>
+              <p><?= htmlspecialchars(substr($course['curso_descripcion'], 0, 100)) ?>...</p>
+              <p class="text-sm">Escuela: <?= htmlspecialchars($course['escuela_nombre']) ?></p>
+              <p class="text-lg font-bold">$<?= number_format($course['curso_precio'], 2) ?></p>
+              <div class="card-actions justify-end">
+                <a href="curso_detalle.php?id=<?= $course['curso_id'] ?>" class="btn btn-primary bg-orange-400 hover:bg-orange-500 border-none">Ver Curso</a>
+              </div>
+            </div>
+          </div>
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#course<?= ($index - 1 + count($courses)) % count($courses) ?>" class="btn btn-circle bg-orange-400 hover:bg-orange-500 border-none">❮</a> 
+            <a href="#course<?= ($index + 1) % count($courses) ?>" class="btn btn-circle bg-orange-400 hover:bg-orange-500 border-none">❯</a>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
 
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

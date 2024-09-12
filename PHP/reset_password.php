@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <div class="navbar-end hidden lg:flex pl-10pr-32" data-aos="zoom-in">
           <ul class="menu menu-horizontal px-1" data-aos="zoom-in">
-            <li><a href="index.php">Inicio</a></li>
+            <li><a href="../index.php">Inicio</a></li>
             <li>
               <details>
                 <summary>Servicios</summary>
