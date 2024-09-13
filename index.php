@@ -162,30 +162,59 @@
 </div>
   </section>
      <!-- Course Carousel Section -->
+     
      <div class="carousel w-full" data-aos="fade-up">
-      <?php foreach ($courses as $index => $course): ?>
-        <div id="course<?= $index ?>" class="carousel-item relative w-full flex justify-center items-center">
-          <div class="card w-98 bg-base-100 shadow-xl">
-            <figure><img src="<?= htmlspecialchars($course['curso_imagen_url']) ?>" alt="<?= htmlspecialchars($course['curso_nombre']) ?>" class="w-full h-48 object-cover" /></figure>
-            <div class="card-body">
-              <h2 class="card-title text-orange-400"><?= htmlspecialchars($course['curso_nombre']) ?></h2>
-              <p><?= htmlspecialchars(substr($course['curso_descripcion'], 0, 100)) ?>...</p>
-              <p class="text-sm">Escuela: <?= htmlspecialchars($course['escuela_nombre']) ?></p>
-              <p class="text-lg font-bold">$<?= number_format($course['curso_precio'], 2) ?></p>
-              <div class="card-actions justify-end">
-                <a href="curso_detalle.php?id=<?= $course['curso_id'] ?>" class="btn btn-primary bg-orange-400 hover:bg-orange-500 border-none">Ver Curso</a>
-              </div>
-            </div>
-          </div>
-          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#course<?= ($index - 1 + count($courses)) % count($courses) ?>" class="btn btn-circle bg-orange-400 hover:bg-orange-500 border-none">❮</a> 
-            <a href="#course<?= ($index + 1) % count($courses) ?>" class="btn btn-circle bg-orange-400 hover:bg-orange-500 border-none">❯</a>
+  <?php foreach ($courses as $index => $course): ?>
+    <div id="course<?= $index ?>" class="carousel-item relative w-full flex justify-center items-center">
+      <div class="card w-98 bg-base-100 shadow-xl">
+        <figure><img src="<?= htmlspecialchars($course['curso_imagen_url']) ?>" alt="<?= htmlspecialchars($course['curso_nombre']) ?>" class="w-full h-48 object-cover" /></figure>
+        <div class="card-body">
+          <h2 class="card-title text-orange-400"><?= htmlspecialchars($course['curso_nombre']) ?></h2>
+          <p><?= htmlspecialchars(substr($course['curso_descripcion'], 0, 100)) ?>...</p>
+          <p class="text-sm">Escuela: <?= htmlspecialchars($course['escuela_nombre']) ?></p>
+          <p class="text-lg font-bold">$<?= number_format($course['curso_precio'], 2) ?></p>
+          <div class="card-actions justify-end">
+            <a href="curso_detalle.php?id=<?= $course['curso_id'] ?>" class="btn btn-primary bg-orange-400 hover:bg-orange-500 border-none">Ver Curso</a>
           </div>
         </div>
-      <?php endforeach; ?>
+      </div>
+      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+        <a href="#course<?= ($index - 1 + count($courses)) % count($courses) ?>" class="btn btn-circle bg-orange-400 hover:bg-orange-500 border-none">❮</a> 
+        <a href="#course<?= ($index + 1) % count($courses) ?>" class="btn btn-circle bg-orange-400 hover:bg-orange-500 border-none">❯</a>
+      </div>
     </div>
-  </div>
-</section>
+  <?php endforeach; ?>
+</div>
+
+<script>
+  function autoAdvance() {
+    const slides = document.querySelectorAll('.carousel-item');
+    const totalSlides = slides.length;
+    let currentSlide = parseInt(window.location.hash.replace('#course', '')) || 0;
+    let nextSlide = (currentSlide + 1) % totalSlides;
+    window.location.hash = `#course${nextSlide}`;
+  }
+
+  // Iniciar el auto-avance cuando la página esté completamente cargada
+  window.addEventListener('load', function() {
+    setInterval(autoAdvance, 5000);
+  });
+
+  // Detener el auto-avance cuando el usuario interactúe con el carrusel
+  document.querySelector('.carousel').addEventListener('click', function() {
+    clearInterval(autoAdvanceInterval);
+  });
+
+  // Reiniciar el auto-avance después de 10 segundos de inactividad
+  let autoAdvanceInterval;
+  function restartAutoAdvance() {
+    clearInterval(autoAdvanceInterval);
+    autoAdvanceInterval = setInterval(autoAdvance, 5000);
+  }
+
+  document.querySelector('.carousel').addEventListener('mouseleave', restartAutoAdvance);
+  document.addEventListener('touchend', restartAutoAdvance);
+</script>
 
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
