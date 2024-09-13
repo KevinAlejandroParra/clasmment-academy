@@ -28,8 +28,7 @@ try {
     if (!$user) {
         throw new Exception("No se encontró el usuario.");
     }
-
-    // Obtener roles y escuelas para los selectores
+ 
     $roles_query = "SELECT * FROM roles";
     $roles_stmt = $conn->query($roles_query);
     $roles = $roles_stmt->fetchAll(PDO::FETCH_ASSOC);
