@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     $user = $_POST["escuela_correo"];
     $pass = $_POST["escuela_password"];
 
-    //sonculta sql
+    //consulta sql
     $escuela_query = "SELECT * FROM `escuelas` WHERE escuela_correo = :correo AND escuela_estado = :estado";
     $stmt = $conn->prepare($escuela_query);
     $stmt->bindValue(":correo",$user, PDO::PARAM_STR);

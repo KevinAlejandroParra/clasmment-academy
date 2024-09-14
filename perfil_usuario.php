@@ -125,7 +125,7 @@ try {
     }
     </style>
 </head>
-<body class="bg-black min-h-screen relative overflow-hidden">
+<body class="bg-black h-screen overflow-auto">
     <!-- Barra de navegación -->
     <div class="container mx-auto p-4">
       <div class="navbar bg-transparent flex justify-between">
@@ -261,14 +261,14 @@ try {
                 <div class="stat-title">Rol</div>
                 <div class="stat-value text-orange-400"><?= htmlspecialchars($user['rol_nombre']) ?></div>
             </div>
-            <div class="stat bg-base-200 rounded-lg p-4 shadow-md" data-aos="fade-up" data-aos-delay="700">
+            <div class="stat bg-base-200 rounded-lg p-4 shadow-md" data-aos="fade-up">
                 <div class="stat-figure text-orange-400">
                     <i class="fas fa-school fa-2x"></i>
                 </div>
                 <div class="stat-title">Escuela</div>
                 <div class="stat-value text-orange-400"><?= htmlspecialchars($user['escuela_nombre']) ?></div>
             </div>
-            <div class="stat bg-base-200 rounded-lg p-4 shadow-md" data-aos="fade-up" data-aos-delay="800">
+            <div class="stat bg-base-200 rounded-lg p-4 shadow-md" data-aos="fade-up">
                 <div class="stat-figure text-orange-400">
                     <i class="fas fa-calendar-alt fa-2x"></i>
                 </div>
