@@ -189,12 +189,11 @@ CREATE INDEX idx_mensaje_destinatario ON `mensajes` (`destinatario_documento`, `
 
 
 -- Datos de prueba para la tabla `escuelas`
-INSERT INTO `escuelas` (`escuela_nombre`, `escuela_descripcion`, `escuela_telefono`, `escuela_direccion`) VALUES
-('GO FIT', 'Entrenamineto y acondicionamente fisico', '1234567890', 'Calle 123, Bogota D.C.'),
-('Soy Fitness', 'Yoga, Pilates y mas', '9876543210', 'Avenida 456, primera de mayo con boyaca'),
-('Taekwondo', 'Cursos de taekwondo para todos los niveles', '5555555555', 'Plaza Principal, Carrera 10 con circunvalar');
-('Administrativo', 'Administracion classment academy', '1234567891', 'sena complejo sur, Bogota D.C.'),
-
+INSERT INTO `escuelas` (`escuela_nombre`, `escuela_documento`, `escuela_descripcion`, `escuela_telefono`, `escuela_direccion`, `escuela_correo`, `escuela_password`, `escuela_fecha_creacion`, `escuela_estado`, `escuela_imagen_url`) VALUES
+('GO FIT', '123456789-1', 'Entrenamiento y acondicionamiento fisico', '1234567890', 'Calle 123, Bogota D.C.', 'danielbernalg.04@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', 'IMG/escuela/gofit.jpeg'),
+('Soy Fitness', '987654321-1', 'Yoga, Pilates y mas', '9876543210', 'Avenida 456, primera de mayo con boyaca', 'soyfitness@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', 'IMG/escuela/soyfitness.jpg'),
+('Taekwondo', '555555555-1', 'Cursos de taekwondo para todos los niveles', '5555555555', 'Plaza Principal, Carrera 10 con circunvalar', 'taekwondo@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', 'IMG/escuela/taekwondo.jpg'),
+('Administrativo', '1234567891', 'Administracion classment academy', '1234567891', 'sena complejo sur, Bogota D.C.', 'classmentacademy@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', 'IMG/escuela/administrativo.jpg');
 
 -- Datos de prueba para la tabla `usuarios`
 INSERT INTO `usuarios` (`usuario_documento`, `usuario_tipo_documento`, `usuario_nombre`, `usuario_apellido`, `usuario_correo`, `usuario_password`, `usuario_telefono`, `usuario_direccion`, `usuario_nacimiento`, `usuario_imagen_url`, `rol_id`, `escuela_id`) VALUES

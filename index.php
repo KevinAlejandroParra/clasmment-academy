@@ -7,11 +7,18 @@
                e.escuela_nombre, e.escuela_id
         FROM cursos c
         INNER JOIN escuelas e ON c.escuela_id = e.escuela_id
-        WHERE c.curso_estado = 'activo'
-        LIMIT 5
-    ");
+        WHERE c.curso_estado = 'activo'");
+        $stmt->execute();
+        $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // Obtener escuelas
+    $escuelas_query = "SELECT escuela_id, escuela_nombre, escuela_imagen_url, escuela_descripcion, escuela_direccion, escuela_telefono, escuela_correo FROM escuelas WHERE escuela_estado = :estado";
+    $stmt = $conn->prepare($escuelas_query);
+    $stmt->bindValue(":estado", "activo", PDO::PARAM_STR);
     $stmt->execute();
-    $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $schools = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+
 ?>        
 <!DOCTYPE html>
 <html data-theme="black" lang="en">
@@ -40,6 +47,9 @@
     }
     .animation-delay-4000 {
         animation-delay: 4s;
+    }
+    .carousel-item {
+        transition: opacity 0.5s ease-in-out;
     }
 
   </style>
@@ -112,7 +122,7 @@
 
   <main class="pt-24">
   <!-- Sección Hero -->
-  <section class="hero-section flex items-center justify-center relative pb-8 pl-24 " data-aos="fade-up">
+  <section class="hero-section flex items-center justify-center relative pb-8 pl-36 " data-aos="fade-up">
     <div class="hero-content flex-col lg:flex-row-reverse pr-48">
     <video
       src="../IMG/design/people.webm"
@@ -135,65 +145,123 @@
   </section>
 
 
-    <!-- Sección del Carrusel de Cursos -->
-    <div class="relative overflow-hidden py-16 bg-ghost" data-aos="fade-up">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center text-white mb-8">Cursos Destacados</h2>
-        <div class="carousel w-full relative">
-          <div class="overflow-hidden">
-            <div class="flex transition-transform duration-300 ease-in-out" id="carousel-container">
-              <div class="flex" id="carousel-inner">
-                <?php foreach ($courses as $index => $course): ?>
-                  <div class="carousel-item flex-none w-full flex justify-center items-center px-4">
-                    <div class="flex space-x-8 items-center">
-                      <!-- Curso anterior -->
-                      <div class="card w-64 bg-base-100 shadow-xl opacity-50 transform scale-90 transition-all duration-300">
-                        <figure><img src="<?= htmlspecialchars($courses[($index - 1 + count($courses)) % count($courses)]['curso_imagen_url']) ?>" alt="Curso" class="w-full h-32 object-cover" /></figure>
-                        <div class="card-body p-4">
-                          <h3 class="card-title text-sm"><?= htmlspecialchars($courses[($index - 1 + count($courses)) % count($courses)]['curso_nombre']) ?></h3>
-                        </div>
+  <!-- Sección del Carrusel de Cursos -->
+  <div class="relative overflow-hidden py-16 bg-ghost" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-white mb-8">Cursos Destacados</h2>
+      <div class="carousel w-full relative">
+        <div class="overflow-hidden">
+          <div class="flex transition-transform duration-300 ease-in-out" id="carousel-container-courses">
+            <div class="flex" id="carousel-inner-courses">
+              <?php foreach ($courses as $index => $course): ?>
+                <div class="carousel-item flex-none w-full flex justify-center items-center px-4">
+                  <div class="flex space-x-8 items-center">
+                    <!-- Curso anterior -->
+                    <div class="card w-64 bg-base-100 shadow-xl opacity-50 transform scale-90 transition-all duration-300 rounded-lg">
+                      <figure><img src="<?= htmlspecialchars($courses[($index - 1 + count($courses)) % count($courses)]['curso_imagen_url']) ?>" alt="Curso" class="w-full h-32 object-cover rounded-t-lg" /></figure>
+                      <div class="card-body p-4">
+                        <h3 class="card-title text-sm"><?= htmlspecialchars($courses[($index - 1 + count($courses)) % count($courses)]['curso_nombre']) ?></h3>
                       </div>
-                      
-                      <!-- Curso actual -->
-                      <div class="card w-80 bg-base-100 shadow-xl z-10 transform scale-110 transition-all duration-300 hover:shadow-2xl">
-                        <figure><img src="<?= htmlspecialchars($course['curso_imagen_url']) ?>" alt="<?= htmlspecialchars($course['curso_nombre']) ?>" class="w-full h-48 object-cover" /></figure>
-                        <div class="card-body">
-                          <h2 class="card-title text-orange-400"><?= htmlspecialchars($course['curso_nombre']) ?></h2>
-                          <p class="text-sm"><?= htmlspecialchars(substr($course['curso_descripcion'], 0, 100)) ?>...</p>
-                          <p class="text-xs">Escuela: <?= htmlspecialchars($course['escuela_nombre']) ?></p>
-                          <p class="text-lg font-bold">$<?= number_format($course['curso_precio'], 2) ?></p>
-                          <div class="card-actions justify-end">
-                            <a href="curso_detalle.php?id=<?= $course['curso_id'] ?>" class="btn btn-sm btn-primary bg-orange-400 hover:bg-orange-500 border-none">Ver Curso</a>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <!-- Curso siguiente -->
-                      <div class="card w-64 bg-base-100 shadow-xl opacity-50 transform scale-90 transition-all duration-300">
-                        <figure><img src="<?= htmlspecialchars($courses[($index + 1) % count($courses)]['curso_imagen_url']) ?>" alt="Curso" class="w-full h-32 object-cover" /></figure>
-                        <div class="card-body p-4">
-                          <h3 class="card-title text-sm"><?= htmlspecialchars($courses[($index + 1) % count($courses)]['curso_nombre']) ?></h3>
+                    </div>
+                    
+                    <!-- Curso actual -->
+                    <div class="card w-80 bg-base-100 rounded-lg z-10">
+                      <figure><img src="<?= htmlspecialchars($course['curso_imagen_url']) ?>" alt="<?= htmlspecialchars($course['curso_nombre']) ?>" class="w-full h-48 object-cover rounded-t-lg" /></figure>
+                      <div class="card-body">
+                        <h2 class="card-title text-orange-400"><?= htmlspecialchars($course['curso_nombre']) ?></h2>
+                        <p class="text-sm"><?= htmlspecialchars(substr($course['curso_descripcion'], 0, 100)) ?>...</p>
+                        <p class="text-xs">Escuela: <?= htmlspecialchars($course['escuela_nombre']) ?></p>
+                        <p class="text-lg font-bold">$<?= number_format($course['curso_precio'], 2) ?></p>
+                        <div class="card-actions justify-end">
+                          <a href="curso_detalle.php?id=<?= $course['curso_id'] ?>" class="btn btn-sm btn-primary bg-orange-400 hover:bg-orange-500 border-none rounded-lg">Ver Curso</a>
                         </div>
                       </div>
                     </div>
+                    
+                    <!-- Curso siguiente -->
+                    <div class="card w-64 bg-base-100 shadow-xl opacity-50 transform scale-90 transition-all duration-300 rounded-lg">
+                      <figure><img src="<?= htmlspecialchars($courses[($index + 1) % count($courses)]['curso_imagen_url']) ?>" alt="Curso" class="w-full h-32 object-cover rounded-t-lg" /></figure>
+                      <div class="card-body p-4">
+                        <h3 class="card-title text-sm"><?= htmlspecialchars($courses[($index + 1) % count($courses)]['curso_nombre']) ?></h3>
+                      </div>
+                    </div>
                   </div>
-                <?php endforeach; ?>
-              </div>
+                </div>
+              <?php endforeach; ?>
             </div>
           </div>
-          
-          
-          <!-- Controles del carrusel -->
-          <div class="absolute inset-y-0 left-0 flex items-center">
-            <button id="prevBtn" class="btn btn-circle bg-orange-400 hover:bg-orange-500 border-none ml-2">❮</button>
-          </div>
-          <div class="absolute inset-y-0 right-0 flex items-center">
-            <button id="nextBtn" class="btn btn-circle bg-orange-400 hover:bg-orange-500 border-none mr-2">❯</button>
-          </div>
+        </div>
+        
+        <!-- Controles del carrusel -->
+        <div class="absolute inset-y-0 left-0 flex items-center">
+          <button id="prevBtn-courses" class="btn btn-circle bg-orange-400 hover:bg-orange-500 border-none ml-2 rounded-lg">❮</button>
+        </div>
+        <div class="absolute inset-y-0 right-0 flex items-center">
+          <button id="nextBtn-courses" class="btn btn-circle bg-orange-400 hover:bg-orange-500 border-none mr-2 rounded-lg">❯</button>
         </div>
       </div>
     </div>
-  </main>
+  </div>
+
+  <!-- Sección del Carrusel de Escuelas -->
+  <div class="relative overflow-hidden py-16 bg-ghost" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-white mb-8">Escuelas aliadas</h2>
+      <div class="carousel w-full relative">
+        <div class="overflow-hidden">
+          <div class="flex transition-transform duration-300 ease-in-out" id="carousel-container-schools">
+            <div class="flex" id="carousel-inner-schools">
+              <?php foreach ($schools as $index => $school): ?>
+                <div class="carousel-item flex-none w-full flex justify-center items-center px-4">
+                  <div class="flex space-x-8 items-center">
+                    <!-- Escuela anterior -->
+                    <div class="card w-64 bg-base-100 opacity-50 rounded-lg shadow-xl">
+                      <figure><img src="<?= htmlspecialchars($schools[($index - 1 + count($schools)) % count($schools)]['escuela_imagen_url']) ?>" alt="escuela" class="w-full h-32 object-cover rounded-t-lg" /></figure>
+                      <div class="card-body p-4">
+                        <h3 class="card-title text-sm"><?= htmlspecialchars($schools[($index - 1 + count($schools)) % count($schools)]['escuela_nombre']) ?></h3>
+                      </div>
+                    </div>
+                    
+                    <!-- Escuela actual -->
+                    <div class="card w-80 bg-base-100 z-10 rounded-lg shadow-xl">
+                      <figure><img src="<?= htmlspecialchars($school['escuela_imagen_url']) ?>" alt="<?= htmlspecialchars($school['escuela_nombre']) ?>" class="w-full h-48 object-cover rounded-t-lg" /></figure>
+                      <div class="card-body">
+                        <h2 class="card-title text-orange-400"><?= htmlspecialchars($school['escuela_nombre']) ?></h2>
+                        <p class="text-sm"><?= htmlspecialchars(substr($school['escuela_descripcion'], 0, 100)) ?>...</p>
+                        <p class="text-xs">Contacto: <?= htmlspecialchars($school['escuela_telefono']) ?></p>
+                        <p class="text-lg font-bold"><?= htmlspecialchars($school['escuela_direccion']) ?></p>
+                        <div class="card-actions justify-end">
+                          <a href="escuela_detalle.php?id=<?= $school['escuela_id'] ?>" class="btn btn-sm rounded-lg btn-primary bg-orange-400 hover:bg-orange-500 border-none">Ver Escuela</a>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Escuela siguiente -->
+                    <div class="card w-64 bg-base-100 shadow-xl opacity-50 rounded-lg">
+                      <figure><img src="<?= htmlspecialchars($schools[($index + 1) % count($schools)]['escuela_imagen_url']) ?>" alt="escuela" class="w-full h-32 object-cover rounded-t-lg" /></figure>
+                      <div class="card-body p-4">
+                        <h3 class="card-title text-sm"><?= htmlspecialchars($schools[($index + 1) % count($schools)]['escuela_nombre']) ?></h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <?php endforeach; ?>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Controles del carrusel -->
+        <div class="absolute inset-y-0 left-0 flex items-center">
+          <button id="prevBtn-schools" class="btn btn-circle bg-orange-400 hover:bg-orange-500 border-none ml-2 rounded-lg">❮</button>
+        </div>
+        <div class="absolute inset-y-0 right-0 flex items-center">
+          <button id="nextBtn-schools" class="btn btn-circle bg-orange-400 hover:bg-orange-500 border-none mr-2 rounded-lg">❯</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
 
     <div class="w-full max-w-[1200px] mx-auto px-4">
         <h2 class="text-4xl font-bold text-center mb-12 text-white">Sobre Nosotros</h2>
@@ -277,12 +345,11 @@
       duration: 1000
     });
   
-  
-    // Carousel courses
-    document.addEventListener('DOMContentLoaded', function() {
-      const container = document.getElementById('carousel-container');
-      const inner = document.getElementById('carousel-inner');
-      const items = document.querySelectorAll('.carousel-item');
+   // Función para inicializar un carrusel
+   function initializeCarousel(containerId, innerId, prevBtnId, nextBtnId) {
+      const container = document.getElementById(containerId);
+      const inner = document.getElementById(innerId);
+      const items = inner.querySelectorAll('.carousel-item');
       const totalItems = items.length;
       let currentIndex = 0;
 
@@ -290,6 +357,9 @@
         const itemWidth = items[0].offsetWidth;
         const newTransform = -currentIndex * itemWidth;
         inner.style.transform = `translateX(${newTransform}px)`;
+        items.forEach((item, index) => {
+          item.style.opacity = index === currentIndex ? '1' : '0.5';
+        });
       }
 
       function nextSlide() {
@@ -310,8 +380,8 @@
         updateCarousel();
       }
 
-      document.getElementById('nextBtn').addEventListener('click', nextSlide);
-      document.getElementById('prevBtn').addEventListener('click', prevSlide);
+      document.getElementById(nextBtnId).addEventListener('click', nextSlide);
+      document.getElementById(prevBtnId).addEventListener('click', prevSlide);
 
       // Auto-avance
       let autoAdvanceInterval = setInterval(nextSlide, 5000);
@@ -328,6 +398,12 @@
       // Ajustar el carrusel al cargar y al cambiar el tamaño de la ventana
       window.addEventListener('load', adjustCarouselLayout);
       window.addEventListener('resize', adjustCarouselLayout);
+    }
+
+    // Inicializar ambos carruseles
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeCarousel('carousel-container-courses', 'carousel-inner-courses', 'prevBtn-courses', 'nextBtn-courses');
+      initializeCarousel('carousel-container-schools', 'carousel-inner-schools', 'prevBtn-schools', 'nextBtn-schools');
 
       // Prevenir el desplazamiento automático al carrusel
       if (window.location.hash) {
@@ -338,5 +414,5 @@
     });
   </script>
 </body>
-
 </html>
+   
