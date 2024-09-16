@@ -132,7 +132,7 @@ try {
         <div class="navbar-start">
           <a href="index.php" class="btn btn-ghost">
             <img src="../IMG/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
-            <h1 class="text-2xl font-bold" data-aos="zoom-in">Classment Academy</h1>
+            <h1 class="text-4xl font-bold" data-aos="zoom-in">Classment Academy</h1>
           </a>
         </div>
         <div class="navbar-end hidden lg:flex pl-10pr-32" data-aos="zoom-in">
@@ -200,8 +200,8 @@ try {
                     <div class="ml-4 text-center md:text-left">
                         <h2 class="card-title text-3xl text-orange-400"><?= htmlspecialchars($user['usuario_nombre']) . ' ' . htmlspecialchars($user['usuario_apellido']) ?></h2>
                         <p class="text-xl"><?= htmlspecialchars($user['usuario_correo']) ?></p>
-                        <div class="mt-4">
-                            <label for="edit-modal" class="btn btn-primary mr-2">
+                        <div class="mt-4 flex space-x-4 ">
+                            <label for="edit-modal" class="btn btn-primary ">
                                 <i class="fas fa-edit mr-2"></i>Editar Perfil
                             </label>
                             <a href="PHP/logout.php" class="btn btn-secondary">

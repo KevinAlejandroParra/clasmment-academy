@@ -85,7 +85,7 @@
       </div>
       <a href="index.php" class="btn btn-ghost">
         <img src="../IMG/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
-        <h1 class="text-2xl font-bold" data-aos="zoom-in">Classment Academy</h1>
+        <h1 class="text-4xl font-bold" data-aos="zoom-in">Classment Academy</h1>
       </a>
     </div>
     <div class="navbar-center hidden lg:flex" data-aos="zoom-in">
