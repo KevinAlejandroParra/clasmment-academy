@@ -1,5 +1,24 @@
 <?php
+session_start();
 require 'PHP/conexion.php';
+
+
+
+// Verificar si el usuario está autenticado
+if (!isset($_SESSION['usuario_correo'])) {
+    // No está autenticado, redirigir al inicio de sesión
+    header('Location: login.php');
+    exit();
+}
+
+// Verificar si el usuario pertenece a la escuela de administración (por ejemplo, escuela_id = 1)
+$escuela_administracion_id = 4; 
+if ($_SESSION['escuela_id'] != $escuela_administracion_id) {
+    // Usuario no pertenece a la escuela de administración, denegar acceso
+    echo "Acceso denegado. No tienes permiso para ver este archivo.";
+    exit();
+}
+
 
 // Obtener todas las escuelas
 $escuelas_query = "SELECT escuela_id, escuela_nombre, escuela_descripcion, escuela_telefono, escuela_direccion, escuela_imagen_url, escuela_fecha_creacion, escuela_estado
