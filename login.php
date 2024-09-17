@@ -168,7 +168,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     text: data.message,
                     icon: 'success',
                     confirmButtonColor: '#F97316',
-                    background: '##0D1117',
+                    background: '#000000',
                     color: '#F97316'
                 }).then((result) => {
                     if (result.isConfirmed) {
