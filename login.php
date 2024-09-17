@@ -3,45 +3,39 @@ session_start();
 require "PHP/conexion.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    header('Content-Type: application/json');
+    $user = $_POST['usuario_correo'];
+    $pass = $_POST['usuario_password'];
 
-        $user = $_POST['usuario_correo'];
-        $pass = $_POST['usuario_password'];
+    $usuarios_query = "SELECT * FROM usuarios WHERE usuario_correo = :correo AND usuario_estado = :estado";
+    $stmt = $conn->prepare($usuarios_query);
+    $stmt->bindValue(":correo", $user, PDO::PARAM_STR);
+    $stmt->bindValue(":estado", "activo", PDO::PARAM_STR);
+    $stmt->execute();
 
-        $usuarios_query = "SELECT * FROM usuarios WHERE usuario_correo = :correo AND usuario_estado = :estado";
-        $stmt = $conn->prepare($usuarios_query);
-        $stmt->bindValue(":correo", $user, PDO::PARAM_STR);
-        $stmt->bindValue(":estado", "activo", PDO::PARAM_STR);
-        $stmt->execute();
+    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($usuario) {
+        if (password_verify($pass, $usuario['usuario_password'])) {
+            $_SESSION['usuario_documento'] = $usuario['usuario_documento'];
+            $_SESSION['usuario_nombre'] = $usuario['usuario_nombre'];
+            $_SESSION['usuario_apellido'] = $usuario['usuario_apellido'];
+            $_SESSION['rol_id'] = $usuario['rol_id'];
+            $_SESSION['escuela_id'] = $usuario['escuela_id'];
+            $_SESSION['usuario_correo'] = $usuario['usuario_correo'];
+            $_SESSION['usuario_telefono'] = $usuario['usuario_telefono'];
+            $_SESSION['usuario_direccion'] = $usuario['usuario_direccion'];
+            $_SESSION['usuario_nacimiento'] = $usuario['usuario_nacimiento'];
+            $_SESSION['usuario_imagen_url'] = $usuario['usuario_imagen_url'];
 
-        if ($usuario) {
-            // Verificar la contraseña usando password_verify()
-            if (password_verify($pass, $usuario['usuario_password'])) {
-
-                // guardar la info del usuario en la sesion
-                $_SESSION['usuario_documento'] = $usuario['usuario_documento'];
-                $_SESSION['usuario_nombre'] = $usuario['usuario_nombre'];
-                $_SESSION['usuario_apellido'] = $usuario['usuario_apellido'];
-                $_SESSION['rol_id'] = $usuario['rol_id'];
-                $_SESSION['escuela_id'] = $usuario['escuela_id'];
-                $_SESSION['usuario_correo'] = $usuario['usuario_correo'];
-                $_SESSION['usuario_telefono'] = $usuario['usuario_telefono'];
-                $_SESSION['usuario_direccion'] = $usuario['usuario_direccion'];
-                $_SESSION['usuario_nacimiento'] = $usuario['usuario_nacimiento'];
-                $_SESSION['usuario_imagen_url'] = $usuario['usuario_imagen_url'];
-
-                echo "Inicio de sesión exitoso";
-                // Redirigir a la página principal o dashboard
-                header("Location: index.php");
-                exit;
-            } else {
-                echo "Correo electrónico o contraseña incorrectos";
-            }
+            echo json_encode(["success" => true, "message" => "Inicio de sesión exitoso"]);
         } else {
-            echo "Correo electrónico o contraseña incorrectos";
+            echo json_encode(["success" => false, "message" => "Correo electrónico o contraseña incorrectos"]);
         }
-
+    } else {
+        echo json_encode(["success" => false, "message" => "Correo electrónico o contraseña incorrectos"]);
+    }
+    exit;
 }
 ?>
 <!DOCTYPE html>
@@ -53,6 +47,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="IMG/logo_mini.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     <style>
     .gradient-circle {
@@ -96,8 +92,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <div class="bg-black min-h-screen relative overflow-hidden">
     <!-- Círculos de gradiente -->
     <div class="gradient-circle w-44 h-32 bg-orange-300 top-10 left-10 opacity-40"></div>
-    <div class="gradient-circle w-64 h-64 bg-blue-300 top-10 right-10 opacity-30"></div>
-    <div class="gradient-circle w-64 h-56 bg-blue-400 bottom-10 left-10 opacity-30"></div>
+    <div class="gradient-circle w-64 h-64 bg-gray-400 top-10 right-10 opacity-30"></div>
+    <div class="gradient-circle w-64 h-56 bg-gray-400 bottom-10 left-10 opacity-30"></div>
     <div class="gradient-circle w-64 h-64 bg-orange-300 bottom-10 right-1/4 opacity-30"></div>
 
 <body class="bg-black min-h-screen relative overflow-hidden" >
@@ -122,17 +118,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <h2 class="font-bold text-3xl text-gray-200">Bienvenido de nuevo</h2>
           <p class="text-sm mt-2 text-orange-400">Inicia sesión para continuar</p>
         </div>
-
-          <form action="login.php" method="post" class="space-y-6">
-            <div class="space-y-2"> <label for="usuario_correo" class="text-sm font-semibold text-orange-400">Correo Electrónico</label>
-             <div class="relative">
-                 <input  type="email" id="usuario_correo" name="usuario_correo" placeholder="Correo Electrónico" 
-                  class="w-full px-4 py-3 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required />
-                  <i class="fa fa-envelope absolute top-1/2 right-3 transform -translate-y-1/2 text-yellow-500"></i>
-             </div>
-            </div>
+          
+                    <form id="loginForm" action="login_escuela.php" method="post" class="space-y-6">
+                      <div class="space-y-2">
+                        <label for="usuario_correo" class="text-sm font-semibold text-orange-400">Correo Electrónico</label>
+                        <div class="relative">
+                            <input type="email" id="usuario_correo" name="usuario_correo" placeholder="Correo Electrónico" 
+                                class="w-full px-4 py-3 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required />
+                            <i class="fa fa-envelope absolute top-1/2 right-3 transform -translate-y-1/2 text-yellow-500"></i>
+                        </div>
+                    </div>
                         
-          <div class="space-y-2">
+          <div class="space-y-2 pb-2">
             <label for="usuario_password" class="text-sm font-semibold text-orange-400">Contraseña</label>
               <div class="relative">
                   <input type="password" id="usuario_password" name="usuario_password" placeholder="Contraseña" class="w-full px-4 py-3 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required />
@@ -153,5 +150,54 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
          </div>
        </div>
     </div>
+    <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        
+        fetch('login.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                Swal.fire({
+                    title: '¡Éxito!',
+                    text: data.message,
+                    icon: 'success',
+                    confirmButtonColor: '#F97316',
+                    background: '##0D1117',
+                    color: '#F97316'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'index.php';
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: 'Error',
+                    text: data.message,
+                    icon: 'error',
+                    confirmButtonColor: '#F97316',
+                    background: '#0D1117',
+                    color: '#F97316'
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            Swal.fire({
+                title: 'Error',
+                text: 'Ocurrió un error al procesar la solicitud',
+                icon: 'error',
+                confirmButtonColor: '#F97316',
+                background: '#0D1117',
+                color: '#F97316'
+            });
+        });
+    });
+    </script>
 </body>
 </html> 

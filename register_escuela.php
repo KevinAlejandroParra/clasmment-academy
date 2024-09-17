@@ -8,6 +8,8 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="shortcut icon" href="../IMG/logo.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
   <style>
     .gradient-circle {
@@ -53,7 +55,7 @@
     <div class="gradient-circle w-64 h-64 bg-blue-300 top-10 right-10 opacity-30"></div>
     <div class="gradient-circle w-64 h-56 bg-blue-400 bottom-10 left-10 opacity-30"></div>
     <div class="gradient-circle w-64 h-64 bg-orange-300 bottom-10 right-1/4 opacity-30"></div>
-<body class="bg-black min-h-screen relative overflow-hidden" style="background-image: url('path/to/your/background-image.jpg');">
+<body class="bg-black min-h-screen relative overflow-hidden">
 <!--contenedor de los circulos-->
 <div class="bubble-container">
     <div class="bubble" style="left: 10%; animation-duration: 12s; animation-delay: 2s;"></div>
@@ -74,7 +76,7 @@
             <div class="text-center">
                 <h2 class="font-bold text-xl text-white">Registra Tu Escuela</h2>
             </div>
-            <form action="PHP/register_escuela.php" method="post" class="space-y-4">
+            <form id="registerForm" action="PHP/register_escuela.php" method="post" class="space-y-4">
     <div class="flex space-x-2">
         <div class="flex flex-col w-1/2">
             <label for="escuela_id" class="text-sm font-semibold text-orange-400">NIT de su escuela</label>
@@ -125,7 +127,32 @@
         <label for="escuela_fecha_creacion" class="text-sm font-semibold text-orange-400">Fecha de creación de su escuela</label>
         <input type="date" id="escuela_fecha_creacion" name="escuela_fecha_creacion" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
     </div>
-
+              <!-- Términos y Condiciones-->
+              <div class="py-2 flex items-center">
+            <div class="">
+               <input type="checkbox" id="termsAndConditions" class="" required/>
+            </div>
+            <div class="ml-3 text-base">
+                <label for="termsAndConditions" class="text-base text-slate-600">
+                  He leído y autorizo el uso de mis datos en los
+                </label>
+                <a href="#" id="openTermsModal" class="text-base text-orange-400 hover:text-orange-300 no-underline hover:underline">
+                  Términos y Condiciones
+                </a>
+            </div>
+          </div>
+    <!-- Modal Terminos y Condiciones -->
+    <dialog id="my_modal_1" class="modal">
+                <div class="modal_box bg-base-300 border-orange-500 p-4 max-w-2xl mx-auto relative shadow-lg">
+                <h3 class="py-2 px-2 text-lg text-orange-500 font-bold">Términos y Condiciones</h3>
+                <div class="border-t-4 border-orange-500"></div>
+                <p class="py-4 px-2 text-sm text-gray-300">Autorizo ​​de manera previa, expresa e informada, como titular de los datos personales comunicados a [Classment Academy] , para el tratamiento de mis datos personales con el fin de: (i) cumplir y hacer cumplir las obligaciones derivadas de la relación entre la Compañía y el titular de los datos, como la gestión de horarios, inscripciones, registro de operaciones, servicio de atención, entre otros; a través de los datos de contacto proporcionados, que incluyen, pero no se limitan a, correo electrónico, número celular, entre otros; (ii) comunicar información relevante sobre los servicios y mejoras que ofrece la Compañía, utilizando medios físicos, digitales y tecnologías de la información como correos electrónicos, redes sociales, mensajes de texto (SMS y/o MMS) y aplicaciones móviles; (iii) evaluar la satisfacción de los usuarios y analizar hábitos de uso para mejorar la gestión del sistema de información; (iv) compartir la información necesaria con terceros encargados de brindar soporte o mejoras en el sistema, bajo los principios de confidencialidad y seguridad de la información.</p>
+                <p class="py-4 px-2 text-sm text-gray-300">El titular de los datos tiene derecho a: (i) conocer, actualizar y rectificar sus datos personales en caso de que sean inexactos, incompletos o estén desactualizados; (ii) solicitar prueba de esta autorización; (iii) ser informado sobre el tratamiento que se le ha dado a sus datos; (iv) presentar quejas ante la Superintendencia de Industria y Comercio en caso de incumplimiento; (v) revocar esta autorización y solicitar la eliminación de sus datos de acuerdo con lo establecido en la Ley 1581 de 2012; (vi) acceder de manera gratuita a los datos proporcionados. Estos derechos podrán ser ejercidos a través de los siguientes canales: [classmentacademy@gmail.com].</p>
+                <div class="modal-action">
+                    <button class="py-2 px-5 bg-black text-white font-semibold rounded-full shadow-md focus:outline-none btn " id="closeModal">Cerrar</button>
+                </div>
+                </div>
+            </dialog>
     <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
         Enviar
     </button>
@@ -144,6 +171,70 @@
     AOS.init({
         duration: 1000
     });
+    // Script para abrir el modal al hacer clic en el enlace
+    document.getElementById('openTermsModal').addEventListener('click', function (event) {
+      event.preventDefault(); // Previene que el enlace navegue
+      document.getElementById('my_modal_1').showModal(); // Muestra el modal
+    });
+     // Script para abrir el modal
+     document.getElementById('openTermsModal').addEventListener('click', function (event) {
+      event.preventDefault(); // Previene la navegación
+      document.getElementById('my_modal_1').showModal(); // Muestra el modal
+    });
+
+    // Script para cerrar el modal
+    document.getElementById('closeModal').addEventListener('click', function () {
+      document.getElementById('my_modal_1').close(); // Cierra el modal
+    });
+    // alertas
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        
+        fetch('PHP/register_escuela.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                Swal.fire({
+                    title: '¡Éxito!',
+                    text: data.message,
+                    icon: 'success',
+                    confirmButtonColor: '#F97316',
+                    background: '#000000',
+                    color: '#F97316'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'index.php';
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: 'Error',
+                    text: data.message,
+                    icon: 'error',
+                    confirmButtonColor: '#F97316',
+                    background: '#0D1117',
+                    color: '#F97316'
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            Swal.fire({
+                title: 'Error',
+                text: 'Ocurrió un error al procesar la solicitud',
+                icon: 'error',
+                confirmButtonColor: '#F97316',
+                background: '#0D1117',
+                color: '#F97316'
+            });
+        });
+    });
+    
 </script>
 </body>
 </html>

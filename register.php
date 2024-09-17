@@ -9,6 +9,8 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="shortcut icon" href="../IMG/logo.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
   <style>
     .gradient-circle {
@@ -80,7 +82,7 @@
         </div>
         <div class="max-h-[70vh] overflow-hidden">
         <div class="pr-4 -mr-4 max-h-[70vh] overflow-y-auto">
-        <form action="PHP/register.php" method="post" class="space-y-4">
+        <form id="registerForm" action="PHP/register.php" method="post" class="space-y-4">
           <div class="pl-2 flex space-x-2">
             <div class="flex flex-col w-1/2">
               <label for="usuario_nombre" class="text-sm font-semibold text-orange-400">Nombres</label>
@@ -213,7 +215,55 @@
     document.getElementById('closeModal').addEventListener('click', function () {
       document.getElementById('my_modal_1').close(); // Cierra el modal
     });
-  </script>
+  // alertas
+  document.getElementById('registerForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        
+        fetch('PHP/register.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                Swal.fire({
+                    title: '¡Éxito!',
+                    text: data.message,
+                    icon: 'success',
+                    confirmButtonColor: '#F97316',
+                    background: '#000000',
+                    color: '#F97316'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'index.php';
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: 'Error',
+                    text: data.message,
+                    icon: 'error',
+                    confirmButtonColor: '#F97316',
+                    background: '#0D1117',
+                    color: '#F97316'
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            Swal.fire({
+                title: 'Error',
+                text: 'Ocurrió un error al procesar la solicitud',
+                icon: 'error',
+                confirmButtonColor: '#F97316',
+                background: '#0D1117',
+                color: '#F97316'
+            });
+        });
+    });
+    
+</script>
 </body>
-
 </html>

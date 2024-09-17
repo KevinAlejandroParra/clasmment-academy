@@ -66,20 +66,23 @@ try {
 
         // Confirmar la transacción
         $conn->commit();
-         // Redirigir a login.php
-         header("Location: ../login.php");
-         exit(); // Asegurarse de que no se ejecute código adicional después de la redirección
+         
+        // Mostrar el mensaje de éxito
+        echo json_encode(["success" => true, "message" => "Usuario registrado con éxito"]);
 
-        // Mensaje de éxito
-        $mensaje = "Usuario registrado con éxito.";
+
     }
 } catch (PDOException $e) {
     // Revertir la transacción en caso de error
     if (isset($conn) && $conn->inTransaction()) {
         $conn->rollBack();
+        echo json_encode(["success" => false, "message" => "Error en el registro: " . $e->getMessage()]);
+
     }
     $error = "Error de base de datos: " . $e->getMessage();
 }  finally {
     // Cerrar la conexión
     $conn = null;
 }
+
+?>

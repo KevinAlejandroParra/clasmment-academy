@@ -48,22 +48,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Confirmar la transacción
         $conn->commit();
-        // redireccionar al index
-        header("Location: index.php");
-        exit();
 
-        // Mensaje de éxito
-        $mensaje = "Escuela registrada con éxito";
+        // Mostrar el mensaje de éxito
+        echo json_encode(["success" => true, "message" => "Escuela registrada con éxito"]);
 
     } catch (Exception $e) {
         // Si hay algún error, revertir la transacción
         $conn->rollBack();
-        
+
         // Mostrar el mensaje de error
-        $mensaje = "Error en el registro: " . $e->getMessage();
+        echo json_encode(["success" => false, "message" => "Error en el registro: " . $e->getMessage()]);
     }
 }
-
-// Mostrar el mensaje en la interfaz de usuario
-echo $mensaje;
 ?>
+

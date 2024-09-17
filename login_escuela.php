@@ -33,17 +33,14 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             $_SESSION['escuela_imagen_url'] = $escuela['escuela_imagen_url'];
             $_SESSION['escuela_fecha_creacion'] = $escuela['escuela_fecha_creacion'];
 
-            //realizado correctamente
-            echo "Inicio de sesión exitoso";
-            //redirigir al index
-            header("Location: index.php");
-            exit;
+            echo json_encode(["success" => true, "message" => "Inicio de sesión exitoso"]);
         } else {
-            echo "Correo electrónico o contraseña de su escuela incorrectos";
+            echo json_encode(["success" => false, "message" => "Correo electrónico o contraseña incorrectos"]);
         }
     } else {
-        echo "Correo electrónico o contraseña de su escuela incorrectos";
+        echo json_encode(["success" => false, "message" => "Correo electrónico o contraseña incorrectos"]);
     }
+    exit;
 }
 ?>
 
@@ -56,6 +53,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="IMG/logo_mini.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style>
     .gradient-circle {
       position: absolute;
@@ -129,7 +128,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             </div>
 
             <!--espacio para el próximo div y evitar errores-->
-            <form action="login_escuela.php" method="post" class="space-y-6">
+            <form id="loginForm" action="login_escuela.php" method="post" class="space-y-6">
                 <div class="space-y-2"> <label for="escuela_correo" class="text-sm font-semibold text-orange-400">Correo Electrónico</label>
                   <div class="relative">
                      <input type="email" id="escuela_correo" name="escuela_correo" placeholder="Correo Electrónico de la escuela"
@@ -138,7 +137,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                   </div>
                 </div>
 
-                <div class="space-y-2">
+                <div class="space-y-2 pb-2">
                     <label for="escuela_password" class="text-sm font-semibold text-orange-400">Contraseña</label>
                       <div class="relative">
                          <input type="password" id="escuela_password" name="escuela_password" placeholder="Contraseña" 
@@ -147,7 +146,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                       </div>
                 </div>
 
-                <a href="PHP/recovery.php" clas="text-sm mt-2 text-orange-400">¿Olvidaste tu contraseña?</a>
+                <a href="recovery.php" class="text-sm mt-2 text-orange-400">¿Olvidaste tu contraseña?</a>
+
 
                   <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300">                    
                     Iniciar Sesión
@@ -161,7 +161,55 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         </div>
     </div>
   </div>
-<body>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        
+        fetch('login.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                Swal.fire({
+                    title: '¡Éxito!',
+                    text: data.message,
+                    icon: 'success',
+                    confirmButtonColor: '#F97316',
+                    background: '##0D1117',
+                    color: '#F97316'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'index.php';
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: 'Error',
+                    text: data.message,
+                    icon: 'error',
+                    confirmButtonColor: '#F97316',
+                    background: '#0D1117',
+                    color: '#F97316'
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            Swal.fire({
+                title: 'Error',
+                text: 'Ocurrió un error al procesar la solicitud',
+                icon: 'error',
+                confirmButtonColor: '#F97316',
+                background: '#0D1117',
+                color: '#F97316'
+            });
+        });
+    });
+    </script>
     
 </body>
 </html>
