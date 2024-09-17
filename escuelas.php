@@ -168,7 +168,7 @@ $escuelas = obtenerEscuelas($conn);
                                     ?>
                                     <tr>
                                         <td><?= htmlspecialchars($curso['curso_nombre']) ?></td>
-                                        <td><?= htmlspecialchars($curso['curso_precio']) ?></td>
+                                        <td>$<?= htmlspecialchars($curso['curso_precio']) ?> COP</td>
                                         <td><?= htmlspecialchars($curso['curso_cupos']) ?></td>
                                         <td><?= htmlspecialchars($curso['curso_estado']) ?></td>
                                     </tr>
@@ -216,7 +216,7 @@ $escuelas = obtenerEscuelas($conn);
                                 <input type="text" name="escuela_direccion" value="<?= htmlspecialchars($escuela['escuela_direccion']) ?>" class="input input-bordered" required>
                             </div>
                             <div class="modal-action">
-                                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                                <button type="submit" class="btn text-black bg-orange-400">Guardar Cambios</button>
                                 <label for="modal-edit-<?= $escuela['escuela_id'] ?>" class="btn">Cancelar</label>
                             </div>
                         </form>

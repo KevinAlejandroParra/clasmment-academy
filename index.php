@@ -141,7 +141,11 @@
       <div class="flex space-x-4" data-aos="zoom-in">
       <a href="login.php"><button class="btn rounded-lg bg-orange-500 shadow-lg shadow-orange-500/50"data-aos="zoom-in">Empieza ahora!</button></a>
       <a href="login_escuela.php"><button class="btn rounded-lg bg-orange-500 shadow-lg shadow-orange-500/50"data-aos="zoom-in">Soy escuela</button></a>
+      <?php if(isset($_SESSION['usuario_documento']) && $_SESSION['usuario_documento'] == '1025531531'): ?>
+        <a href="escuelas.php"><button class="btn rounded-lg bg-orange-500 shadow-lg shadow-orange-500/50"data-aos="zoom-in">Gestionar Escuelas</button></a>
+      <?php endif; ?>
       </div>
+
     </div>
   </div>
 </div>
