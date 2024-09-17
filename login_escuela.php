@@ -94,6 +94,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
   </style>
 
 </head>
+
+
 <div class="bg-black min-h-screen relative overflow-hidden">
     <!-- Círculos de gradiente -->
     <div class="gradient-circle w-44 h-32 bg-orange-300 top-10 left-10 opacity-40"></div>
@@ -102,6 +104,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     <div class="gradient-circle w-64 h-64 bg-orange-300 bottom-10 right-1/4 opacity-30"></div>
 
 <body class="bg-black min-h-screen relative overflow-hidden" >
+
   <!-- Contenedor de burbujas -->
   <div class="bubble-container">
     <div class="bubble" style="left: 10%; animation-duration: 12s; animation-delay: 2s;"></div>
@@ -110,6 +113,11 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     <div class="bubble" style="left: 70%; animation-duration: 8s; animation-delay: 6s;"></div>
     <div class="bubble" style="left: 90%; animation-duration: 14s; animation-delay: 1s;"></div>
   </div>
+
+  <a href="index.php" class="fixed top-4 left-4 bg-orange-500 hover:bg-orange-800 shadow-lg shadow-orange-500/50 text-black font-bold py-2 px-4 rounded-lg transition duration-200 flex items-center space-x-2 shadow-lg z-50">
+            <i class="fas fa-arrow-left"></i>
+            <span>Volver</span>
+        </a>  
 
   <!--Contenedor de login-->
   <div class="flex items-center justify-center min-h-screen relative z-10">

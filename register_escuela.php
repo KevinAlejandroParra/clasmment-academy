@@ -62,6 +62,11 @@
     <div class="bubble" style="left: 70%; animation-duration: 8s; animation-delay: 6s;"></div>
     <div class="bubble" style="left: 90%; animation-duration: 14s; animation-delay: 1s;"></div>
 </div>
+<!-- boton de retoceso -->
+<a href="login_escuela.php" class="fixed top-4 left-4 bg-orange-500 hover:bg-orange-800 shadow-lg shadow-orange-500/50 text-black font-bold py-2 px-4 rounded-lg transition duration-200 flex items-center space-x-2 shadow-lg z-50">
+            <i class="fas fa-arrow-left"></i>
+            <span>Volver</span>
+        </a>  
 <!--contenedor del registro centrado-->
 <div class="flex items -center justify-center min-h-screen relative z-10">
     <div class="w-full max-w-2xl p-8">

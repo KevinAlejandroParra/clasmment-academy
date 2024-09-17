@@ -138,7 +138,10 @@
          tus habilidades blandas, elimina las excusas y las distracciones.
 
       </p>
-      <a href="login.php"><button class="btn rounded-lg bg-orange-400"data-aos="zoom-in">Empieza ahora!</button></a>
+      <div class="flex space-x-4" data-aos="zoom-in">
+      <a href="login.php"><button class="btn rounded-lg bg-orange-500 shadow-lg shadow-orange-500/50"data-aos="zoom-in">Empieza ahora!</button></a>
+      <a href="login_escuela.php"><button class="btn rounded-lg bg-orange-500 shadow-lg shadow-orange-500/50"data-aos="zoom-in">Soy escuela</button></a>
+      </div>
     </div>
   </div>
 </div>

@@ -197,10 +197,12 @@ INSERT INTO `escuelas` (`escuela_nombre`, `escuela_documento`, `escuela_descripc
 
 -- Datos de prueba para la tabla `usuarios`
 INSERT INTO `usuarios` (`usuario_documento`, `usuario_tipo_documento`, `usuario_nombre`, `usuario_apellido`, `usuario_correo`, `usuario_password`, `usuario_telefono`, `usuario_direccion`, `usuario_nacimiento`, `usuario_imagen_url`, `rol_id`, `escuela_id`) VALUES
-('1001001001', 'CC', 'Kevin', 'Parra', 'luisparra5380@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '3001234567', 'Calle 789, tabogo', '1990-05-15', 'IMG/usuarios/1726301436_20240901_122208.jpg', 5, 4),
-('1002002002', 'CC', 'Chris ', 'Bumstead', 'cbum@email.com', 'cbum', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', 'Avenida 012, Ciudad C USA', '1985-10-20', '1726022704_coach_1.png', 3, 2),
-('1003003003', 'CC', 'Carlos', 'Rodríguez', 'carlos.rodriguez@email.com', 'password789', '3005555555', 'Carrera 345, Ciudad C', '1988-03-25', 'IMG/usuarios/nf.jpg', 3, 3),
-('1004004004', 'CC', 'Ana', 'Martínez', 'ana.martinez@email.com', 'passwordabc', '3007777777', 'Diagonal 678, Ciudad A', '1992-12-10', 'IMG/usuarios/nf.jpg', 4, 1);
+('1025531531', 'CC', 'Kevin', 'Parra', 'luisparra5380@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '3001234567', 'Calle 789, tabogo', '1990-05-15', 'IMG/usuarios/1726301436_20240901_122208.jpg', 5, 4),
+('1002002002', 'CC', 'Chris ', 'Bumstead', 'cbum@email.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '3001234560', 'Avenida 012, Ciudad C USA', '1985-10-20', 'IMG/usuarios/1726022704_coach_1.png', 3, 2),
+('1003003003', 'CC', 'Carlos', 'Rodríguez', 'carlos.rodriguez@email.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '3005555555', 'Carrera 345, Ciudad C', '1988-03-25', 'IMG/usuarios/nf.jpg', 3, 3),
+('1004004004', 'CC', 'Ana', 'Martínez', 'ana.martinez@email.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '3007777777', 'Diagonal 678, Ciudad A', '1992-12-10', 'IMG/usuarios/nf.jpg', 4, 1),
+('1004004005', 'CC', 'Marco', 'Gonzalez', 'marco@email.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '3087777777', 'Diagonal 788, Ciudadela colsubsidio', '1999-12-10', 'IMG/usuarios/nf.jpg', 2, 1);
+
 
 -- Datos de prueba para la tabla `cursos`
 
@@ -236,8 +238,8 @@ INSERT INTO `profesores_cursos` (`usuario_documento`, `curso_id`) VALUES
 
 -- Datos de prueba para la tabla `matriculas`
 INSERT INTO `matriculas` (`matricula_fecha`, `matricula_fecha_fin`, `matricula_estado`, `matricula_plan`, `curso_id`, `usuario_documento`) VALUES
-(CURRENT_TIMESTAMP, '2024-12-15', 'activo', 'semestral', 1, '1001001001'),
-(CURRENT_TIMESTAMP, '2025-02-28', 'activo', 'anual', 2, '1001001001'),
+(CURRENT_TIMESTAMP, '2024-12-15', 'activo', 'semestral', 1, '1004004005'),
+(CURRENT_TIMESTAMP, '2025-02-28', 'activo', 'anual', 2, '1004004005'),
 (CURRENT_TIMESTAMP, '2024-12-20', 'activo', 'semestral', 3, '1004004004');
 
 -- Datos de prueba para la tabla `asistencias`
@@ -252,8 +254,8 @@ INSERT INTO `asistencias` (`matricula_id`, `asistencia_fecha`, `asistencia_estad
 
 -- Datos de prueba para la tabla `ordenes_pagos`
 INSERT INTO `ordenes_pagos` (`usuario_documento`, `curso_id`, `metodo_pago_id`, `orden_pago_monto`, `orden_pago_estado`, `orden_pago_estado_pago`, `orden_pago_numero_referencia`) VALUES
-('1001001001', 1, 1, 500000, 'pagada', 'completado', 'REF001'),
-('1001001001', 2, 2, 750000, 'pagada', 'completado', 'REF002'),
+('1004004005', 1, 1, 500000, 'pagada', 'completado', 'REF001'),
+('1004004005', 2, 2, 750000, 'pagada', 'completado', 'REF002'),
 ('1004004004', 3, 3, 600000, 'pendiente', 'pendiente', 'REF003');
 
 -- Datos de prueba para la tabla `facturas`
@@ -264,7 +266,7 @@ INSERT INTO `facturas` (`orden_pago_id`, `factura_total`, `factura_estado`) VALU
 
 -- Datos de prueba para la tabla `mensajes`
 INSERT INTO `mensajes` (`remitente_documento`, `destinatario_documento`, `mensaje_asunto`, `mensaje_contenido`, `mensaje_leido`, `mensaje_thread_id`) VALUES
-('1001001001', '1002002002', 'Consulta sobre el curso', '¿Podría darme más información sobre los materiales necesarios para el curso de Pintura al Óleo?', FALSE, 1),
-('1002002002', '1001001001', 'RE: Consulta sobre el curso', 'Claro, con gusto. Para el curso necesitarás lo siguiente: [lista de materiales]', FALSE, 1),
+('1004004005', '1002002002', 'Consulta sobre el curso', '¿Podría darme más información sobre los materiales necesarios para el curso de Pintura al Óleo?', FALSE, 1),
+('1002002002', '1004004005', 'RE: Consulta sobre el curso', 'Claro, con gusto. Para el curso necesitarás lo siguiente: [lista de materiales]', FALSE, 1),
 ('1004004004', '1003003003', 'Cambio de horario', '¿Es posible cambiar mi horario del curso de Inglés Intermedio?', FALSE, 2),
 ('1003003003', '1004004004', 'RE: Cambio de horario', 'Podemos discutir las opciones disponibles. ¿Qué horario te convendría más?', FALSE, 2);

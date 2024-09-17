@@ -65,9 +65,15 @@
     <div class="bubble" style="left: 90%; animation-duration: 14s; animation-delay: 1s;"></div>
   </div>
 
+  <!-- boton de retoceso -->
+<a href="login.php" class="fixed top-4 left-4 bg-orange-500 hover:bg-orange-800 shadow-lg shadow-orange-500/50 text-black font-bold py-2 px-4 rounded-lg transition duration-200 flex items-center space-x-2 shadow-lg z-50">
+            <i class="fas fa-arrow-left"></i>
+            <span>Volver</span>
+        </a>  
+
       <!-- Contenedor principal para centrar el registro -->
 <div class="flex items-center justify-center min-h-screen relative z-10">
-    <div class="w-full max-w-2xl p-8">
+    <div class="w-full max-w-2xl p-2">
       <div class="bg-black shadow-2xl shadow-orange-400/60 border-solid border-t-2 border-l-2 border-orange-400 p-10 rounded-lg backdrop-blur-lg shadow-lg space-y-6">
         <div class="text-center">
           <h2 class="font-bold text-xl text-white">Regístrate</h2>
@@ -123,13 +129,12 @@
               <input type="tel" id="usuario_telefono" name="usuario_telefono" placeholder="Teléfono" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white">
             </div>
           </div>
-          <div class="pl-2 flex flex-col space-y-4">
-            <label for="usuario_direccion" class="text-sm font-semibold text-orange-400">Dirección</label>
-            <input type="text" id="usuario_direccion" name="usuario_direccion" placeholder="Dirección" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
-          </div>
-  
-          <div class="pl-2 flex space-x-4">
-            <div class="flex flex-col w-1/2">
+          <div class="flex space-x-4">
+            <div class="flex flex-col w-1/3">
+              <label for="usuario_direccion" class="text-sm font-semibold text-orange-400">Dirección</label>
+              <input type="text" id="usuario_direccion" name="usuario_direccion" placeholder="Dirección" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
+            </div>
+            <div class="flex flex-col w-1/3">
               <label for="rol_id" class="text-sm font-semibold text-orange-400">Selecciona un rol</label>
               <select name="rol_id" id="rol_id" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
                 <option value="1">Invitado</option>
@@ -138,7 +143,7 @@
                 <option value="4">Coordinador</option>
               </select>
             </div>
-            <div class="flex flex-col w-1/2">
+            <div class="flex flex-col w-1/3">
               <label for="escuela_id" class="text-sm font-semibold text-orange-400">Selecciona una escuela</label>
               <select name="escuela_id" id="escuela_id" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
                 <option value="4">no aplica</option>
@@ -148,7 +153,6 @@
               </select>
             </div>
           </div>
-  
           <!-- Términos y Condiciones-->
           <div class="py-2 flex items-center">
             <div class="">

@@ -11,9 +11,9 @@ if (!isset($_SESSION['usuario_correo'])) {
     exit();
 }
 
-// Verificar si el usuario pertenece a la escuela de administración (por ejemplo, escuela_id = 1)
-$escuela_administracion_id = 4; 
-if ($_SESSION['escuela_id'] != $escuela_administracion_id) {
+// Verificar si el usuario pertenece a la escuela de administración  (por ejemplo, escuela_id = 1)
+$usuario_administracion_id = 1025531531; 
+if ($_SESSION['usuario_documento'] != $usuario_administracion_id) {
     // Usuario no pertenece a la escuela de administración, denegar acceso
     echo "Acceso denegado. No tienes permiso para ver este archivo.";
     exit();
