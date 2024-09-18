@@ -11,9 +11,11 @@
         $stmt->execute();
         $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // Obtener escuelas
-    $escuelas_query = "SELECT escuela_id, escuela_nombre, escuela_imagen_url, escuela_descripcion, escuela_direccion, escuela_telefono, escuela_correo FROM escuelas WHERE escuela_estado = :estado";
+    // Obtener escuelas y excluir la escuela de administracion (escuela_id = 4)
+    $adminExcluir = 4;
+    $escuelas_query = "SELECT escuela_id, escuela_nombre, escuela_imagen_url, escuela_descripcion, escuela_direccion, escuela_telefono, escuela_correo FROM escuelas WHERE escuela_id <> :id AND escuela_estado = :estado";
     $stmt = $conn->prepare($escuelas_query);
+    $stmt->bindValue(':id', $adminExcluir, PDO::PARAM_INT);
     $stmt->bindValue(":estado", "activo", PDO::PARAM_STR);
     $stmt->execute();
     $schools = $stmt->fetchAll(PDO::FETCH_ASSOC);
