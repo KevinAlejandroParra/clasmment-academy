@@ -17,8 +17,10 @@ if ($_SESSION['usuario_documento'] != $usuario_administracion_id) {
 
 // Función para obtener todas las escuelas activas
 function obtenerEscuelas($conn) {
-    $escuelas_query = "SELECT * FROM escuelas WHERE escuela_estado = :estado ORDER BY escuela_id ASC";
+    $adminExcluir = 4;
+    $escuelas_query = "SELECT * FROM escuelas WHERE escuela_id <> :id AND escuela_estado = :estado ORDER BY escuela_id ASC";
     $stmt = $conn->prepare($escuelas_query);
+    $stmt->bindValue(':id', $adminExcluir, PDO::PARAM_INT);
     $stmt->bindValue(":estado", "activo", PDO::PARAM_STR);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);

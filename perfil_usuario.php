@@ -1,7 +1,7 @@
 <?php
 require 'PHP/conexion.php';
 session_start();
-
+// verificar si el usuario se ha autenticado
 if (!isset($_SESSION['usuario_documento'])) {
     header("Location: login.php");
     exit();
@@ -13,12 +13,12 @@ $error_message = $success_message = '';
 try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    // Consulta que obtiene la información del usuario
     $usuarios_query = "SELECT u.*, r.rol_nombre, e.escuela_nombre 
                        FROM usuarios u
                        INNER JOIN roles r ON u.rol_id = r.rol_id
                        INNER JOIN escuelas e ON u.escuela_id = e.escuela_id
                        WHERE u.usuario_estado = :estado AND u.usuario_documento = :usuario_documento";
-
     $stmt = $conn->prepare($usuarios_query);
     $stmt->bindValue(":estado", "activo", PDO::PARAM_STR);
     $stmt->bindValue(":usuario_documento", $usuario, PDO::PARAM_STR);
@@ -29,10 +29,12 @@ try {
         throw new Exception("No se encontró el usuario.");
     }
  
+    //Consulta que obtiene la lista de roles
     $roles_query = "SELECT * FROM roles";
     $roles_stmt = $conn->query($roles_query);
     $roles = $roles_stmt->fetchAll(PDO::FETCH_ASSOC);
 
+// Consulta que obtiene la lista de escuelas
     $escuelas_query = "SELECT * FROM escuelas";
     $escuelas_stmt = $conn->query($escuelas_query);
     $escuelas = $escuelas_stmt->fetchAll(PDO::FETCH_ASSOC);
