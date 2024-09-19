@@ -90,7 +90,8 @@ CREATE TABLE `horarios` (
 
 -- Estructura de la tabla `profesores_cursos`
 CREATE TABLE `profesores_cursos` (
-  `profesor_curso_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `profesor_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `escuela_id` VARCHAR(100) NOT NULL,
   `usuario_documento` VARCHAR(20) NOT NULL,
   `curso_id` INT NOT NULL,
   FOREIGN KEY (`usuario_documento`) REFERENCES `usuarios`(`usuario_documento`),
@@ -231,10 +232,10 @@ INSERT INTO `horarios` (`curso_id`, `horario_dia_semana`, `horario_hora_inicio`,
 (3, 'Viernes', '10:00:00', '12:00:00');
 
 -- Datos de prueba para la tabla `profesores_cursos`
-INSERT INTO `profesores_cursos` (`usuario_documento`, `curso_id`) VALUES
-('1002002002', 1),
-('1002002002', 2),
-('1003003003', 3);
+INSERT INTO `profesores_cursos` (`escuela_id`, `usuario_documento`, `curso_id`) VALUES
+('1','1002002002', 1),
+('2','1002002002', 2),
+('3','1003003003', 3);
 
 -- Datos de prueba para la tabla `matriculas`
 INSERT INTO `matriculas` (`matricula_fecha`, `matricula_fecha_fin`, `matricula_estado`, `matricula_plan`, `curso_id`, `usuario_documento`) VALUES
