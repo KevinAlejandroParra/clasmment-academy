@@ -74,15 +74,15 @@
           </svg>
         </div>
         <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-          <li><a>Inicio</a></li>
+          <li><a href="index.php">Inicio</a></li>
           <li>
             <a>Servicios</a>
             <ul class="p-2">
-              <li><a>Escuelas</a></li>
-              <li><a>Cursos</a></li>
-            </ul>
+              <li><a href="index.php#title-schools">Escuelas</a></li>
+              <li><a href="index.php#title-courses">Cursos</a></li>
+              </ul>
           </li>
-          <li><a>Nosotros</a></li>
+          <li><a href="index.php#nosotros">Nosotros</a></li>
         </ul>
       </div>
       <a href="index.php" class="btn btn-ghost">
@@ -92,17 +92,17 @@
     </div>
     <div class="navbar-center hidden lg:flex" data-aos="zoom-in">
       <ul class="menu menu-horizontal px-1" data-aos="zoom-in">
-        <li><a>Inicio</a></li>
-        <li>
+      <li><a href="index.php">Inicio</a></li>
+      <li>
           <details>
             <summary>Servicios</summary>
             <ul class="p-2">
-              <li><a>Escuelas</a></li>
-              <li><a>Cursos</a></li>
+            <li><a href="index.php#title-schools">Escuelas</a></li>
+            <li><a href="index.php#title-courses">Cursos</a></li>
             </ul>
           </details>
         </li>
-        <li><a>Nosotros</a></li>
+        <li><a href="index.php#nosotros">Nosotros</a></li>
       </ul>
     </div>
     <div class="navbar-end">
@@ -124,7 +124,7 @@
 
   <main class="pt-24">
   <!-- Sección Hero -->
-  <section class="hero-section flex items-center justify-center relative pb-8 pl-36 " data-aos="fade-up">
+  <section class="hero-section flex items-center justify-center relative pb-8 pl-36 " id="hero-section" data-aos="fade-up">
     <div class="hero-content flex-col lg:flex-row-reverse pr-48">
     <video
       src="../IMG/design/people.webm"
@@ -155,7 +155,7 @@
 
 
   <!-- Sección del Carrusel de Cursos -->
-  <div class="relative overflow-hidden py-16 bg-ghost" data-aos="fade-up">
+  <div class="relative overflow-hidden py-16 bg-ghost" id="title-courses" data-aos="fade-up">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center text-white mb-8">Cursos Destacados</h2>
       <div class="carousel w-full relative">
@@ -213,7 +213,7 @@
   </div>
 
   <!-- Sección del Carrusel de Escuelas -->
-  <div class="relative overflow-hidden py-16 bg-ghost" data-aos="fade-up">
+  <div class="relative overflow-hidden py-16 bg-ghost" id="title-schools" data-aos="fade-up">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center text-white mb-8">Escuelas aliadas</h2>
       <div class="carousel w-full relative">
@@ -269,10 +269,24 @@
       </div>
     </div>
   </div>
-  
+ </section>
+<section>
+  <div class="card card-side flex items-center justify-center relative pb-8 pl-36 " id="hero-section" data-aos="fade-up">
+  <figure>
+    <img
+      src="IMG/design/escuelanew.png"
+      alt="escuela" />
+  </figure>
+  <div class="card-body flex-col lg:flex-row-reverse pr-48">
+    <h2 class="card-title text-4xl font-bold text-orange-400 mb-4">Eleva tu emprendimiento a un 200%</h2>
+    <p>Da clic en el botton y sumergete en esta gran aventura.</p>
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary"><a href="register_escuela.php">Empieza </a></button>
+    </div>
+  </div>
+</div>
 
-
-    <div class="w-full max-w-[1200px] mx-auto px-4">
+    <div class="w-full max-w-[1200px] mx-auto px-4" id="nosotros">
         <h2 class="text-4xl font-bold text-center mb-12 text-white">Sobre Nosotros</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -294,23 +308,23 @@
             </div>
         </div>
         
-        <div class="mt-12">
+        <div class="mt-12 pb-24">
             <h3 class="text-2xl font-semibold mb-6 text-center text-orange-400">Creadores del Proyecto</h3>
             <div class="flex flex-wrap justify-center gap-8">
                 <div class="bg-black rounded-lg shadow-lg p-6 text-center w-64">
                     <img src="IMG/nosotros.png" alt="Daniel Josué Peña Puentes" class="rounded-full mx-auto mb-4">
                     <h4 class="font-semibold text-lg">Daniel Josué Peña Puentes</h4>
-                    <p class="text-gray-600">Desarrollador</p>
+                    <p class="text-withe ">Desarrollador</p>
                 </div>
                 <div class="bg-black rounded-lg shadow-lg p-6 text-center w-64">
                     <img src="IMG/nosotros.png" alt="Kevin Alejandro Parra Cifuentes" class="rounded-full mx-auto mb-4">
                     <h4 class="font-semibold text-lg">Kevin Alejandro Parra Cifuentes</h4>
-                    <p class="text-gray-600">Desarrollador</p>
+                    <p class="text-withe ">Desarrollador</p>
                 </div>
                 <div class="bg-black rounded-lg shadow-lg p-6 text-center w-64">
                     <img src="IMG/nosotros.png" alt="Daniel Sneither Bernal Gómez" class="rounded-full mx-auto mb-4">
                     <h4 class="font-semibold text-lg">Daniel Sneither Bernal Gómez</h4>
-                    <p class="text-gray-600">Desarrollador</p>
+                    <p class="text-withe ">Desarrollador</p>
                 </div>
             </div>
         </div>
@@ -333,11 +347,9 @@
                             </ul>
                         </div>
                         <div class="flex flex-col justify-center items-center space-y-4">
-                            <p>Suscríbete para recibir noticias:</p>
-                            <form>
-                                <input type="email" placeholder="Email" class="px-2 py-1 rounded-md">
-                                <button class="font-semibold border-2 border-white rounded-md  px-2 py-1">Enviar</button>
-                            </form>
+                            <h3 class="font-bold text-xl tracking-tight">Unete a nuestra comunidad</h3>
+                            <p>Sacale el mayor potencial a tus habilidades!</p>
+
                         </div>
                     </div>
                     <!-- Copyright -->
