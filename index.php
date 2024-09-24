@@ -271,22 +271,29 @@
   </div>
  </section>
 <section>
-  <div class="card card-side flex items-center justify-center relative pb-8 pl-36 " id="hero-section" data-aos="fade-up">
-  <figure>
-    <img
-      src="IMG/design/escuelanew.png"
-      alt="escuela" />
-  </figure>
-  <div class="card-body flex-col lg:flex-row-reverse pr-48">
-    <h2 class="card-title text-4xl font-bold text-orange-400 mb-4">Eleva tu emprendimiento a un 200%</h2>
-    <p>Da clic en el botton y sumergete en esta gran aventura.</p>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary"><a href="register_escuela.php">Empieza </a></button>
+  <div class="flex justify-center p-8 ">
+    <div class="grid grid-col-1 gap-4 pr-6">
+        <img class="rounded-lg"
+          src="IMG/design/escuelanew.png"
+          alt="escuela"
+        />
+      </div>
+      <div class="flex flex-col justify-center text-white">
+        <div class="text-4xl tracking-wide leading-tight font-extrabold">Eleva tu emprendimiento a un 200%</div>
+        <div class="text-4xl tracking-wide leading-tight font-bold">Unete a nuestra comunidad</div>
+        <div class="flex mt-6 space-x-4">
+          <button class="w-1/2 bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
+          <a href="PHP/register_escuela.php"> Registrar mi escuela </a>
+          </button>
+          <button class="w-1/2 bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
+          <a href="Pendiente/escuelas.php">Ver escuelas </a>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-    <div class="w-full max-w-[1200px] mx-auto px-4" id="nosotros">
+    <div class="w-full max-w-[1200px] mx-auto p-8 px-4" id="nosotros">
         <h2 class="text-4xl font-bold text-center mb-12 text-white">Sobre Nosotros</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
