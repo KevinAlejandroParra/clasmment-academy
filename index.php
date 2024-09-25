@@ -271,9 +271,9 @@
   </div>
  </section>
 <section>
-  <div class="flex justify-center p-8 ">
+  <div class="flex justify-center p-8 "data-aos="fade-up" >
     <div class="grid grid-col-1 gap-4 pr-6">
-        <img class="rounded-lg"
+        <img class="rounded-lg shadow-lg shadow-orange-500/50"
           src="IMG/design/escuelanew.png"
           alt="escuela"
         />

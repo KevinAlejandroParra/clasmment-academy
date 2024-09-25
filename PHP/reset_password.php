@@ -60,32 +60,50 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </head>
     <body>
     <body class="bg-black min-h-screen relative overflow-hidden justify-center">
-    <!-- Barra de navegación -->
-    <div class="container mx-auto p-4">
-      <div class="navbar bg-transparent flex justify-between">
-        <div class="navbar-start">
-          <a href="index.php" class="btn btn-ghost">
-            <img src="../IMG/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
-            <h1 class="text-2xl font-bold" data-aos="zoom-in">Classment Academy</h1>
-          </a>
+
+  <!-- Navbar -->
+  <div class="navbar bg-transparent py-4 backdrop-blur-md bg-opacity-50 fixed top-0 left-0 right-0 z-50 shadow-lg">
+    <div class="navbar-start flex justify-center">
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+          </svg>
         </div>
-        <div class="navbar-end hidden lg:flex pl-10pr-32" data-aos="zoom-in">
-          <ul class="menu menu-horizontal px-1" data-aos="zoom-in">
-            <li><a href="../index.php">Inicio</a></li>
-            <li>
-              <details>
-                <summary>Servicios</summary>
-                <ul class="p-2 bg-base-100">
-                  <li><a href="escuelas.php">Escuelas</a></li>
-                  <li><a href="cursos.php">Cursos</a></li>
-                </ul>
-              </details>
-            </li>
-            <li><a href="nosotros.php">Nosotros</a></li>
-          </ul>
-        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+          <li><a href="../index.php">Inicio</a></li>
+          <li>
+            <a>Servicios</a>
+            <ul class="p-2">
+              <li><a href="../index.php#title-schools">Escuelas</a></li>
+              <li><a href="../index.php#title-courses">Cursos</a></li>
+              </ul>
+          </li>
+          <li><a href="../index.php#nosotros">Nosotros</a></li>
+        </ul>
       </div>
+      <a href="../index.php" class="btn btn-ghost">
+        <img src="../IMG/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
+        <h1 class="text-4xl font-bold" data-aos="zoom-in">Classment Academy</h1>
+      </a>
     </div>
+    <div class="navbar-center hidden lg:flex" data-aos="zoom-in">
+      <ul class="menu menu-horizontal px-1" data-aos="zoom-in">
+      <li><a href="../index.php">Inicio</a></li>
+      <li>
+          <details>
+            <summary>Servicios</summary>
+            <ul class="p-2">
+            <li><a href="../index.php#title-schools">Escuelas</a></li>
+            <li><a href="../index.php#title-courses">Cursos</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="../index.php#nosotros">Nosotros</a></li>
+      </ul>
+    </div>
+  </div>
+  <main class="pt-24">
         <div class="container mx-auto p-4">
             <div class="flex items-center justify-center">
                 <div class="w-full max-w-5xl p-8">
@@ -99,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <div class="w-1/2 px-10 mt-4">
                                 <form method="POST" action="">
                                     <input type="hidden" name="token" value="<?php echo htmlspecialchars($token); ?>">
-                                    <h2 class="text-3xl font-bold text-center">Restablecer Contraseña</h2>
+                                    <h2 class="text-4xl tracking-wide font-extrabold text-center">Restablecer Contraseña</h2>
                                     <div class="form-control mt-6">
                                         <label class="label">
                                             <span class="label-text">Nueva Contraseña</span>
