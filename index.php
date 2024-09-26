@@ -286,7 +286,7 @@
           <a href="PHP/register_escuela.php"> Registrar mi escuela </a>
           </button>
           <button class="w-1/2 bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
-          <a href="Pendiente/escuelas.php">Ver escuelas </a>
+          <a href="aliados.php">Ver escuelas </a>
           </button>
         </div>
       </div>

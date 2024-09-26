@@ -25,15 +25,7 @@ $stmt->execute();
 $schools = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-// obtener los cursos de una escuela
-$escuelas_query = "SELECT e.*, c.curso_nombre, c.curso_precio, c.curso_cupos, c.curso_estado FROM escuelas e 
-     INNER JOIN cursos c ON c.escuela_id = e.escuela_id
-     WHERE escuela_estado = :estado";
-     $stmt = $conn->prepare($escuelas_query);
-     $stmt->bindValue(":estado", "activo", PDO::PARAM_STR);
-     $stmt->bindValue(":", "", PDO::PARAM_STR);
-     $stmt->execute();
-     $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 
 // Manejar las operaciones CRUD
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -165,7 +157,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 </thead>
                                 <tbody>
                                     <?php 
-                                    foreach ($courses as $curso): 
+                                    // Consulta para obtener los cursos de la escuela actual
+                                    $cursos_query = "SELECT curso_nombre, curso_precio, curso_cupos, curso_estado FROM cursos WHERE escuela_id = :escuela_id";
+                                    $stmt_cursos = $conn->prepare($cursos_query);
+                                    $stmt_cursos->bindValue(':escuela_id', $escuela['escuela_id'], PDO::PARAM_INT);
+                                    $stmt_cursos->execute();
+                                    $cursos = $stmt_cursos->fetchAll(PDO::FETCH_ASSOC);
+
+                                    foreach ($cursos as $curso): 
                                     ?>
                                     <tr>
                                         <td><?= htmlspecialchars($curso['curso_nombre']) ?></td>

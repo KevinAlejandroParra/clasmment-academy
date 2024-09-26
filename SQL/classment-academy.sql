@@ -65,11 +65,7 @@ CREATE TABLE `cursos` (
   `curso_capacidad_maxima` INT NOT NULL,
   `curso_edad_minima` INT NOT NULL DEFAULT 0,
   `curso_imagen_url` VARCHAR(255) DEFAULT '/IMG/cursos/nf.jpg',
-
-
   -- PENDIENTE POR AGREGAR LA GALERIA DEL CURSO`
-
-
   `curso_fecha_inicio` DATE NOT NULL,
   `curso_fecha_fin` DATE NOT NULL,
   `curso_estado` ENUM('activo', 'inactivo', 'completo') DEFAULT 'activo',
