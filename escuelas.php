@@ -15,25 +15,25 @@ if ($_SESSION['usuario_documento'] != $usuario_administracion_id) {
     exit();
 }
 
-// Función para obtener todas las escuelas activas
-function obtenerEscuelas($conn) {
-    $adminExcluir = 4;
-    $escuelas_query = "SELECT * FROM escuelas WHERE escuela_id <> :id AND escuela_estado = :estado ORDER BY escuela_id ASC";
-    $stmt = $conn->prepare($escuelas_query);
-    $stmt->bindValue(':id', $adminExcluir, PDO::PARAM_INT);
-    $stmt->bindValue(":estado", "activo", PDO::PARAM_STR);
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
+// obtener todas las escuelas activas y excluir la escuela nombrada administración
+$adminExcluir = 4;
+$escuelas_query = "SELECT escuela_id, escuela_nombre, escuela_imagen_url, escuela_descripcion, escuela_direccion, escuela_telefono, escuela_correo, escuela_fecha_creacion FROM escuelas WHERE escuela_id <> :id AND escuela_estado = :estado";
+$stmt = $conn->prepare($escuelas_query);
+$stmt->bindValue(':id', $adminExcluir, PDO::PARAM_INT);
+$stmt->bindValue(":estado", "activo", PDO::PARAM_STR);
+$stmt->execute();
+$schools = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Función para obtener los cursos de una escuela
-function obtenerCursos($conn, $escuela_id) {
-    $cursos_query = "SELECT * FROM cursos WHERE escuela_id = :escuela_id";
-    $stmt = $conn->prepare($cursos_query);
-    $stmt->bindValue(":escuela_id", $escuela_id, PDO::PARAM_INT);
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
+
+// obtener los cursos de una escuela
+$escuelas_query = "SELECT e.*, c.curso_nombre, c.curso_precio, c.curso_cupos, c.curso_estado FROM escuelas e 
+     INNER JOIN cursos c ON c.escuela_id = e.escuela_id
+     WHERE escuela_estado = :estado";
+     $stmt = $conn->prepare($escuelas_query);
+     $stmt->bindValue(":estado", "activo", PDO::PARAM_STR);
+     $stmt->bindValue(":", "", PDO::PARAM_STR);
+     $stmt->execute();
+     $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Manejar las operaciones CRUD
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$escuelas = obtenerEscuelas($conn);
+
 ?>
 
 <!DOCTYPE html>
@@ -122,7 +122,7 @@ $escuelas = obtenerEscuelas($conn);
     </a>
 </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <?php foreach ($escuelas as $escuela): ?>
+            <?php foreach ($schools as $escuela): ?>
                 <div class="card bg-base-200 shadow-xl">
                     <figure><img src="<?= htmlspecialchars($escuela['escuela_imagen_url']) ?>" alt="<?= htmlspecialchars($escuela['escuela_nombre']) ?>" class="w-full h-48 object-cover"/></figure>
                     <div class="card-body">
@@ -165,8 +165,7 @@ $escuelas = obtenerEscuelas($conn);
                                 </thead>
                                 <tbody>
                                     <?php 
-                                    $cursos = obtenerCursos($conn, $escuela['escuela_id']);
-                                    foreach ($cursos as $curso): 
+                                    foreach ($courses as $curso): 
                                     ?>
                                     <tr>
                                         <td><?= htmlspecialchars($curso['curso_nombre']) ?></td>

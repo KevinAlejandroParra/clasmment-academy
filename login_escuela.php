@@ -131,7 +131,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             <form id="loginForm" action="login_escuela.php" method="post" class="space-y-6">
                 <div class="space-y-2"> <label for="escuela_correo" class="text-sm font-semibold text-orange-400">Correo Electrónico</label>
                   <div class="relative">
-                     <input type="email" id="escuela_correo" name="escuela_correo" placeholder="Correo Electrónico de la escuela"
+                     <input type="email" id="escuela_correo" name="escuela_correo" placeholder="Digita el correo asociado a la escuela"
                      class="w-full px-4 py-3 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
                      <i class="fa fa-envelope absolute top-1/2 right-3 transform -translate-y-1/2 text-yellow-500"></i>                    
                   </div>
@@ -140,7 +140,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 <div class="space-y-2 pb-2">
                     <label for="escuela_password" class="text-sm font-semibold text-orange-400">Contraseña</label>
                       <div class="relative">
-                         <input type="password" id="escuela_password" name="escuela_password" placeholder="Contraseña" 
+                         <input type="password" id="escuela_password" name="escuela_password" placeholder="Digita lacontraseña" 
                          class="w-full px-4 py-3 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
                          <i class="fa fa-lock absolute top-1/2 right-3 transform -translate-y-1/2 text-yellow-500"></i>
                       </div>
