@@ -1,10 +1,10 @@
 <?php
 session_start();
-require 'PHP/conexion.php';
+require '../PHP/conexion.php';
 
 // Verificar si el usuario está autenticado
 if (!isset($_SESSION['usuario_correo'])) {
-    header('Location: login.php');
+    header('Location: ../login.php');
     exit();
 }
 
@@ -83,24 +83,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      <div class="container mx-auto p-4">
       <div class="navbar bg-transparent flex justify-between">
         <div class="navbar-start">
-          <a href="index.php" class="btn btn-ghost">
+          <a href="../index.php" class="btn btn-ghost">
             <img src="../IMG/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
             <h1 class="text-4xl font-bold" data-aos="zoom-in">Classment Academy</h1>
           </a>
         </div>
         <div class="navbar-end hidden lg:flex pl-10pr-32" data-aos="zoom-in">
           <ul class="menu menu-horizontal px-1" data-aos="zoom-in">
-            <li><a href="index.php">Inicio</a></li>
+            <li><a href="../index.php">Inicio</a></li>
             <li>
               <details>
                 <summary>Servicios</summary>
                 <ul class="p-2 bg-base-100">
-                  <li><a href="escuelas.php">Escuelas</a></li>
+                  <li><a href="../aliados.php">Escuelas</a></li>
                   <li><a href="cursos.php">Cursos</a></li>
                 </ul>
               </details>
             </li>
-            <li><a href="nosotros.php">Nosotros</a></li>
+            <li><a href="../index.php#nosotros">Nosotros</a></li>
           </ul>
         </div>
       </div>
@@ -109,14 +109,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container mx-auto p-4">
         <h1 class="text-4xl font-bold mb-8 text-center text-orange-400">Escuelas Aliadas</h1>
         <div class="text-center mb-8">
-    <a href="register_escuela.php" class="btn bg-orange-400 hover:bg-orange-500 text-white">
+    <a href="../register_escuela.php" class="btn bg-orange-400 hover:bg-orange-500 text-white">
         <i class="fas fa-plus mr-2"></i>Crear Nueva Escuela
     </a>
 </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <?php foreach ($schools as $escuela): ?>
                 <div class="card bg-base-200 shadow-xl">
-                    <figure><img src="<?= htmlspecialchars($escuela['escuela_imagen_url']) ?>" alt="<?= htmlspecialchars($escuela['escuela_nombre']) ?>" class="w-full h-48 object-cover"/></figure>
+                    <figure><img src="../<?= htmlspecialchars($escuela['escuela_imagen_url']) ?>" alt="<?= htmlspecialchars($escuela['escuela_nombre']) ?>" class="w-full h-48 object-cover"/></figure>
                     <div class="card-body">
                         <h2 class="card-title text-orange-400"><?= htmlspecialchars($escuela['escuela_nombre']) ?></h2>
                         <p><?= htmlspecialchars(substr($escuela['escuela_descripcion'], 0, 100)) ?>...</p>
