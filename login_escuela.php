@@ -24,7 +24,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             //guardar información de la escuela al iniciar
             $_SESSION['escuela_id'] = $escuela['escuela_id'];
             $_SESSION['escuela_nombre'] = $escuela['escuela_nombre'];
-            $_SESSION['escuela_documento'] = $escuela['escuela_documento'];
+            $_SESSION['escuela_nit'] = $escuela['escuela_nit'];
             $_SESSION['escuela_descripcion'] = $escuela['escuela_descripcion'];
             $_SESSION['escuela_telefono'] = $escuela['escuela_telefono'];
             $_SESSION['escuela_direccion'] = $escuela['escuela_direccion'];

@@ -79,7 +79,7 @@
             <form id="registerForm" action="PHP/register_escuela.php" method="post" class="space-y-4">
     <div class="flex space-x-2">
         <div class="flex flex-col w-1/2">
-            <label for="escuela_id" class="text-sm font-semibold text-orange-400">NIT de su escuela</label>
+            <label for="escuela_id" class="text-sm font-semibold text-orange-400"></label>
             <input type="text" id="escuela_id" name="escuela_id" placeholder="NIT Escuela" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
         </div>
         <div class="flex flex-col w-1/2">
@@ -90,7 +90,7 @@
 
     <div class="flex space-x-2">
         <div class="flex flex-col w-1/2">
-            <label for="escuela_documento" class="text-sm font-semibold text-orange-400">Documento de su escuela</label>
+            <label for="escuela_nit" class="text-sm font-semibold text-orange-400">NIT de su escuela</label>
             <select id="escuela_documento" name="escuela_documento" placeholder="Documento de la Escuela" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
                 <option value="NIT">NIT</option>
             </select>    

@@ -13,7 +13,7 @@ CREATE TABLE `roles` (
 CREATE TABLE `escuelas` (
   `escuela_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `escuela_nombre` VARCHAR(100) NOT NULL,
-  `escuela_documento` ENUM ('NIT') NOT NULL,  
+  `escuela_nit` INT(10) NOT NULL,  
   `escuela_descripcion` TEXT,
   `escuela_telefono` VARCHAR(20) NOT NULL,
   `escuela_direccion` TEXT NOT NULL,
@@ -186,7 +186,7 @@ CREATE INDEX idx_mensaje_destinatario ON `mensajes` (`destinatario_documento`, `
 
 
 -- Datos de prueba para la tabla `escuelas`
-INSERT INTO `escuelas` (`escuela_nombre`, `escuela_documento`, `escuela_descripcion`, `escuela_telefono`, `escuela_direccion`, `escuela_correo`, `escuela_password`, `escuela_fecha_creacion`, `escuela_estado`, `escuela_imagen_url`) VALUES
+INSERT INTO `escuelas` (`escuela_nombre`, `escuela_nit`, `escuela_descripcion`, `escuela_telefono`, `escuela_direccion`, `escuela_correo`, `escuela_password`, `escuela_fecha_creacion`, `escuela_estado`, `escuela_imagen_url`) VALUES
 ('GO FIT', '123456789-1', 'Entrenamiento y acondicionamiento fisico', '1234567890', 'Calle 123, Bogota D.C.', 'danielbernalg.04@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', 'IMG/escuelas/gofit.jpeg'),
 ('Soy Fitness', '987654321-1', 'Yoga, Pilates y mas', '9876543210', 'Avenida 456, primera de mayo con boyaca', 'soyfitness@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', 'IMG/escuelas/soyfitness.jpg'),
 ('Taekwondo', '555555555-1', 'Cursos de taekwondo para todos los niveles', '5555555555', 'Plaza Principal, Carrera 10 con circunvalar', 'taekwondo@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', 'IMG/escuelas/taekwondo.jpg'),

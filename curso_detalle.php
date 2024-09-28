@@ -4,7 +4,7 @@ require "./PHP/conexion.php";
 // Obtener el ID del curso de la URL
 $curso_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
-// Función para obtener los detalles del curso
+// obtener los detalles del curso
 $curso_details_query = "SELECT c.*, e.escuela_nombre, e.escuela_direccion, e.escuela_telefono,
                                u.usuario_nombre, u.usuario_apellido, u.usuario_imagen_url
                         FROM cursos c
@@ -18,14 +18,14 @@ $curso_details_query = "SELECT c.*, e.escuela_nombre, e.escuela_direccion, e.esc
     $stmt->execute();
     $curso_details = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// Función para obtener los horarios del curso
+// obtener los horarios del curso
     $horarios_query = "SELECT * FROM horarios WHERE curso_id = :curso_id";
     $stmt = $conn->prepare($horarios_query);
     $stmt->bindValue(':curso_id', $curso_id, PDO::PARAM_INT);
     $stmt->execute();
     $horarios_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Función para obtener el número de estudiantes matriculados
+//  obtener el número de estudiantes matriculados
     $sql = "SELECT COUNT(*) AS total FROM matriculas WHERE curso_id = :curso_id AND matricula_estado = 'activo'";
     $stmt = $conn->prepare($sql);
     $stmt->bindValue(':curso_id', $curso_id, PDO::PARAM_INT);
