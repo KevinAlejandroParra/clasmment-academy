@@ -206,6 +206,12 @@ try {
                             <label for="edit-modal" class="btn btn-primary ">
                                 <i class="fas fa-edit mr-2"></i>Editar Perfil
                             </label>
+                            <?php if ($user['rol_id'] == 5): ?>
+                             <a href="/escuela_perfil.php" class="btn btn-primary ">
+                                <i class="fa-solid fa-school"></i>Ver mi escuela
+                            </a>
+                            <?php endif; ?>
+                       
                             <a href="PHP/logout.php" class="btn btn-secondary">
                               <i class="fas fa-sign-out-alt mr-2"></i>Cerrar Sesión
                                </a>
