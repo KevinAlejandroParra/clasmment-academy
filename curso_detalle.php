@@ -5,47 +5,42 @@ require "./PHP/conexion.php";
 $curso_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 // Función para obtener los detalles del curso
-function getCursoDetails($conn, $curso_id) {
-    $sql = "SELECT c.*, e.escuela_nombre, e.escuela_direccion, e.escuela_telefono,
-                   u.usuario_nombre, u.usuario_apellido, u.usuario_imagen_url
-            FROM cursos c
-            INNER JOIN escuelas e ON c.escuela_id = e.escuela_id
-            LEFT JOIN profesores_cursos pc ON c.curso_id = pc.curso_id
-            LEFT JOIN usuarios u ON pc.usuario_documento = u.usuario_documento
-            WHERE c.curso_id = :curso_id";
+$curso_details_query = "SELECT c.*, e.escuela_nombre, e.escuela_direccion, e.escuela_telefono,
+                               u.usuario_nombre, u.usuario_apellido, u.usuario_imagen_url
+                        FROM cursos c
+                        INNER JOIN escuelas e ON c.escuela_id = e.escuela_id
+                        LEFT JOIN profesores_cursos pc ON c.curso_id = pc.curso_id
+                        LEFT JOIN usuarios u ON pc.usuario_documento = u.usuario_documento
+                        WHERE c.curso_id = :curso_id";
 
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':curso_id', $curso_id, PDO::PARAM_INT);
+    $stmt = $conn->prepare($curso_details_query);
+    $stmt->bindValue(':curso_id', $curso_id, PDO::PARAM_INT);
     $stmt->execute();
-    return $stmt->fetch(PDO::FETCH_ASSOC);
-}
+    $curso_details = $stmt->fetch(PDO::FETCH_ASSOC);
 
 // Función para obtener los horarios del curso
-function getCursoHorarios($conn, $curso_id) {
-    $sql = "SELECT * FROM horarios WHERE curso_id = :curso_id";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':curso_id', $curso_id, PDO::PARAM_INT);
+    $horarios_query = "SELECT * FROM horarios WHERE curso_id = :curso_id";
+    $stmt = $conn->prepare($horarios_query);
+    $stmt->bindValue(':curso_id', $curso_id, PDO::PARAM_INT);
     $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
+    $horarios_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Función para obtener el número de estudiantes matriculados
-function getEstudiantesMatriculados($conn, $curso_id) {
-    $sql = "SELECT COUNT(*) as total FROM matriculas WHERE curso_id = :curso_id AND matricula_estado = 'activo'";
+    $sql = "SELECT COUNT(*) AS total FROM matriculas WHERE curso_id = :curso_id AND matricula_estado = 'activo'";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':curso_id', $curso_id, PDO::PARAM_INT);
+    $stmt->bindValue(':curso_id', $curso_id, PDO::PARAM_INT);
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $result['total'];
-}
+    $estudiantes_matricula = $result['total'];
+
 
 try {
-    $curso = getCursoDetails($conn, $curso_id);
+    $curso = $curso_details;
     if (!$curso) {
         throw new Exception("Curso no encontrado");
     }
-    $horarios = getCursoHorarios($conn, $curso_id);
-    $estudiantes_matriculados = getEstudiantesMatriculados($conn, $curso_id);
+    $horarios = $horarios_details;
+    $estudiantes_matriculados = $estudiantes_matricula;
 } catch (Exception $e) {
     // Manejar el error, por ejemplo, redirigir a la página principal
     header("Location: index.php");
@@ -64,7 +59,7 @@ try {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="shortcut icon" href="IMG/logo.png" type="image/x-icon">
 </head>
-<body class="bg-black font-sans">
+<body class="bg-black font-sans relative min-h-screen overflow-y-auto">
       <!-- Barra de navegación -->
       <div class="container mx-auto p-4">
       <div class="navbar bg-transparent flex justify-between">
@@ -92,7 +87,8 @@ try {
       </div>
     </div>
 
-    <main class="container mx-auto mt-8 px-4 max-w-4xl">
+
+    <main class="container mx-auto mt-8 px-4 max-w-6xl shadow-lg shadow-orange-500/50">
         <div class="card bg-black shadow-xl">
             <figure class="relative h-64 sm:h-80 md:h-96">
                 <img src="<?php echo htmlspecialchars($curso['curso_imagen_url']); ?>" alt="<?php echo htmlspecialchars($curso['curso_nombre']); ?>" class="w-full h-full object-cover">
@@ -198,8 +194,37 @@ try {
                 </div>
             </div>
         </div>
-    </main>
+</div>
+</div>
+</main>
+            <!-- Footer -->
+            <footer class="bg-ghost text-zinc-50 p-2 pt-4">
+                <div class="w-full max-w-[1200px] mx-auto flex flex-col gap-8 items-center justify-center py-6 text-center">
+                    <div class="w-full flex flex-col md:flex-row justify-between items-center">
+                        <div class="footer-contact">
+                            <h3 class="font-bold text-xl tracking-tight">Contacto</h3>
+                            <p>Teléfono: +57 321 2376552</p>
+                            <p>Correo: classmentacademy@gmail.com</p>
+                        </div>
+                    
+                        <div class="footer-links">
+                            <h3 class="font-bold text-xl tracking-tight">Legal</h3>
+                            <ul>
+                                <li><a href="#">Política de privacidad</a></li>
+                                <li><a href="#">Términos de uso</a></li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-col justify-center items-center space-y-4">
+                            <h3 class="font-bold text-xl tracking-tight">Unete a nuestra comunidad</h3>
+                            <p>Sacale el mayor potencial a tus habilidades!</p>
 
-
+                        </div>
+                    </div>
+                    <!-- Copyright -->
+                    <div class="bg-zinc-950 w-full p-2 flex items-center justify-center rounded-full font-semibold shadow-lg">
+                        <p>Copyright &copy; 2024 classment academy</p>
+                    </div>
+                </div>
+            </footer>
 </body>
 </html>
