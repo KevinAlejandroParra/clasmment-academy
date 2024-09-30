@@ -70,7 +70,7 @@
             <span>Volver</span>
         </a>  
 <!--contenedor del registro centrado-->
-<div class="flex items -center justify-center min-h-screen relative z-10">
+<div class="flex items-center justify-center min-h-screen relative z-10">
     <div class="w-full max-w-2xl p-8">
         <div class="bg-black shadow-2xl shadow-orange-400/60 border-solid border-t-2 border-l-2 border-orange-400 p-10 rounded-lg backdrop-blur-lg shadow-lg space-y-6">
             <div class="text-center">

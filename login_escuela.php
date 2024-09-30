@@ -167,7 +167,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         
         const formData = new FormData(this);
         
-        fetch('login.php', {
+        fetch('login_escuela.php', {
             method: 'POST',
             body: formData
         })

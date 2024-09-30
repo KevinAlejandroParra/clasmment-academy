@@ -195,10 +195,11 @@ INSERT INTO `escuelas` (`escuela_nombre`, `escuela_nit`, `escuela_descripcion`, 
 -- Datos de prueba para la tabla `usuarios`
 INSERT INTO `usuarios` (`usuario_documento`, `usuario_tipo_documento`, `usuario_nombre`, `usuario_apellido`, `usuario_correo`, `usuario_password`, `usuario_telefono`, `usuario_direccion`, `usuario_nacimiento`, `usuario_imagen_url`, `rol_id`, `escuela_id`) VALUES
 ('1025531531', 'CC', 'Kevin', 'Parra', 'luisparra5380@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '3001234567', 'Calle 789, tabogo', '1990-05-15', 'IMG/usuarios/1726301436_20240901_122208.jpg', 5, 4),
-('1002002002', 'CC', 'Chris ', 'Bumstead', 'cbum@email.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '3001234560', 'Avenida 012, Ciudad C USA', '1985-10-20', 'IMG/usuarios/1726022704_coach_1.png', 3, 2),
+('1002002002', 'CC', 'Chris ', 'Bumstead', 'cbum@email.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '3001234560', 'Avenida 012, Ciudad C USA', '1985-10-20', 'IMG/usuarios/1726022704_coach_1.png', 5, 2),
 ('1003003003', 'CC', 'Carlos', 'Rodríguez', 'carlos.rodriguez@email.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '3005555555', 'Carrera 345, Ciudad C', '1988-03-25', 'IMG/usuarios/nf.jpg', 3, 3),
 ('1004004004', 'CC', 'Ana', 'Martínez', 'ana.martinez@email.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '3007777777', 'Diagonal 678, Ciudad A', '1992-12-10', 'IMG/usuarios/nf.jpg', 4, 1),
-('1004004005', 'CC', 'Marco', 'Gonzalez', 'marco@email.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '3087777777', 'Diagonal 788, Ciudadela colsubsidio', '1999-12-10', 'IMG/usuarios/nf.jpg', 2, 1);
+('1004004005', 'CC', 'Marco', 'Gonzalez', 'marco@email.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '3087777777', 'Diagonal 788, Ciudadela colsubsidio', '1999-12-10', 'IMG/usuarios/nf.jpg', 2, 1),
+('1025531531', 'CC', 'Daniel', 'Gomez', 'danielbernalg.04@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '3001234565', 'Calle 189, tayogo', '1991-05-15', 'IMG/usuarios/nf.jpg', 5, 1);
 
 
 -- Datos de prueba para la tabla `cursos`
