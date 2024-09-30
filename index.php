@@ -283,7 +283,7 @@
         <div class="text-4xl tracking-wide leading-tight font-bold">Unete a nuestra comunidad</div>
         <div class="flex mt-6 space-x-4">
           <button class="w-1/2 bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
-          <a href="PHP/register_escuela.php"> Registrar mi escuela </a>
+          <a href="register_escuela.php"> Registrar mi escuela </a>
           </button>
           <button class="w-1/2 bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
           <a href="aliados.php">Ver escuelas </a>

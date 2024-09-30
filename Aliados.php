@@ -24,7 +24,12 @@ $schools = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="shortcut icon" href="../IMG/design/ca.jpg" type="image/x-icon">
 
 </head>
-<body class="bg-black-900 text-white">
+<body class="bg-black relative min-h-screen overflow-y-auto">
+   <!-- Círculos de gradiente -->
+   <div class="fixed w-96 h-96 bg-orange-300 top-0 left-0 rounded-full filter blur-[100px] opacity-30 animate-blob"></div>
+   <div class="fixed w-96 h-96 bg-orange-400 top-1/4 right-0 rounded-full filter blur-[100px] opacity-20 animate-blob animation-delay-2000"></div>
+   <div class="fixed w-96 h-96 bg-orange-300 bottom-0 left-1/4 rounded-full filter blur-[100px] opacity-30 animate-blob animation-delay-4000"></div>
+   <div class="fixed w-96 h-96 bg-orange-400 bottom-1/4 right-1/4 rounded-full filter blur-[100px] opacity-20 animate-blob"></div>
      <!-- Barra de navegación -->
      <div class="container mx-auto p-4">
       <div class="navbar bg-transparent flex justify-between">
@@ -61,13 +66,13 @@ $schools = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <?php foreach ($schools as $escuela): ?>
-                <div class="card bg-base-200 shadow-xl">
+                <div class="card bg-black  shadow-lg shadow-orange-500/50">
                     <figure><img src="<?= htmlspecialchars($escuela['escuela_imagen_url']) ?>" alt="<?= htmlspecialchars($escuela['escuela_nombre']) ?>" class="w-full h-48 object-cover"/></figure>
                     <div class="card-body">
                         <h2 class="card-title text-orange-400"><?= htmlspecialchars($escuela['escuela_nombre']) ?></h2>
                         <p><?= htmlspecialchars(substr($escuela['escuela_descripcion'], 0, 100)) ?>...</p>
                         <div class="card-actions justify-end mt-4">
-                         <button class="btn bg-orange-400 text-white"><a href="escuela.php?id=<?= $escuela['escuela_id'] ?>">Entrar</a></button>
+                         <button class="btn bg-orange-400 text-white"><a href="escuela_detalle.php?id=<?= $escuela['escuela_id'] ?>">Entrar</a></button>
 
                         </div>
                     </div>
