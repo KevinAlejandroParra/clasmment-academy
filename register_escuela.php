@@ -79,54 +79,47 @@
             <form id="registerForm" action="PHP/register_escuela.php" method="post" class="space-y-4">
     <div class="flex space-x-2">
         <div class="flex flex-col w-1/2">
-            <label for="escuela_id" class="text-sm font-semibold text-orange-400"></label>
-            <input type="text" id="escuela_id" name="escuela_id" placeholder="NIT Escuela" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
+            <label for="escuela_nit" class="text-sm font-semibold text-orange-400">Nit de su escuela</label>
+            <input type="text" id="escuela_nit" name="escuela_nit" placeholder="xxxxxxxxx-x" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
         </div>
         <div class="flex flex-col w-1/2">
             <label for="escuela_nombre" class="text-sm font-semibold text-orange-400">Nombre de su escuela</label>
-            <input type="text" id="escuela_nombre" name="escuela_nombre" placeholder="Nombre de la Escuela" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
+            <input type="text" id="escuela_nombre" name="escuela_nombre" placeholder="nombre o abreviatura" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
         </div>
     </div>
-
     <div class="flex space-x-2">
-        <div class="flex flex-col w-1/2">
-            <label for="escuela_nit" class="text-sm font-semibold text-orange-400">NIT de su escuela</label>
-            <select id="escuela_documento" name="escuela_documento" placeholder="Documento de la Escuela" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
-                <option value="NIT">NIT</option>
-            </select>    
-        </div>
         <div class="flex flex-col w-1/2">
             <label for="escuela_descripcion" class="text-sm font-semibold text-orange-400">Descripcion de su escuela</label>
-            <input type="text" id="escuela_descripcion" name="escuela_descripcion" placeholder="Descripción de la Escuela" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
+            <input type="text" id="escuela_descripcion" name="escuela_descripcion" placeholder="Breve descripción" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
         </div>
-    </div>
 
-    <div class="flex space-x-2">
         <div class="flex flex-col w-1/2">
             <label for="escuela_telefono" class="text-sm font-semibold text-orange-400">Telefono de su escuela</label>
             <input type="tel" id="escuela_telefono" name="escuela_telefono" placeholder="Número de contacto" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
         </div>
+    </div>
+        <div class="flex space-x-2">
         <div class="flex flex-col w-1/2">
             <label for="escuela_direccion" class="text-sm font-semibold text-orange-400">Dirección de su escuela</label>
-            <input type="text" id="escuela_direccion" name="escuela_direccion" placeholder="Direccion de su Escuela" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
+            <input type="text" id="escuela_direccion" name="escuela_direccion" placeholder="Direccion especifica" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
         </div>
-    </div>
-
-    <div class="flex space-x-2">
         <div class="flex flex-col w-1/2">
             <label for="escuela_correo" class="text-sm font-semibold text-orange-400">Correo de su escuela</label>
-            <input type="email" id="escuela_correo" name="escuela_correo" placeholder="Correo de su Escuela" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
+            <input type="email" id="escuela_correo" name="escuela_correo" placeholder="Correo activo" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
         </div>
+    </div>
+    <div class="flex space-x-2">
         <div class="flex flex-col w-1/2">
             <label for="escuela_password" class="text-sm font-semibold text-orange-400">Contraseña de su escuela</label>
             <input type="password" id="escuela_password" name="escuela_password" placeholder="Ingrese una contraseña segura" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
         </div>
-    </div>
 
-    <div class="flex flex-col">
+    <div class="flex flex-col w-1/2">
         <label for="escuela_fecha_creacion" class="text-sm font-semibold text-orange-400">Fecha de creación de su escuela</label>
         <input type="date" id="escuela_fecha_creacion" name="escuela_fecha_creacion" class="w-full px-4 py-2 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
     </div>
+    </div>
+    
               <!-- Términos y Condiciones-->
               <div class="py-2 flex items-center">
             <div class="">

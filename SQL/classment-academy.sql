@@ -199,7 +199,7 @@ INSERT INTO `usuarios` (`usuario_documento`, `usuario_tipo_documento`, `usuario_
 ('1003003003', 'CC', 'Carlos', 'Rodríguez', 'carlos.rodriguez@email.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '3005555555', 'Carrera 345, Ciudad C', '1988-03-25', 'IMG/usuarios/nf.jpg', 3, 3),
 ('1004004004', 'CC', 'Ana', 'Martínez', 'ana.martinez@email.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '3007777777', 'Diagonal 678, Ciudad A', '1992-12-10', 'IMG/usuarios/nf.jpg', 4, 1),
 ('1004004005', 'CC', 'Marco', 'Gonzalez', 'marco@email.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '3087777777', 'Diagonal 788, Ciudadela colsubsidio', '1999-12-10', 'IMG/usuarios/nf.jpg', 2, 1),
-('1025531531', 'CC', 'Daniel', 'Gomez', 'danielbernalg.04@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '3001234565', 'Calle 189, tayogo', '1991-05-15', 'IMG/usuarios/nf.jpg', 5, 1);
+('1025531522', 'CC', 'Daniel', 'Gomez', 'danielbernalg.04@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '3001234565', 'Calle 189, tayogo', '1991-05-15', 'IMG/usuarios/nf.jpg', 5, 1);
 
 
 -- Datos de prueba para la tabla `cursos`

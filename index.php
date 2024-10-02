@@ -278,7 +278,7 @@
           alt="escuela"
         />
       </div>
-      <div class="flex flex-col justify-center text-white">
+      <div class="flex flex-col justify-center text-white z-10">
         <div class="text-4xl tracking-wide leading-tight font-extrabold">Eleva tu emprendimiento a un 200%</div>
         <div class="text-4xl tracking-wide leading-tight font-bold">Unete a nuestra comunidad</div>
         <div class="flex mt-6 space-x-4">
@@ -305,7 +305,7 @@
                 </div>
             </div>
             
-            <div class="bg-black rounded-lg shadow-lg p-8 bg-black">
+            <div class="bg-black rounded-lg shadow-lg p-8 bg-black ">
                 <h3 class="text-2xl font-semibold mb-4 text-orange-400">Justificación</h3>
                 <ul class="text-white space-y-4">
                     <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Brindamos visibilidad a escuelas pequeñas, generando equidad y nuevas oportunidades.</li>
