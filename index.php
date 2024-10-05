@@ -282,12 +282,8 @@
         <div class="text-4xl tracking-wide leading-tight font-extrabold">Eleva tu emprendimiento a un 200%</div>
         <div class="text-4xl tracking-wide leading-tight font-bold">Unete a nuestra comunidad</div>
         <div class="flex mt-6 space-x-4">
-          <button class="w-1/2 bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
-          <a href="register_escuela.php"> Registrar mi escuela </a>
-          </button>
-          <button class="w-1/2 bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
-          <a href="aliados.php">Ver escuelas </a>
-          </button>
+          <a href="register_escuela.php" class="w-1/2 btn btn-md rounded-md bg-orange-500 text-white text-lg hover:bg-orange-600 border-none py-2 px-4">Registrar mi escuela</a>
+          <a href="aliados.php" class="w-1/2 btn btn-md rounded-md bg-orange-500 text-white text-lg hover:bg-orange-600 border-none py-2 px-4">Ver escuelas</a>
         </div>
       </div>
     </div>
