@@ -1,6 +1,7 @@
 <?php
-require 'PHP/conexion.php';
+require_once __DIR__ . '/../../PUBLIC/Config/conexion.php';
 session_start();
+
 // verificar si el usuario se ha autenticado
 if (!isset($_SESSION['usuario_documento'])) {
     header("Location: login.php");
@@ -44,7 +45,7 @@ try {
         if (isset($_POST['update'])) {
             // Manejo de la imagen de perfil
             if (isset($_FILES['usuario_imagen_url']) && $_FILES['usuario_imagen_url']['error'] == 0) {
-                $usuario_imagen_url = '/IMG/usuarios/' . time() . '_' . $_FILES['usuario_imagen_url']['name'];
+                $usuario_imagen_url = '..PUBLIC/Img/usuarios/' . time() . '_' . $_FILES['usuario_imagen_url']['name'];
                 move_uploaded_file($_FILES['usuario_imagen_url']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . $usuario_imagen_url);
             } else {
                 $usuario_imagen_url = $user['usuario_imagen_url'];
@@ -132,14 +133,14 @@ try {
     <div class="container mx-auto p-4">
       <div class="navbar bg-transparent flex justify-between">
         <div class="navbar-start">
-          <a href="index.php" class="btn btn-ghost">
-            <img src="../IMG/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
+          <a href="../PUBLIC/index.php" class="btn btn-ghost">
+            <img src="../PUBLIC/Img/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
             <h1 class="text-4xl font-bold" data-aos="zoom-in">Classment Academy</h1>
           </a>
         </div>
         <div class="navbar-end hidden lg:flex pl-10pr-32" data-aos="zoom-in">
           <ul class="menu menu-horizontal px-1" data-aos="zoom-in">
-            <li><a href="index.php">Inicio</a></li>
+            <li><a href="../PUBLIC/index.php">Inicio</a></li>
             <li>
               <details>
                 <summary>Servicios</summary>
@@ -212,7 +213,7 @@ try {
                             </a>
                             <?php endif; ?>
                        
-                            <a href="PHP/logout.php" class="btn btn-secondary">
+                            <a href="../APP/Views/Helpers/logout.php" class="btn btn-secondary">
                               <i class="fas fa-sign-out-alt mr-2"></i>Cerrar Sesión
                                </a>
 

@@ -1,6 +1,6 @@
 <?php
         session_start(); 
-        require "./PHP/conexion.php";
+        require "./Config/conexion.php";
 
         $stmt = $conn->prepare("
         SELECT c.curso_id, c.curso_nombre, c.curso_descripcion, c.curso_imagen_url, c.curso_precio, 
@@ -31,7 +31,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="shortcut icon" href="../IMG/logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="./Img/logo.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
@@ -86,7 +86,7 @@
         </ul>
       </div>
       <a href="index.php" class="btn btn-ghost">
-        <img src="../IMG/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
+        <img src="./Img/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
         <h1 class="text-4xl font-bold" data-aos="zoom-in">Classment Academy</h1>
       </a>
     </div>
@@ -108,7 +108,7 @@
     <div class="navbar-end">
       <a class="btn-ghost">
         <?php if(isset($_SESSION['usuario_documento'])): ?>
-          <a href="perfil_usuario.php" class="flex items-center space-x-2 text-xl pr-32" data-aos="zoom-in">
+          <a href="../APP/Views/Crud/perfil_usuario.php" class="flex items-center space-x-2 text-xl pr-32" data-aos="zoom-in">
             <span>Mi Perfil</span>
             <i class="fas fa-user-circle text-3xl"></i>
           </a>

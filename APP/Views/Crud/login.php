@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "PHP/conexion.php";
+require '../PUBLIC/Config/conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     header('Content-Type: application/json');
