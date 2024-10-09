@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../PUBLIC/Config/conexion.php';
+require "../../../PUBLIC/Config/conexion.php";
 session_start();
 
 // verificar si el usuario se ha autenticado
@@ -45,7 +45,7 @@ try {
         if (isset($_POST['update'])) {
             // Manejo de la imagen de perfil
             if (isset($_FILES['usuario_imagen_url']) && $_FILES['usuario_imagen_url']['error'] == 0) {
-                $usuario_imagen_url = '..PUBLIC/Img/usuarios/' . time() . '_' . $_FILES['usuario_imagen_url']['name'];
+                $usuario_imagen_url = '../../../PUBLIC/Img/' . time() . '_' . $_FILES['usuario_imagen_url']['name'];
                 move_uploaded_file($_FILES['usuario_imagen_url']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . $usuario_imagen_url);
             } else {
                 $usuario_imagen_url = $user['usuario_imagen_url'];
@@ -133,8 +133,8 @@ try {
     <div class="container mx-auto p-4">
       <div class="navbar bg-transparent flex justify-between">
         <div class="navbar-start">
-          <a href="../PUBLIC/index.php" class="btn btn-ghost">
-            <img src="../PUBLIC/Img/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
+          <a href="../../../PUBLIC/index.php" class="btn btn-ghost">
+            <img src="../../../PUBLIC/IMG/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
             <h1 class="text-4xl font-bold" data-aos="zoom-in">Classment Academy</h1>
           </a>
         </div>
@@ -208,7 +208,7 @@ try {
                                 <i class="fas fa-edit mr-2"></i>Editar Perfil
                             </label>
                             <?php if ($user['rol_id'] == 5): ?>
-                             <a href="/escuela_perfil.php" class="btn btn-primary ">
+                             <a href="../Crud/escuela_perfil.php" class="btn btn-primary ">
                                 <i class="fa-solid fa-school"></i>Ver mi escuela
                             </a>
                             <?php endif; ?>

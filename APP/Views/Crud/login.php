@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../PUBLIC/Config/conexion.php';
+require '../../../PUBLIC/Config/conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     header('Content-Type: application/json');
@@ -106,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div class="bubble" style="left: 90%; animation-duration: 14s; animation-delay: 1s;"></div>
   </div>
   <!-- boton de retroceso -->
-  <a href="index.php" class="fixed top-4 left-4 bg-orange-500 hover:bg-orange-800 shadow-lg shadow-orange-500/50 text-black font-bold py-2 px-4 rounded-lg transition duration-200 flex items-center space-x-2 shadow-lg z-50">
+  <a href="../../../PUBLIC/index.php" class="fixed top-4 left-4 bg-orange-500 hover:bg-orange-800 shadow-lg shadow-orange-500/50 text-black font-bold py-2 px-4 rounded-lg transition duration-200 flex items-center space-x-2 shadow-lg z-50">
             <i class="fas fa-arrow-left"></i>
             <span>Volver</span>
         </a>  

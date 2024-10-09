@@ -1,5 +1,5 @@
 <?php
-require "./PHP/conexion.php";
+require '../../../PUBLIC/Config/conexion.php';
 
 // Obtener el ID del curso de la URL
 $curso_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
@@ -57,16 +57,16 @@ try {
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="shortcut icon" href="IMG/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../IMG/logo.png" type="image/x-icon">
 </head>
 <body class="bg-black font-sans relative min-h-screen overflow-y-auto">
       <!-- Barra de navegación -->
       <div class="container mx-auto p-4">
       <div class="navbar bg-transparent flex justify-between">
         <div class="navbar-start">
-          <a href="index.php" class="btn btn-ghost">
-            <img src="../IMG/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
-            <h1 class="text-4xl font-bold" data-aos="zoom-in">Classment Academy</h1>
+        <a href="../../../PUBLIC/index.php" class="btn btn-ghost">
+        <img src="../../../PUBLIC/IMG/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
+          <h1 class="text-4xl font-bold" data-aos="zoom-in">Classment Academy</h1>
           </a>
         </div>
         <div class="navbar-end hidden lg:flex pl-10pr-32" data-aos="zoom-in">

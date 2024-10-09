@@ -1,6 +1,6 @@
 <?php
 session_start();
-require './PHP/conexion.php';
+require "../../../PUBLIC/Config/conexion.php";
 
 
 // Verificar si hay una escuela logueada

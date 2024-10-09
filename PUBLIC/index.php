@@ -127,7 +127,7 @@
   <section class="hero-section flex items-center justify-center relative pb-8 pl-36 " id="hero-section" data-aos="fade-up">
     <div class="hero-content flex-col lg:flex-row-reverse pr-48">
     <video
-      src="../IMG/design/people.webm"
+      src="./Img/design/people.webm"
       class="max-w-sm  pl-32" data-aos="zoom-in" 
       autoplay muted loop
       ></video>
@@ -182,7 +182,7 @@
                         <p class="text-xs">Escuela: <?= htmlspecialchars($course['escuela_nombre']) ?></p>
                         <p class="text-lg font-bold">$<?= number_format($course['curso_precio'], 2) ?></p>
                         <div class="card-actions justify-end">
-                          <a href="curso_detalle.php?id=<?= $course['curso_id'] ?>" class="btn btn-sm btn-primary bg-orange-400 hover:bg-orange-500 border-none rounded-lg">Ver Curso</a>
+                          <a href="../APP/Views/Crud/curso_detalle.php?id=<?= $course['curso_id'] ?>" class="btn btn-sm btn-primary bg-orange-400 hover:bg-orange-500 border-none rounded-lg">Ver Curso</a>
                         </div>
                       </div>
                     </div>
@@ -240,7 +240,7 @@
                         <p class="text-xs">Contacto: <?= htmlspecialchars($school['escuela_telefono']) ?></p>
                         <p class="text-lg font-bold"><?= htmlspecialchars($school['escuela_direccion']) ?></p>
                         <div class="card-actions justify-end">
-                          <a href="escuela_detalle.php?id=<?= $school['escuela_id'] ?>" class="btn btn-sm rounded-lg btn-primary bg-orange-400 hover:bg-orange-500 border-none">Ver Escuela</a>
+                          <a href="../APP/Views/Crud/escuela_detalle.php?id=<?= $school['escuela_id'] ?>" class="btn btn-sm rounded-lg btn-primary bg-orange-400 hover:bg-orange-500 border-none">Ver Escuela</a>
                         </div>
                       </div>
                     </div>

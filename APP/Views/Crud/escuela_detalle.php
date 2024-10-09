@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "./PHP/conexion.php";
+require "../../../PUBLIC/Config/conexion.php";
 
 // Verificar si se ha proporcionado un ID de escuela
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
@@ -65,7 +65,7 @@ try {
       <div class="navbar bg-transparent flex justify-between">
         <div class="navbar-start">
           <a href="index.php" class="btn btn-ghost">
-            <img src="../IMG/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
+        <img src="../../../PUBLIC/IMG/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
             <h1 class="text-4xl font-bold" data-aos="zoom-in">Classment Academy</h1>
           </a>
         </div>
