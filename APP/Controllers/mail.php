@@ -1,9 +1,8 @@
 <?php
-require "conexion.php";
+require "../../PUBLIC/config/conexion.php";
 require_once (__DIR__ . '/PHPMailer/Exception.php');
 require_once (__DIR__ . '/PHPMailer/PHPMailer.php');
 require_once (__DIR__ . '/PHPMailer/SMTP.php');
-
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -66,7 +65,7 @@ if ($usuario_correo) {
                         <p>Has solicitado recuperar tu contraseña. No te preocupes, ¡estamos aquí para ayudarte! 😊</p>
                         <p>Por favor, haz clic en el siguiente botón para restablecer tu contraseña:</p>
                         <p style='text-align: center;'>
-                            <a href='http://localhost:3000/PHP/reset_password.php?token=$token' class='button'>Restablecer contraseña 🔑</a>
+                            <a href='http://localhost:3000/APP/Models/reset_password.php?token=$token' class='button'>Restablecer contraseña 🔑</a>
                         </p>
                         <p><strong>Nota:</strong> Este enlace expirará en 1 hora por razones de seguridad. ⏳</p>
                         <p>Si no has solicitado este cambio, por favor ignora este correo o contacta con nuestro equipo de soporte.</p>
@@ -80,7 +79,7 @@ if ($usuario_correo) {
             </body>
             </html>
             ";
-            $mail->AltBody = 'hola puedes revisar este enlace para restablecer tu contraseña: http://localhost:3000/PHP/reset_password.php?token=' . $token;
+            $mail->AltBody = 'hola puedes revisar este enlace para restablecer tu contraseña: http://localhost:3000/APP/Models/reset_password.php?token=' . $token;
             $mail->send();
             echo 'Se ha enviado un correo con instrucciones para restablecer tu contraseña.';
         } catch (Exception $e) {

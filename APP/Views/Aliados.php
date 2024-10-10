@@ -1,5 +1,5 @@
 <?php
-require 'PHP/conexion.php';
+require '../../PUBLIC/Config/conexion.php';
 
 
 $adminExcluir = 4;
@@ -21,7 +21,7 @@ $schools = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="shortcut icon" href="../IMG/design/ca.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="../../PUBLIC/Img/design/ca.jpg" type="image/x-icon">
 
 </head>
 <body class="bg-black relative min-h-screen overflow-y-auto">
@@ -34,19 +34,19 @@ $schools = $stmt->fetchAll(PDO::FETCH_ASSOC);
      <div class="container mx-auto p-4">
       <div class="navbar bg-transparent flex justify-between">
         <div class="navbar-start">
-          <a href="index.php" class="btn btn-ghost">
-            <img src="../IMG/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
+          <a href="../../PUBLIC/index.php" class="btn btn-ghost">
+            <img src="../../PUBLIC/index.php" alt="logo" class="w-f h-full" data-aos="zoom-in">
             <h1 class="text-4xl font-bold" data-aos="zoom-in">Classment Academy</h1>
           </a>
         </div>
         <div class="navbar-end hidden lg:flex pl-10pr-32" data-aos="zoom-in">
           <ul class="menu menu-horizontal px-1" data-aos="zoom-in">
-            <li><a href="index.php">Inicio</a></li>
+            <li><a href="../../PUBLIC/index.php">Inicio</a></li>
             <li>
               <details>
                 <summary>Servicios</summary>
                 <ul class="p-2 bg-base-100">
-                  <li><a href="escuelas.php">Escuelas</a></li>
+                  <li><a href="../../PUBLIC/index.php#title-schools">Escuelas</a></li>
                   <li><a href="cursos.php">Cursos</a></li>
                 </ul>
               </details>
@@ -60,7 +60,7 @@ $schools = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="container mx-auto p-4">
         <h1 class="text-4xl font-bold mb-8 text-center text-orange-400">Escuelas Aliadas</h1>
         <div class="text-center mb-8">
-    <a href="register_escuela.php" class="btn bg-orange-400 hover:bg-orange-500 text-white">
+    <a href="../Views/Crud/register_escuela.php" class="btn bg-orange-400 hover:bg-orange-500 text-white">
         <i class="fas fa-plus mr-2"></i>Crear Nueva Escuela
     </a>
 </div>
@@ -72,7 +72,7 @@ $schools = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <h2 class="card-title text-orange-400"><?= htmlspecialchars($escuela['escuela_nombre']) ?></h2>
                         <p><?= htmlspecialchars(substr($escuela['escuela_descripcion'], 0, 100)) ?>...</p>
                         <div class="card-actions justify-end mt-4">
-                         <button class="btn bg-orange-400 text-white"><a href="escuela_detalle.php?id=<?= $escuela['escuela_id'] ?>">Entrar</a></button>
+                         <button class="btn bg-orange-400 text-white"><a href="../Views/Crud/escuela_detalle.php?id=<?= $escuela['escuela_id'] ?>">Entrar</a></button>
 
                         </div>
                     </div>

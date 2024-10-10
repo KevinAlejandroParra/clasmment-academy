@@ -1,5 +1,5 @@
 <?php
-require "conexion.php";
+require "../../PUBLIC/config/conexion.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {

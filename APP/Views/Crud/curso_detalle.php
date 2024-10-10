@@ -43,7 +43,7 @@ try {
     $estudiantes_matriculados = $estudiantes_matricula;
 } catch (Exception $e) {
     // Manejar el error, por ejemplo, redirigir a la página principal
-    header("Location: index.php");
+    header("Location: ../../../PUBLIC/index.php");
     exit();
 }
 ?>

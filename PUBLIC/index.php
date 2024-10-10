@@ -113,7 +113,7 @@
             <i class="fas fa-user-circle text-3xl"></i>
           </a>
         <?php else: ?>
-          <a href="login.php" class="flex items-center space-x-2 text-xl pr-32" data-aos="zoom-in">
+          <a href="../APP/Views/Crud/login.php" class="flex items-center space-x-2 text-xl pr-32" data-aos="zoom-in">
             <span>Ingresa</span>
             <i class="fas fa-sign-in-alt text-3xl"></i>
           </a>
@@ -141,10 +141,10 @@
 
       </p>
       <div class="flex space-x-4" data-aos="zoom-in">
-      <a href="login.php"><button class="btn rounded-lg bg-orange-500 shadow-lg shadow-orange-500/50"data-aos="zoom-in">Empieza ahora!</button></a>
-      <a href="login_escuela.php"><button class="btn rounded-lg bg-orange-500 shadow-lg shadow-orange-500/50"data-aos="zoom-in">Soy escuela</button></a>
+      <a href="../APP/Views/Crud/login.php"><button class="btn rounded-lg bg-orange-500 shadow-lg shadow-orange-500/50"data-aos="zoom-in">Empieza ahora!</button></a>
+      <a href="../APP/Views/Crud/login_escuela.php"><button class="btn rounded-lg bg-orange-500 shadow-lg shadow-orange-500/50"data-aos="zoom-in">Soy escuela</button></a>
       <?php if(isset($_SESSION['usuario_documento']) && $_SESSION['usuario_documento'] == '1025531531'): ?>
-        <a href="ADMIN/escuelas.php"><button class="btn rounded-lg bg-orange-500 shadow-lg shadow-orange-500/50"data-aos="zoom-in">Gestionar Escuelas</button></a>
+        <a href="../APP/Views/ADMIN/escuelas.php"><button class="btn rounded-lg bg-orange-500 shadow-lg shadow-orange-500/50"data-aos="zoom-in">Gestionar Escuelas</button></a>
       <?php endif; ?>
       </div>
 
@@ -274,7 +274,7 @@
   <div class="flex justify-center p-8 "data-aos="fade-up" >
     <div class="grid grid-col-1 gap-4 pr-6">
         <img class="rounded-lg shadow-lg shadow-orange-500/50"
-          src="IMG/design/escuelanew.png"
+          src="../../PUBLIC/Img/design/escuelanew.png"
           alt="escuela"
         />
       </div>
@@ -282,8 +282,8 @@
         <div class="text-4xl tracking-wide leading-tight font-extrabold">Eleva tu emprendimiento a un 200%</div>
         <div class="text-4xl tracking-wide leading-tight font-bold">Unete a nuestra comunidad</div>
         <div class="flex mt-6 space-x-4">
-          <a href="register_escuela.php" class="w-1/2 btn btn-md rounded-md bg-orange-500 text-white text-lg hover:bg-orange-600 border-none py-2 px-4">Registrar mi escuela</a>
-          <a href="aliados.php" class="w-1/2 btn btn-md rounded-md bg-orange-500 text-white text-lg hover:bg-orange-600 border-none py-2 px-4">Ver escuelas</a>
+          <a href="../APP/Views/Crud/register_escuela.php" class="w-1/2 btn btn-md rounded-md bg-orange-500 text-white text-lg hover:bg-orange-600 border-none py-2 px-4">Registrar mi escuela</a>
+          <a href="../APP/Views/aliados.php" class="w-1/2 btn btn-md rounded-md bg-orange-500 text-white text-lg hover:bg-orange-600 border-none py-2 px-4">Ver escuelas</a>
         </div>
       </div>
     </div>

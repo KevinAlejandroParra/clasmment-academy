@@ -64,14 +64,14 @@ try {
       <div class="container mx-auto p-4">
       <div class="navbar bg-transparent flex justify-between">
         <div class="navbar-start">
-          <a href="index.php" class="btn btn-ghost">
+          <a href="../../../PUBLIC/index.php" class="btn btn-ghost">
         <img src="../../../PUBLIC/IMG/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
             <h1 class="text-4xl font-bold" data-aos="zoom-in">Classment Academy</h1>
           </a>
         </div>
         <div class="navbar-end hidden lg:flex pl-10pr-32" data-aos="zoom-in">
           <ul class="menu menu-horizontal px-1" data-aos="zoom-in">
-            <li><a href="index.php">Inicio</a></li>
+            <li><a href="../../../PUBLIC/index.php">Inicio</a></li>
             <li>
               <details>
                 <summary>Servicios</summary>

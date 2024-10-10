@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "PHP/conexion.php";
+require '../../../PUBLIC/Config/conexion.php';
 
 if($_SERVER["REQUEST_METHOD"] === "POST"){
 
@@ -52,7 +52,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     <title>Login Escuela</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="shortcut icon" href="IMG/logo_mini.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../PUBLIC/Img/logo_mini.png" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
@@ -113,7 +113,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     <div class="bubble" style="left: 90%; animation-duration: 14s; animation-delay: 1s;"></div>
   </div>
 
-  <a href="index.php" class="fixed top-4 left-4 bg-orange-500 hover:bg-orange-800 shadow-lg shadow-orange-500/50 text-black font-bold py-2 px-4 rounded-lg transition duration-200 flex items-center space-x-2 shadow-lg z-50">
+  <a href="../../../PUBLIC/index.php" class="fixed top-4 left-4 bg-orange-500 hover:bg-orange-800 shadow-lg shadow-orange-500/50 text-black font-bold py-2 px-4 rounded-lg transition duration-200 flex items-center space-x-2 shadow-lg z-50">
             <i class="fas fa-arrow-left"></i>
             <span>Volver</span>
         </a>  
@@ -183,7 +183,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                     color: '#F97316'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = 'index.php';
+                        window.location.href = '../../../PUBLIC/index.php';
                     }
                 });
             } else {

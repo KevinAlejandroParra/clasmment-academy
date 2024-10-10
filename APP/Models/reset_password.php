@@ -1,5 +1,5 @@
 <?php
-require "conexion.php";
+require "../../PUBLIC/config/conexion.php";
 
 $token = isset($_GET['token']) ? $_GET['token'] : null;
 $error = null;
@@ -65,8 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="container mx-auto p-4">
       <div class="navbar bg-transparent flex items-center justify-center">
         <div class="navbar-start">
-        <a href="index.php" class="btn btn-ghost">
-        <img src="../IMG/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
+        <a href="../../PUBLIC/index.php" class="btn btn-ghost">
+        <img src="../../PUBLIC/Img/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
         <h1 class="text-5xl font-bold" data-aos="zoom-in"> Classment Academy</h1>
       </a>
         </div>
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <div class="flex flex-row items-center ">
                             <div class="w-1/2  flex justify-start">
                                 <img
-                                src="../IMG/design/futbolista.png"
+                                src="../../PUBLIC/Img/design/futbolista.png"
                                 class="max-w-sm pr-10 h-auto" data-aos="zoom-in" />
                             </div>
                             <div class="w-1/2 px-10 mt-4">

@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../../PUBLIC/Img/design/ca.jpg" type="image/x-icon">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 </head>
@@ -16,8 +17,8 @@
     <div class="container mx-auto p-4">
       <div class="navbar bg-transparent flex items-center justify-center">
         <div class="navbar-start">
-        <a href="index.php" class="btn btn-ghost">
-        <img src="../IMG/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
+        <a href="../../PUBLIC/index.php" class="btn btn-ghost">
+        <img src="../../PUBLIC/Img/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
         <h1 class="text-5xl font-bold" data-aos="zoom-in"> Classment Academy</h1>
       </a>
         </div>
@@ -28,7 +29,7 @@
       <div class="bg-black p-10 rounded-lg backdrop-blur-lg shadow-lg space-y-6">   
       <div class="flex flex-row items-center ">
         <div class="w-1/2 px-10">
-          <form action="PHP/mail.php" method="POST">
+          <form action="../Controllers/mail.php" method="POST">
             <h2 class="text-3xl font-bold tracking-wide leading-normal text-orange-300 aos-init aos-animate">Por favor, ingresa tu correo electrónico asociado a tu cuenta.</h2>
             <div class="form-control mt-6">
               <label class="label">
@@ -43,7 +44,7 @@
         </div>
         <div class="w-1/2  flex justify-end">
           <img
-          src="../IMG/design/fisoculturistas.png"
+          src="../../PUBLIC/Img/design/fisoculturistas.png"
           class="max-w-5xl " data-aos="zoom-in" />
         </div>
       </div>

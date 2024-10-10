@@ -1,6 +1,6 @@
 <?php
 
-require "conexion.php";
+require "../../PUBLIC/config/conexion.php";
 
 try {
     // Obtener roles

@@ -187,10 +187,10 @@ CREATE INDEX idx_mensaje_destinatario ON `mensajes` (`destinatario_documento`, `
 
 -- Datos de prueba para la tabla `escuelas`
 INSERT INTO `escuelas` (`escuela_nombre`, `escuela_nit`, `escuela_descripcion`, `escuela_telefono`, `escuela_direccion`, `escuela_correo`, `escuela_password`, `escuela_fecha_creacion`, `escuela_estado`, `escuela_imagen_url`) VALUES
-('GO FIT', '123456789-1', 'Entrenamiento y acondicionamiento fisico', '1234567890', 'Calle 123, Bogota D.C.', 'danielbernalg.04@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', '/PUBLIC/Img/escuelas/gofit.jpeg'),
-('Soy Fitness', '987654321-1', 'Yoga, Pilates y mas', '9876543210', 'Avenida 456, primera de mayo con boyaca', 'soyfitness@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', '/PUBLIC/Img/escuelas/soyfitness.jpg'),
-('Taekwondo', '555555555-1', 'Cursos de taekwondo para todos los niveles', '5555555555', 'Plaza Principal, Carrera 10 con circunvalar', 'taekwondo@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', '/PUBLIC/Img/escuelas/taekwondo.jpg'),
-('Administrativo', '1234567891', 'Administracion classment academy', '1234567891', 'sena complejo sur, Bogota D.C.', 'classmentacademy@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', '/PUBLIC/Img/escuelas/administrativo.jpg');
+('GO FIT', '123456789-1', 'Entrenamiento y acondicionamiento fisico', '1234567890', 'Calle 123, Bogota D.C.', 'danielbernalg.04@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', '../../PUBLIC/Img/escuelas/gofit.jpeg'),
+('Soy Fitness', '987654321-1', 'Yoga, Pilates y mas', '9876543210', 'Avenida 456, primera de mayo con boyaca', 'soyfitness@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', '../../PUBLIC/Img/escuelas/soyfitness.jpg'),
+('Taekwondo', '555555555-1', 'Cursos de taekwondo para todos los niveles', '5555555555', 'Plaza Principal, Carrera 10 con circunvalar', 'taekwondo@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', '../../PUBLIC/Img/escuelas/taekwondo.jpg'),
+('Administrativo', '1234567891', 'Administracion classment academy', '1234567891', 'sena complejo sur, Bogota D.C.', 'classmentacademy@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', '../../PUBLIC/Img/escuelas/administrativo.jpg');
 
 -- Datos de prueba para la tabla `usuarios`
 INSERT INTO `usuarios` (`usuario_documento`, `usuario_tipo_documento`, `usuario_nombre`, `usuario_apellido`, `usuario_correo`, `usuario_password`, `usuario_telefono`, `usuario_direccion`, `usuario_nacimiento`, `usuario_imagen_url`, `rol_id`, `escuela_id`) VALUES
@@ -211,7 +211,7 @@ INSERT INTO `cursos` (`curso_nombre`, `curso_descripcion`, `curso_precio`, `curs
 ('Defensa Personal', 'Programa de defensa personal para mejorar tu resistencia', 500000, 15, 20, 14, '/PUBLIC/Img/cursos/defensa_personal.jpg', '2024-09-01', '2025-01-15', 1, 'GO FIT, Carrera 45b, diagonal 60 Sur'),
 
 -- Cursos para Soy Fitness
-('Entrenamiento de Fuerza', 'Clases de entrenamiento de fuerza para tonificar el cuerpo', 650000, 15, 20, 18, 'PUBLIC/Img/cursos/entrenamiento_fuerza.jpeg', '2024-08-15', '2024-12-15', 2, 'Soy Fitness, Calle 45, Ciudad B'),
+('Entrenamiento de Fuerza', 'Clases de entrenamiento de fuerza para tonificar el cuerpo', 650000, 15, 20, 18, '/PUBLIC/Img/cursos/entrenamiento_fuerza.jpeg', '2024-08-15', '2024-12-15', 2, 'Soy Fitness, Calle 45, Ciudad B'),
 ('Zumba', 'Clases de Zumba para quemar calorías y divertirse', 400000, 20, 25, 16, '/PUBLIC/Img/cursos/zumba.jpg', '2024-09-01', '2025-02-28', 2, 'Soy Fitness, Calle 45, Ciudad B'),
 
 -- Cursos para Taekwondo

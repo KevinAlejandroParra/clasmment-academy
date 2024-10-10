@@ -1,6 +1,6 @@
 <?php
 session_start();
 session_destroy();
-header("Location: ../views/login.php");
+header("Location: ../../../../APP/Views/Crud/login.php");
 exit();
 ?>

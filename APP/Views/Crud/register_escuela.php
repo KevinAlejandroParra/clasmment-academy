@@ -6,7 +6,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="shortcut icon" href="../IMG/logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../../PUBLIC/Img/logo.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -65,7 +65,7 @@
     <div class="bubble" style="left: 90%; animation-duration: 14s; animation-delay: 1s;"></div>
 </div>
 <!-- boton de retoceso -->
-<a href="login_escuela.php" class="fixed top-4 left-4 bg-orange-500 hover:bg-orange-800 shadow-lg shadow-orange-500/50 text-black font-bold py-2 px-4 rounded-lg transition duration-200 flex items-center space-x-2 shadow-lg z-50">
+<a href="../Crud/login_escuela.php" class="fixed top-4 left-4 bg-orange-500 hover:bg-orange-800 shadow-lg shadow-orange-500/50 text-black font-bold py-2 px-4 rounded-lg transition duration-200 flex items-center space-x-2 shadow-lg z-50">
             <i class="fas fa-arrow-left"></i>
             <span>Volver</span>
         </a>  
@@ -76,7 +76,7 @@
             <div class="text-center">
                 <h2 class="font-bold text-xl text-white">Registra Tu Escuela</h2>
             </div>
-            <form id="registerForm" action="PHP/register_escuela.php" method="post" class="space-y-4">
+            <form id="registerForm" action="../../Models/register_escuela.php" method="post" class="space-y-4">
     <div class="flex space-x-2">
         <div class="flex flex-col w-1/2">
             <label for="escuela_nit" class="text-sm font-semibold text-orange-400">Nit de su escuela</label>
@@ -151,7 +151,7 @@
     </button>
 
     <div class="text-center">
-        <p class="text-sm text-gray-400">¿Ya tienes una cuenta? <a href="login_escuela.php" class="text-sm text-orange-400">Inicia sesión</a></p>
+        <p class="text-sm text-gray-400">¿Ya tienes una cuenta? <a href="/APP/Views/Crud/login_escuela.php" class="text-sm text-orange-400">Inicia sesión</a></p>
         
 
     </div>
@@ -185,7 +185,7 @@
         
         const formData = new FormData(this);
         
-        fetch('PHP/register_escuela.php', {
+        fetch('../../Models/register_escuela.php', {
             method: 'POST',
             body: formData
         })
@@ -201,7 +201,7 @@
                     color: '#F97316'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = 'index.php';
+                        window.location.href = '../../../PUBLIC/index.php';
                     }
                 });
             } else {

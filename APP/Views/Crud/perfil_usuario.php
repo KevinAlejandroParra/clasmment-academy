@@ -213,7 +213,7 @@ try {
                             </a>
                             <?php endif; ?>
                        
-                            <a href="../APP/Views/Helpers/logout.php" class="btn btn-secondary">
+                            <a href="../../Helpers/logout.php" class="btn btn-secondary">
                               <i class="fas fa-sign-out-alt mr-2"></i>Cerrar Sesión
                                </a>
 
