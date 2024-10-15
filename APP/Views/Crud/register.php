@@ -82,7 +82,7 @@
         </div>
         <div class="max-h-[70vh] overflow-hidden">
         <div class="pr-4 -mr-4 max-h-[70vh] overflow-y-auto">
-        <form id="registerForm" action="PHP/register.php" method="post" class="space-y-4">
+        <form id="registerForm" action="../../Models/register.php" method="post" class="space-y-4">
           <div class="pl-2 flex space-x-2">
             <div class="flex flex-col w-1/2">
               <label for="usuario_nombre" class="text-sm font-semibold text-orange-400">Nombres</label>
@@ -221,7 +221,7 @@
         
         const formData = new FormData(this);
         
-        fetch('PHP/register.php', {
+        fetch('../../Models/register.php', {
             method: 'POST',
             body: formData
         })
@@ -237,7 +237,7 @@
                     color: '#F97316'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = 'index.php';
+                        window.location.href = '../../../PUBLIC/index.php';
                     }
                 });
             } else {

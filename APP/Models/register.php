@@ -42,6 +42,26 @@ try {
             throw new Exception("Todos los campos son obligatorios.");
         }
 
+            // validar numero de telefono
+            if (filter_var($usuario_telefono, FILTER_VALIDATE_INT)) {
+            } else {
+                throw new Exception("El telefono debe ser un valor numerico.");
+            }
+
+            // Sanitizar nombres y apellidos
+            $usuario_apellido = filter_var($usuario_apellido, FILTER_SANITIZE_STRING); 
+            if (preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/u', $usuario_apellido)) {
+            } else {
+                throw new Exception("El apellido debe ser un valor de tipo texto sin caracteres especiales.");
+            }
+            
+            $usuario_nombre = filter_var($usuario_nombre, FILTER_SANITIZE_STRING); 
+            if (preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/u', $usuario_nombre)) {
+            } else {
+                throw new Exception("El nombre debe ser un valor de tipo texto sin caracteres especiales.");
+            }
+            
+
         $insert_query = "INSERT INTO usuarios (usuario_documento, usuario_tipo_documento, usuario_nombre, 
                          usuario_apellido, usuario_correo, usuario_password, usuario_telefono, 
                          usuario_direccion, usuario_nacimiento, rol_id, escuela_id) 
