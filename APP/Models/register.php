@@ -42,7 +42,11 @@ try {
             throw new Exception("Todos los campos son obligatorios.");
         }
 
-            // validar numero de telefono
+            // validar numero de telefono y documento
+            if (filter_var($usuario_documento, FILTER_VALIDATE_INT)) {
+            } else {
+                throw new Exception("El documento debe ser un valor numerico.");
+            }
             if (filter_var($usuario_telefono, FILTER_VALIDATE_INT)) {
             } else {
                 throw new Exception("El telefono debe ser un valor numerico.");
@@ -61,6 +65,7 @@ try {
                 throw new Exception("El nombre debe ser un valor de tipo texto sin caracteres especiales.");
             }
             
+        // Consulta de inserción
 
         $insert_query = "INSERT INTO usuarios (usuario_documento, usuario_tipo_documento, usuario_nombre, 
                          usuario_apellido, usuario_correo, usuario_password, usuario_telefono, 
@@ -70,6 +75,7 @@ try {
 
         $stmt = $conn->prepare($insert_query);
 
+        // Asignar valores a la consulta
         $stmt->bindValue(':documento', $usuario_documento, PDO::PARAM_INT);
         $stmt->bindValue(':tipo_documento', $usuario_tipo_documento, PDO::PARAM_STR);
         $stmt->bindValue(':nombre', $usuario_nombre, PDO::PARAM_STR);
@@ -92,17 +98,13 @@ try {
 
 
     }
-} catch (PDOException $e) {
+} catch (Exception $e) {
     // Revertir la transacción en caso de error
-    if (isset($conn) && $conn->inTransaction()) {
         $conn->rollBack();
-        echo json_encode(["success" => false, "message" => "Error en el registro: " . $e->getMessage()]);
 
-    }
-    $error = "Error de base de datos: " . $e->getMessage();
-}  finally {
-    // Cerrar la conexión
-    $conn = null;
+    // Mostrar el mensaje de error
+    echo json_encode(["success" => false, "message" => "Error en el registro: " . $e->getMessage()]);
+    
 }
 
 ?>

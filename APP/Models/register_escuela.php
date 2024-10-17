@@ -1,9 +1,9 @@
 <?php
 require "../../PUBLIC/config/conexion.php";
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         // Iniciar la transacción
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $conn->beginTransaction();
 
         // Datos del formulario
@@ -22,6 +22,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             empty($escuela_password) || empty($escuela_fecha_creacion)) {
             throw new Exception("Todos los campos son obligatorios.");
         }
+
+                    // validar numero de telefono y nit
+                    if (filter_var($escuela_telefono, FILTER_VALIDATE_INT)) {
+                    } else {
+                        throw new Exception("El telefono debe ser un valor numerico.");
+                    }
+
+                    if (filter_var($escuela_nit, FILTER_VALIDATE_INT)) {
+                    } else {
+                    throw new Exception("El nit debe ser un valor numerico.");
+                }
+        
+                    // Sanitizar nombres y apellidos
+                    $escuela_nombre = filter_var($escuela_nombre, FILTER_SANITIZE_STRING); 
+                    if (preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/u', $escuela_nombre)) {
+                    } else {
+                        throw new Exception("El nombre debe ser un valor de tipo texto sin caracteres especiales.");
+                    }
+                    
+                    $escuela_descripcion = filter_var($escuela_descripcion, FILTER_SANITIZE_STRING); 
+                    if (preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/u', $escuela_descripcion)) {
+                    } else {
+                        throw new Exception("La descripción debe ser un valor de tipo texto sin caracteres especiales.");
+                    }
 
         // Consulta de inserción
         $insert_query = "INSERT INTO `escuelas`(escuela_nombre, escuela_nit, escuela_descripcion, 
@@ -50,6 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Mostrar el mensaje de éxito
         echo json_encode(["success" => true, "message" => "Escuela registrada con éxito"]);
 
+        }
     } catch (Exception $e) {
         // Si hay algún error, revertir la transacción
         $conn->rollBack();
@@ -57,6 +82,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Mostrar el mensaje de error
         echo json_encode(["success" => false, "message" => "Error en el registro: " . $e->getMessage()]);
     }
-}
+
 ?>
 

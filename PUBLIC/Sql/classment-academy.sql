@@ -19,7 +19,7 @@ CREATE TABLE `escuelas` (
   `escuela_direccion` TEXT NOT NULL,
   `escuela_correo` VARCHAR (100)  NOT NULL,
   `escuela_password`  VARCHAR (255) NOT NULL,
-  `escuela_imagen_url` VARCHAR(255) DEFAULT '/IMG/escuelas/nf.jpg',
+  `escuela_imagen_url` VARCHAR(255) DEFAULT '../../PUBLIC/Img/escuelas/nf.jpg',
   `escuela_fecha_creacion` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   `escuela_estado` ENUM('activo', 'inactivo') DEFAULT 'activo'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -35,7 +35,7 @@ CREATE TABLE `usuarios` (
   `usuario_telefono` VARCHAR(20),
   `usuario_direccion` TEXT,
   `usuario_nacimiento` DATE NOT NULL,
-  `usuario_imagen_url` VARCHAR(255) DEFAULT '/IMG/usuarios/nf.jpg',
+  `usuario_imagen_url` VARCHAR(255) DEFAULT '../../PUBLIC/Img/usuarios/nf.jpg',
   `usuario_fecha_creacion` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   `usuario_ultima_actualizacion` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `usuario_estado` ENUM('activo', 'inactivo') DEFAULT 'activo',
@@ -64,7 +64,7 @@ CREATE TABLE `cursos` (
   `curso_cupos` INT NOT NULL,
   `curso_capacidad_maxima` INT NOT NULL,
   `curso_edad_minima` INT NOT NULL DEFAULT 0,
-  `curso_imagen_url` VARCHAR(255) DEFAULT '/IMG/cursos/nf.jpg',
+  `curso_imagen_url` VARCHAR(255) DEFAULT '../../PUBLIC/Img/cursos/nf.jpg',
   -- PENDIENTE POR AGREGAR LA GALERIA DEL CURSO`
   `curso_fecha_inicio` DATE NOT NULL,
   `curso_fecha_fin` DATE NOT NULL,
