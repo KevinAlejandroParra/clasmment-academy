@@ -35,7 +35,7 @@ $schools = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <div class="navbar bg-transparent flex justify-between">
         <div class="navbar-start">
           <a href="../../PUBLIC/index.php" class="btn btn-ghost">
-            <img src="../../PUBLIC/index.php" alt="logo" class="w-f h-full" data-aos="zoom-in">
+            <img src="../../PUBLIC/Img/logo.png" alt="logo" class="w-f h-full" data-aos="zoom-in">
             <h1 class="text-4xl font-bold" data-aos="zoom-in">Classment Academy</h1>
           </a>
         </div>

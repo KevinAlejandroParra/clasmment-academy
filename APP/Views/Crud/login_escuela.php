@@ -62,12 +62,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
       filter: blur(50px);
     }
 
-    body {
-      margin: 0;
-      height: 100vh;
-      background-color: #1e3c72;
-      overflow: hidden;
-    }
+
 
     .bubble-container {
       position: absolute;
@@ -140,7 +135,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 <div class="space-y-2 pb-2">
                     <label for="escuela_password" class="text-sm font-semibold text-orange-400">Contraseña</label>
                       <div class="relative">
-                         <input type="password" id="escuela_password" name="escuela_password" placeholder="Digita lacontraseña" 
+                         <input type="password" id="escuela_password" name="escuela_password" placeholder="Digita la contraseña" 
                          class="w-full px-4 py-3 bg-gray-900/70 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white" required>
                          <i class="fa fa-lock absolute top-1/2 right-3 transform -translate-y-1/2 text-yellow-500"></i>
                       </div>
