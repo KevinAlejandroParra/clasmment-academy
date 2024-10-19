@@ -131,7 +131,7 @@ CREATE TABLE `ordenes_pagos` (
   `orden_pago_monto` DECIMAL(10, 2) NOT NULL,
   `orden_pago_fecha` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   `orden_pago_estado` ENUM('pendiente', 'pagada', 'cancelada') DEFAULT 'pendiente',
-  `orden_pago_fecha_pago` TIMESTAMP NULL,
+  `orden_pago_fecha_plazo` TIMESTAMP NULL,
   `orden_pago_estado_pago` ENUM('pendiente', 'completado', 'fallido') DEFAULT 'pendiente',
   `orden_pago_numero_referencia` VARCHAR(50),
   FOREIGN KEY (`usuario_documento`) REFERENCES `usuarios`(`usuario_documento`),
@@ -176,7 +176,8 @@ INSERT INTO `metodos_pagos` (`metodo_pago_nombre`) VALUES
 ('Tarjeta de Crédito'),
 ('PSE'),
 ('Transferencia Bancaria'),
-('Efectivo');
+('Efecty'),
+('PayPal');
 
 -- Se crean índices adicionales para mejorar el rendimiento
 CREATE INDEX idx_curso_estado ON `cursos` (`curso_estado`);
@@ -252,15 +253,15 @@ INSERT INTO `asistencias` (`matricula_id`, `asistencia_fecha`, `asistencia_estad
 
 -- Datos de prueba para la tabla `ordenes_pagos`
 INSERT INTO `ordenes_pagos` (`usuario_documento`, `curso_id`, `metodo_pago_id`, `orden_pago_monto`, `orden_pago_estado`, `orden_pago_estado_pago`, `orden_pago_numero_referencia`) VALUES
-('1004004005', 1, 1, 500000, 'pagada', 'completado', 'REF001'),
-('1004004005', 2, 2, 750000, 'pagada', 'completado', 'REF002'),
-('1004004004', 3, 3, 600000, 'pendiente', 'pendiente', 'REF003');
+('1004004005', 1, 1, 50000, 'pagada', 'completado', 'REF001'),
+('1004004005', 2, 2, 75000, 'pagada', 'completado', 'REF002'),
+('1004004004', 3, 3, 60000, 'pendiente', 'pendiente', 'REF003');
 
 -- Datos de prueba para la tabla `facturas`
 INSERT INTO `facturas` (`orden_pago_id`, `factura_total`, `factura_estado`) VALUES
-(1, 500000, 'pagada'),
-(2, 750000, 'pagada'),
-(3, 600000, 'emitida');
+(1, 50000, 'pagada'),
+(2, 75000, 'pagada'),
+(3, 60000, 'emitida');
 
 -- Datos de prueba para la tabla `mensajes`
 INSERT INTO `mensajes` (`remitente_documento`, `destinatario_documento`, `mensaje_asunto`, `mensaje_contenido`, `mensaje_leido`, `mensaje_thread_id`) VALUES
