@@ -1,0 +1,110 @@
+[{
+  "_id": {
+    "$oid": "671320330e2094a20e469cd0"
+  },
+  "orden_pago_id": 1,
+  "usuario_documento": 1004004005,
+  "curso_id": 1,
+  "metodo_pago_id": 1,
+  "orden_pago_monto": 50000,
+  "orden_pago_fecha": {
+    "$date": "2024-07-03T05:00:00.000Z"
+  },
+  "orden_pago_estado": "pagada",
+  "orden_pago_fecha_pago": {
+    "$date": "2024-07-10T05:00:00.000Z"
+  },
+  "orden_pago_fecha_plazo": {
+    "$date": "2024-07-11T05:00:00.000Z"
+  },
+  "orden_pago_estado_pago": "completado",
+  "orden_pago_numero_referencia": "REF001"
+},
+{
+  "_id": {
+    "$oid": "671321240e2094a20e469cd1"
+  },
+  "orden_pago_id": 2,
+  "usuario_documento": 1004004005,
+  "curso_id": 2,
+  "metodo_pago_id": 2,
+  "orden_pago_monto": 750000,
+  "orden_pago_fecha": {
+    "$date": "2024-08-15T05:00:00.000Z"
+  },
+  "orden_pago_estado": "pagada",
+  "orden_pago_fecha_pago": {
+    "$date": "2024-08-20T05:00:00.000Z"
+  },
+  "orden_pago_fecha_plazo": {
+    "$date": "2024-08-22T05:00:00.000Z"
+  },
+  "orden_pago_estado_pago": "completado",
+  "orden_pago_numero_referencia": "REF002"
+},
+{
+  "_id": {
+    "$oid": "671321810e2094a20e469cd2"
+  },
+  "orden_pago_id": 3,
+  "usuario_documento": 1004004004,
+  "curso_id": 3,
+  "metodo_pago_id": 3,
+  "orden_pago_monto": 600000,
+  "orden_pago_fecha": {
+    "$date": "2024-09-01T05:00:00.000Z"
+  },
+  "orden_pago_estado": "pendiente",
+  "orden_pago_fecha_pago": {
+    "$date": "2024-09-09T05:00:00.000Z"
+  },
+  "orden_pago_fecha_plazo": {
+    "$date": "2024-09-10T05:00:00.000Z"
+  },
+  "orden_pago_estado_pago": "pendiente",
+  "orden_pago_numero_referencia": "REF003"
+},
+{
+  "_id": {
+    "$oid": "6713220a0e2094a20e469cd3"
+  },
+  "orden_pago_id": 4,
+  "usuario_documento": 1026874568,
+  "curso_id": 4,
+  "metodo_pago_id": 4,
+  "orden_pago_monto": 50000,
+  "orden_pago_fecha": {
+    "$date": "2024-09-02T05:00:00.000Z"
+  },
+  "orden_pago_estado": "pagada",
+  "orden_pago_fecha_pago": {
+    "$date": "2024-09-04T05:00:00.000Z"
+  },
+  "orden_pago_fecha_plazo": {
+    "$date": "2024-09-15T05:00:00.000Z"
+  },
+  "orden_pago_estado_pago": "completado",
+  "orden_pago_numero_referencia": "REF003"
+},
+{
+  "_id": {
+    "$oid": "671322670e2094a20e469cd4"
+  },
+  "orden_pago_id": 5,
+  "usuario_documento": 1025698874,
+  "curso_id": 5,
+  "metodo_pago_id": 5,
+  "orden_pago_monto": 60000,
+  "orden_pago_fecha": {
+    "$date": "2024-10-04T05:00:00.000Z"
+  },
+  "orden_pago_estado": "pendiente",
+  "orden_pago_fecha_pago": {
+    "$date": "2024-10-09T05:00:00.000Z"
+  },
+  "orden_pago_fecha_plazo": {
+    "$date": "2024-10-10T05:00:00.000Z"
+  },
+  "orden_pago_estado_pago": "pendiente",
+  "orden_pago_numero_referencia": "REF005"
+}]

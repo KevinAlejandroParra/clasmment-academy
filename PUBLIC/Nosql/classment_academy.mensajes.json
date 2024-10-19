@@ -1,0 +1,75 @@
+[{
+  "_id": {
+    "$oid": "671326bc00be888055c1b90d"
+  },
+  "mensaje_id": 1,
+  "remitente_documento": "1004004005",
+  "destinatario_documento": "1002002002",
+  "mensaje_asunto": "Consulta sobre el curso",
+  "mensaje_contenido": "¿Podría darme más información sobre los materiales necesarios para el curso de Pintura al Óleo?",
+  "mensaje_fecha_envio": {
+    "$date": "2024-07-05T00:00:00.000Z"
+  },
+  "mensaje_leido": false,
+  "mensaje_thread_id": 1
+},
+{
+  "_id": {
+    "$oid": "671326bc00be888055c1b90e"
+  },
+  "mensaje_id": 2,
+  "remitente_documento": "1002002002",
+  "destinatario_documento": "1004004005",
+  "mensaje_asunto": "RE: Consulta sobre el curso",
+  "mensaje_contenido": "Claro, con gusto. Para el curso necesitarás lo siguiente: [lista de materiales]",
+  "mensaje_fecha_envio": {
+    "$date": "2024-07-06T00:00:00.000Z"
+  },
+  "mensaje_leido": false,
+  "mensaje_thread_id": 1
+},
+{
+  "_id": {
+    "$oid": "671326bc00be888055c1b90f"
+  },
+  "mensaje_id": 3,
+  "remitente_documento": "1004004004",
+  "destinatario_documento": "1003003003",
+  "mensaje_asunto": "Cambio de horario",
+  "mensaje_contenido": "¿Es posible cambiar mi horario del curso de Inglés Intermedio?",
+  "mensaje_fecha_envio": {
+    "$date": "2024-09-03T00:00:00.000Z"
+  },
+  "mensaje_leido": false,
+  "mensaje_thread_id": 2
+},
+{
+  "_id": {
+    "$oid": "671326bc00be888055c1b910"
+  },
+  "mensaje_id": 4,
+  "remitente_documento": "1003003003",
+  "destinatario_documento": "1004004004",
+  "mensaje_asunto": "RE: Cambio de horario",
+  "mensaje_contenido": "Podemos discutir las opciones disponibles. ¿Qué horario te convendría más?",
+  "mensaje_fecha_envio": {
+    "$date": "2024-09-04T00:00:00.000Z"
+  },
+  "mensaje_leido": false,
+  "mensaje_thread_id": 2
+},
+{
+  "_id": {
+    "$oid": "671326bc00be888055c1b911"
+  },
+  "mensaje_id": 5,
+  "remitente_documento": "1005005005",
+  "destinatario_documento": "1004004005",
+  "mensaje_asunto": "Recordatorio de pago",
+  "mensaje_contenido": "Recuerde que tiene un pago pendiente por el curso de Matemáticas Avanzadas.",
+  "mensaje_fecha_envio": {
+    "$date": "2024-10-02T00:00:00.000Z"
+  },
+  "mensaje_leido": false,
+  "mensaje_thread_id": 3
+}]

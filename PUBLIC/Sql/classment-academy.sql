@@ -258,14 +258,18 @@ INSERT INTO `ordenes_pagos` (`usuario_documento`, `curso_id`, `metodo_pago_id`, 
 ('1004004004', 3, 3, 60000, 'pendiente', 'pendiente', 'REF003');
 
 -- Datos de prueba para la tabla `facturas`
-INSERT INTO `facturas` (`orden_pago_id`, `factura_total`, `factura_estado`) VALUES
+INSERT INTO `facturas` (`orden_pago_id`, `factura_total`, `factura_estado`) VALUES 
 (1, 50000, 'pagada'),
 (2, 75000, 'pagada'),
-(3, 60000, 'emitida');
+(3, 60000, 'emitida'),
+(4, 45000, 'emitida'),  
+(5, 85000, 'anulada');  
+
 
 -- Datos de prueba para la tabla `mensajes`
-INSERT INTO `mensajes` (`remitente_documento`, `destinatario_documento`, `mensaje_asunto`, `mensaje_contenido`, `mensaje_leido`, `mensaje_thread_id`) VALUES
+INSERT INTO `mensajes` (`remitente_documento`, `destinatario_documento`, `mensaje_asunto`, `mensaje_contenido`, `mensaje_leido`, `mensaje_thread_id`) VALUES 
 ('1004004005', '1002002002', 'Consulta sobre el curso', '¿Podría darme más información sobre los materiales necesarios para el curso de Pintura al Óleo?', FALSE, 1),
 ('1002002002', '1004004005', 'RE: Consulta sobre el curso', 'Claro, con gusto. Para el curso necesitarás lo siguiente: [lista de materiales]', FALSE, 1),
 ('1004004004', '1003003003', 'Cambio de horario', '¿Es posible cambiar mi horario del curso de Inglés Intermedio?', FALSE, 2),
-('1003003003', '1004004004', 'RE: Cambio de horario', 'Podemos discutir las opciones disponibles. ¿Qué horario te convendría más?', FALSE, 2);
+('1003003003', '1004004004', 'RE: Cambio de horario', 'Podemos discutir las opciones disponibles. ¿Qué horario te convendría más?', FALSE, 2),
+('1005005005', '1004004005', 'Recordatorio de pago', 'Recuerde que tiene un pago pendiente por el curso de Matemáticas Avanzadas.', FALSE, 3);  

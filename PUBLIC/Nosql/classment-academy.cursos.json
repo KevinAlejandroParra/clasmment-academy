@@ -1,0 +1,132 @@
+[{
+  "_id": {
+    "$oid": "6712dcb97c3af3aae528183f"
+  },
+  "curso_id": 101,
+  "curso_nombre": "Entrenamiento personal",
+  "curso_descripcion": "Asesorias de entrenamiento personal para lograr tus obejetivos",
+  "curso_precio": 500000,
+  "curso_cupos": 15,
+  "curso_capacidad_maxima": 20,
+  "curso_edad_minima": 16,
+  "curso_imagen_url": "/PUBLIC/Img/cursos/entrenamiento.jpg",
+  "curso_fecha_inicio": {
+    "$date": "2024-08-01T00:00:00.000Z"
+  },
+  "curso_fecha_fin": {
+    "$date": "2024-12-15T00:00:00.000Z"
+  },
+  "curso_estado": 1,
+  "escuela_id": 1,
+  "curso_direccion": "GO FIT, Carrera 45b,diagonal 60 Sur"
+},
+{
+  "_id": {
+    "$oid": "6712dcb97c3af3aae5281840"
+  },
+  "curso_id": 102,
+  "curso_nombre": "Entrenamiento Funcional",
+  "curso_descripcion": "Clases de entrenamiento funcional para mejorar tu rendimiento físico",
+  "curso_precio": 600000,
+  "curso_cupos": 20,
+  "curso_capacidad_maxima": 25,
+  "curso_edad_minima": 16,
+  "curso_imagen_URL": "/PUBLIC/Img/cursos/entrenamiento-funcional.jpg",
+  "curso_fecha_inicio": {
+    "$date": "2024-08-01T00:00:00.000Z"
+  },
+  "curso_fecha_fin": {
+    "$date": "2024-12-15T00:00:00.000Z"
+  },
+  "curso_estado": 1,
+  "escuela_id": 1,
+  "curso_direccion": "GO FIT, Carrera 45b, diagonal 60 Sur"
+},
+{
+  "_id": {
+    "$oid": "6712dcb97c3af3aae5281841"
+  },
+  "curso_id": 103,
+  "curso_nombre": "Defensa personal",
+  "curso_descripcion": "Programa de defensa personal para mejorar tu resistencia",
+  "curso_precio": 500000,
+  "curso_cupos": 15,
+  "curso_capacidad_maxima": 20,
+  "curso_edad_minima": 14,
+  "curso_imagen_URL": "/PUBLIC/Img/cursos/defensa_personal.jpg",
+  "curso_fecha_inicio": {
+    "$date": "2024-09-01T00:00:00.000Z"
+  },
+  "curso_fecha_fin": {
+    "$date": "2025-01-15T00:00:00.000Z"
+  },
+  "curso_estado": 1,
+  "escuela_id": 1,
+  "curso_direccion": "GO FIT, Carrera 45b, diagonal 60 Sur"
+},
+{
+  "_id": {
+    "$oid": "6712dcb97c3af3aae5281842"
+  },
+  "curso_id": 201,
+  "curso_nombre": "Entrenamiento de Fuerza",
+  "curso_descripcion": "Clases de entrenamiento de fuerza para tonificar el cuerpo",
+  "curso_precio": 650000,
+  "curso_cupos": 15,
+  "curso_capacidad_maxima": 20,
+  "curso_edad_minima": 18,
+  "curso_imagen_URL": "/PUBLIC/Img/cursos/entrenamiento_fuerza.jpeg",
+  "curso_fecha_inicio": {
+    "$date": "2024-08-15T00:00:00.000Z"
+  },
+  "curso_fecha_fin": {
+    "$date": "2024-12-15T00:00:00.000Z"
+  },
+  "curso_estado": 1,
+  "escuela_id": 2,
+  "curso_direccion": "Soy Fitness, Calle 45, Ciudad B"
+},
+{
+  "_id": {
+    "$oid": "6712dcb97c3af3aae5281843"
+  },
+  "curso_id": 202,
+  "curso_nombre": "Zumba",
+  "curso_descripcion": "Clases de Zumba para quemar calorías y divertirse",
+  "curso_precio": 400000,
+  "curso_cupos": 20,
+  "curso_capacidad_maxima": 25,
+  "curso_edad_minima": 16,
+  "curso_imagen_URL": "/PUBLIC/Img/cursos/zumba.jpg",
+  "curso_fecha_inicio": {
+    "$date": "2024-09-01T00:00:00.000Z"
+  },
+  "curso_fecha_fin": {
+    "$date": "2024-09-01T00:00:00.000Z"
+  },
+  "curso_estado": 1,
+  "escuela_id": 2,
+  "curso_direccion": "2025-02-28', 2, 'Soy Fitness, Calle 45, Ciudad B"
+},
+{
+  "_id": {
+    "$oid": "6712dcb97c3af3aae5281844"
+  },
+  "curso_id": 301,
+  "curso_nombre": "Taekwondo Básico",
+  "curso_descripcion": "Curso de taekwondo para principiantes",
+  "curso_precio": 500000,
+  "curso_cupos": 20,
+  "curso_capacidad_maximo": 25,
+  "curso_edad_minima": 8,
+  "curso_imagen_URL": "/PUBLIC/Img/cursos/taekwondo_ninos.jpg",
+  "curso_fecha_inicio": {
+    "$date": "2024-07-15T00:00:00.000Z"
+  },
+  "curso_fecha_fin": {
+    "$date": "2024-12-20T00:00:00.000Z"
+  },
+  "curso_estado": 1,
+  "escuela_id": 3,
+  "curso_direccion": "Aula 203, Taekwondo"
+}]

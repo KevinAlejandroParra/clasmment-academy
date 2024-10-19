@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "6712e07782128ece1ef3fef5"
+  },
+  "asistencia_id": 1,
+  "matricula_id": 1,
+  "asistencia_fecha": {
+    "$date": "2024-08-01T05:00:00.000Z"
+  },
+  "asistencia_estado": "presente"
+},
+{
+  "_id": {
+    "$oid": "6712e0a482128ece1ef3fef6"
+  },
+  "asistencia_id": 2,
+  "matricula_id": 1,
+  "asistencia_fecha": {
+    "$date": "2024-08-06T05:00:00.000Z"
+  },
+  "asistencia_estado": "presente"
+},
+{
+  "_id": {
+    "$oid": "6712e0cf82128ece1ef3fef7"
+  },
+  "asistencia_id": 3,
+  "matricula_id": 1,
+  "asistencia_fecha": {
+    "$date": "2024-08-08T05:00:00.000Z"
+  },
+  "asistencia_estado": "ausente"
+},
+{
+  "_id": {
+    "$oid": "6712e11782128ece1ef3fef8"
+  },
+  "asistencia_id": 4,
+  "matricula_id": 2,
+  "asistencia_fecha": {
+    "$date": "2024-09-01T05:00:00.000Z"
+  },
+  "asistencia_estado": "presente"
+},
+{
+  "_id": {
+    "$oid": "6712e13b82128ece1ef3fef9"
+  },
+  "asistencia_id": 5,
+  "matricula_id": 2,
+  "asistencia_fecha": {
+    "$date": "2024-09-03T05:00:00.000Z"
+  },
+  "asistencia_estado": "presente"
+}]

@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "6713263000be888055c1b908"
+  },
+  "factura_id": 1,
+  "orden_pago_id": 1,
+  "factura_fecha_emision": {
+    "$date": "2024-07-03T00:00:00.000Z"
+  },
+  "factura_total": 50000,
+  "factura_estado": "pagada"
+},
+{
+  "_id": {
+    "$oid": "6713263000be888055c1b909"
+  },
+  "factura_id": 2,
+  "orden_pago_id": 2,
+  "factura_fecha_emision": {
+    "$date": "2024-08-15T00:00:00.000Z"
+  },
+  "factura_total": 75000,
+  "factura_estado": "pagada"
+},
+{
+  "_id": {
+    "$oid": "6713263000be888055c1b90a"
+  },
+  "factura_id": 3,
+  "orden_pago_id": 3,
+  "factura_fecha_emision": {
+    "$date": "2024-09-01T00:00:00.000Z"
+  },
+  "factura_total": 60000,
+  "factura_estado": "emitida"
+},
+{
+  "_id": {
+    "$oid": "6713263000be888055c1b90b"
+  },
+  "factura_id": 4,
+  "orden_pago_id": 4,
+  "factura_fecha_emision": {
+    "$date": "2024-09-15T00:00:00.000Z"
+  },
+  "factura_total": 45000,
+  "factura_estado": "emitida"
+},
+{
+  "_id": {
+    "$oid": "6713263000be888055c1b90c"
+  },
+  "factura_id": 5,
+  "orden_pago_id": 5,
+  "factura_fecha_emision": {
+    "$date": "2024-10-01T00:00:00.000Z"
+  },
+  "factura_total": 85000,
+  "factura_estado": "anulada"
+}]

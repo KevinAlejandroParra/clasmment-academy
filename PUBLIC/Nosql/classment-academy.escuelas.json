@@ -1,0 +1,90 @@
+[{
+  "_id": {
+    "$oid": "6712cc9bd90df7bf3cae4cb5"
+  },
+  "escuela_id": 1,
+  "escuela_nombre": "GO FIT",
+  "escuela_nit": 123456788,
+  "escuela_descripcion": "Entrenamiento y acondicionamiento físico",
+  "escuela_telefono": 1234567890,
+  "escuela_direccion": "Calle 123, Bogota D.C.",
+  "escuela_correo": "danielbernalg.04@gmail.com",
+  "escuela_password": 1010,
+  "escuela_fecha_creacion": {
+    "$date": "2020-01-01T00:00:00.000Z"
+  },
+  "escuela_estado": "activo",
+  "escuela_imagen_url": "../../PUBLIC/Img/escuelas/gofit.jpeg"
+},
+{
+  "_id": {
+    "$oid": "6712cc9bd90df7bf3cae4cb6"
+  },
+  "escuela_id": 2,
+  "escuela_nombre": "Soy Fitness",
+  "escuela_nit": 987654320,
+  "escuela_descripcion": "Yoga, Pilates y mas",
+  "escuela_telefono": 9876543210,
+  "escuela_direccion": "Avenida 456, primera de mayo con boyaca",
+  "escuela_correo": "soyfitness@gmail.com",
+  "escuela_password": 1010,
+  "escuela_fecha_creacion": {
+    "$date": "2020-01-01T00:00:00.000Z"
+  },
+  "escuela_estado": "activo",
+  "escuela_imagen_url": "../../PUBLIC/Img/escuelas/soyfitness.jpg"
+},
+{
+  "_id": {
+    "$oid": "6712cc9bd90df7bf3cae4cb7"
+  },
+  "escuela_id": 3,
+  "escuela_nombre": "Taekwondo",
+  "escuela_nit": 555555554,
+  "escuela_descripcion": "Cursos de taekwondo para todos los niveles",
+  "escuela_telefono": 5555555555,
+  "escuela_direccion": "Plaza Principal, Carrera 10 con circunvalar",
+  "escuela_correo": "taekwondo@gmail.com",
+  "escuela_password": "12345678990",
+  "escuela_fecha_creacion": {
+    "$date": "2020-01-01T00:00:00.000Z"
+  },
+  "escuela_estado": "activo",
+  "escuela_imagen_url": "../../PUBLIC/Img/escuelas/taekwondo.jpg"
+},
+{
+  "_id": {
+    "$oid": "6712cc9bd90df7bf3cae4cb8"
+  },
+  "escuela_id": 4,
+  "escuela_nombre": "Administrativo",
+  "escuela_nit": 1234567891,
+  "escuela_descripcion": "Administracion classment academy",
+  "escuela_telefono": 1234567891,
+  "escuela_direccion": "sena complejo sur, Bogota D.C.",
+  "escuela_correo": "classmentacademy@gmail.com",
+  "escuela_password": 1425367890,
+  "escuela_fecha_creacion": {
+    "$date": "2020-01-01T00:00:00.000Z"
+  },
+  "escuela_estado": "activo",
+  "escuela_imagen_url": "../../PUBLIC/Img/escuelas/administrativo.jpg"
+},
+{
+  "_id": {
+    "$oid": "6712df9cd90df7bf3cae4cb9"
+  },
+  "escuela_id": 5,
+  "escuela_nombre": "Natural Gym",
+  "escuela_nit": 1425360897,
+  "escuela_descripcion": "entrena y fortalece tu cuerpo",
+  "escuela_telefono": 3110257458,
+  "escuela_direccion": "Carrera 78c-59 sur",
+  "escuela_correo": "NaturalGYM@gmail.com",
+  "escuela_password": "1478054",
+  "escuela_fecha_creacion": {
+    "$date": "2022-06-24T00:00:00.000Z"
+  },
+  "escuela_estado": "activo",
+  "escuela_imagen_url": "../../PUBLIC/img/escuelas/NaturalGYM.jpg"
+}]

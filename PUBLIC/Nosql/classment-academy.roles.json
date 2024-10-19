@@ -1,0 +1,35 @@
+[{
+  "_id": {
+    "$oid": "6712bf7895fc6a7db656dc1a"
+  },
+  "rol_id": 1,
+  "rol_nombre": "invitado"
+},
+{
+  "_id": {
+    "$oid": "6712bf7895fc6a7db656dc1b"
+  },
+  "rol_id": 2,
+  "rol_nombre": "alumno"
+},
+{
+  "_id": {
+    "$oid": "6712bf7895fc6a7db656dc1c"
+  },
+  "rol_id": 3,
+  "rol_nombre": "profesor"
+},
+{
+  "_id": {
+    "$oid": "6712bf7895fc6a7db656dc1d"
+  },
+  "rol_id": 4,
+  "rol_nombre": "coordinador"
+},
+{
+  "_id": {
+    "$oid": "6712bf7895fc6a7db656dc1e"
+  },
+  "rol_id": 5,
+  "rol_nombre": "administrador"
+}]

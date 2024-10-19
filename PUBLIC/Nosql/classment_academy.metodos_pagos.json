@@ -1,0 +1,35 @@
+[{
+  "_id": {
+    "$oid": "67131b470e2094a20e469ccb"
+  },
+  "metodo_pago_id": 1,
+  "metodo_pago_nombre": "Tarjeta de Crédito"
+},
+{
+  "_id": {
+    "$oid": "67131ba60e2094a20e469ccc"
+  },
+  "metodo_pago_id": 2,
+  "metodo_pago_nombre": "PSE"
+},
+{
+  "_id": {
+    "$oid": "67131bc30e2094a20e469ccd"
+  },
+  "metodo_pago_id": 3,
+  "metodo_pago_nombre": "Transferencia Bancaria"
+},
+{
+  "_id": {
+    "$oid": "67131c490e2094a20e469cce"
+  },
+  "metodo_pago_id": 4,
+  "metodo_pago_nombre": "Efecty"
+},
+{
+  "_id": {
+    "$oid": "67131c560e2094a20e469ccf"
+  },
+  "metodo_pago_id": 5,
+  "metodo_pago_nombre": "PayPal"
+}]
