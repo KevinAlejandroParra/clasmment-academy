@@ -13,6 +13,7 @@ Este es un sistema de información diseñado para los procesos que actualmente r
 ### Prerrequisitos
 - Ultima version de xampp 8.2.12
 - Ultima version de Php 8.3.11
+- Ultima version de Visual Studio Code
 
 ### Instalación del Frontend
 
@@ -22,7 +23,7 @@ Este es un sistema de información diseñado para los procesos que actualmente r
 
 ### Instalación del Backend
 
-1. Navega a la carpeta `SQL`:
+1. Navega a la Direccion `PUBLIC/Sql`:
 2. copia la base de datos llamada `classment-academy.sql`
 3. copia esta base de datos en la interfaz de tu http://localhost/phpmyadmin/ en el apartado de sql de la parte superior
 4. reinicia el live server para asegurarte de que los cambios se muestren correctamente
