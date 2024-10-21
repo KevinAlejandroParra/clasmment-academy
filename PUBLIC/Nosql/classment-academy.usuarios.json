@@ -1,0 +1,114 @@
+[{
+  "_id": {
+    "$oid": "67158c7736e09582750f6645"
+  },
+  "usuario_documento": 1025531531,
+  "usuario_tipo_documento": "CC",
+  "usuario_nombre": "kevin",
+  "usuario_apellido": "Parra",
+  "usuario_correo": "luisparra5380@gmail.com",
+  "usuario_password": 1010,
+  "usuario_telefono": 3001234567,
+  "usuario_direccion": "Calle 789, tabogo",
+  "usuario_nacimiento": {
+    "$date": "1990-05-15T00:00:00.000Z"
+  },
+  "usuario_imagen_url": "/PUBLIC/Img/usuarios/1726301436_20240901_122208.jpg",
+  "rol_id": 5,
+  "escuela_id": 4
+},
+{
+  "_id": {
+    "$oid": "67158c7736e09582750f6646"
+  },
+  "usuario_documento": 1002002002,
+  "usuario_tipo_documento": "CC",
+  "usuario_nombre": "Chris",
+  "usuario_apellido": "Bumstead",
+  "usuario_correo": "cbum@email.com",
+  "usuario_password": 1010,
+  "usuario_telefono": 3001234560,
+  "usuario_direccion": "Avenida 012, Ciudad C USA",
+  "usuario_nacimiento": {
+    "$date": "1985-10-20T00:00:00.000Z"
+  },
+  "usuario_imagen_url": "/PUBLIC/Img/usuarios/1726022704_coach_1.png",
+  "rol_id": 5,
+  "escuela_id": 2
+},
+{
+  "_id": {
+    "$oid": "67158c7736e09582750f6647"
+  },
+  "usuario_documento": 1003003003,
+  "usuario_tipo_documento": "CC",
+  "usuario_nombre": "Carlos",
+  "usuario_apellido": "Rodríguez",
+  "usuario_correo": "carlos.rodriguez@email.com",
+  "usuario_password": "carro1795",
+  "usuario_telefono": 3005555555,
+  "usuario_direccion": "Carrera 345, Ciudad C",
+  "usuario_nacimiento": {
+    "$date": "1988-03-25T00:00:00.000Z"
+  },
+  "usuario_imagen_url": "/PUBLIC/Img/usuarios/nf.jpg",
+  "rol_id": 3,
+  "escuela_id": 3
+},
+{
+  "_id": {
+    "$oid": "67158c7736e09582750f6648"
+  },
+  "usuario_documento": 1004004004,
+  "usuario_tipo_documento": "CC",
+  "usuario_nombre": "Ana",
+  "usuario_apellido": "Martínez",
+  "usuario_correo": "ana.martinez@email.com",
+  "usuario_passord": "anamarti25498",
+  "usuario_telefono": 3007777777,
+  "usuario_direccion": "Diagonal 678, Ciudad A",
+  "usuario_nacimiento": {
+    "$date": "1992-12-10T00:00:00.000Z"
+  },
+  "usuario_imagen_url": "/PUBLIC/Img/usuarios/nf.jpg",
+  "rol_id": 4,
+  "escuela_id": 1
+},
+{
+  "_id": {
+    "$oid": "67158c7736e09582750f6649"
+  },
+  "usuario_documento": 1004004005,
+  "usuario_tipo_documento": "CC",
+  "usuario_nombre": "Marco",
+  "usuario_apellido": "Gonzalez",
+  "usuario_correo": "marco@email.com",
+  "usuario_password": "gonzal32",
+  "usuario_telefono": 3087777777,
+  "usuario_direccion": "Diagonal 788, Ciudadela colsubsidio",
+  "usuario_nacimiento": {
+    "$date": "1999-12-10T00:00:00.000Z"
+  },
+  "usuario_imagen_url": "/PUBLIC/Img/usuarios/nf.jpg",
+  "rol_id": 2,
+  "escuela_id": 1
+},
+{
+  "_id": {
+    "$oid": "67158c7736e09582750f664a"
+  },
+  "usuario_documento": 1025531522,
+  "usuario_tipo_documento": "CC",
+  "usuario_nombre": "Daniel",
+  "usuario_apellido": "Gomez",
+  "usuario_correo": "danielbernalg.04@gmail.com",
+  "usuario_password": "dangome0406",
+  "usuario_telefono": 3001234565,
+  "usuario_direccion": "Calle 189, tayogo",
+  "usuario_nacimiento": {
+    "$date": "1991-05-15T00:00:00.000Z"
+  },
+  "usuario_imagen_url": "/PUBLIC/Img/usuarios/nf.jpg",
+  "rol_id": 5,
+  "escuela_id": 1
+}]

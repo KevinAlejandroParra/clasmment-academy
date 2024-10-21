@@ -1,0 +1,77 @@
+[{
+  "_id": {
+    "$oid": "67159a6836e09582750f664b"
+  },
+  "recuperacion_id": 1,
+  "usuario_documento": 1025531522,
+  "token": "KJ45SIYEBA548",
+  "email": "danielbernalg.04@gmail.com",
+  "fecha_creacion": {
+    "$date": "2024-10-21T00:03:52.199Z"
+  },
+  "fecha_expiracion": {
+    "$date": "2024-10-21T01:03:52.199Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67159a6836e09582750f664c"
+  },
+  "recuperacion_id": 2,
+  "usuario_documento": 1004004005,
+  "token": "KSOAHF45SD24S8",
+  "email": "marco@email.com",
+  "fecha_creacion": {
+    "$date": "2024-10-21T00:03:52.199Z"
+  },
+  "fecha_expiracion": {
+    "$date": "2024-10-21T01:03:52.199Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67159a6836e09582750f664d"
+  },
+  "recuperacion_id": 3,
+  "usuario_documento": 1004004004,
+  "token": "AS45FSD54FDS82D",
+  "email": "ana.martinez@email.com",
+  "fecha_creacion": {
+    "$date": "2024-10-21T00:03:52.199Z"
+  },
+  "fecha_expiracion": {
+    "$date": "2024-10-21T01:03:52.199Z"
+  },
+  "usuarios_documento": 1004004004
+},
+{
+  "_id": {
+    "$oid": "67159a6836e09582750f664e"
+  },
+  "recuperacion_id": 4,
+  "usuario_documento": 1003003003,
+  "token": "4DFS8ERF84S5FD4",
+  "email": "carlos.rodriguez@email.com",
+  "fecha_creacion": {
+    "$date": "2024-10-21T00:03:52.199Z"
+  },
+  "fecha_expiracion": {
+    "$date": "2024-10-21T01:03:52.199Z"
+  },
+  "usuarios_documento": 1003003003
+},
+{
+  "_id": {
+    "$oid": "67159a6836e09582750f664f"
+  },
+  "recuperacion_id": 5,
+  "usuario_documento": 1025531531,
+  "token": "2F7R87S7R2S10DS",
+  "email": "luisparra5380@gmail.com",
+  "fecha_creacion": {
+    "$date": "2024-10-21T00:03:52.199Z"
+  },
+  "fecha_expiracion": {
+    "$date": "2024-10-21T01:03:52.199Z"
+  }
+}]
