@@ -4,7 +4,7 @@ require '../../../PUBLIC/Config/conexion.php';
 
 // Verificar si el usuario está autenticado
 if (!isset($_SESSION['usuario_correo'])) {
-    header('Location: ../login.php');
+    header('Location: ../Crud/login.php');
     exit();
 }
 
