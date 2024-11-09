@@ -142,11 +142,7 @@ $cursos = $stmt_cursos->fetchAll(PDO::FETCH_ASSOC);
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="shortcut icon" href="../../../PUBLIC/Img/design/ca.jpg" type="image/x-icon">
-    <style>
-        .modal-box {
-            max-width: 90vw;
-        }
-    </style>
+ 
 </head>
 <body class="bg-black text-white">
        <!-- Círculos de gradiente -->
