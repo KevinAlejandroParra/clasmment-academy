@@ -265,7 +265,7 @@ $cursos = $stmt_cursos->fetchAll(PDO::FETCH_ASSOC);
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <?php foreach ($cursos as $curso): ?>
                 <div class="card bg-black  shadow-lg shadow-orange-500/50">
-                    <figure><img src="../<?= htmlspecialchars($curso['curso_imagen_url']) ?>" alt="<?= htmlspecialchars($curso['curso_nombre']) ?>" class="w-full h-48 object-cover"/></figure>
+                    <figure><img src="<?= htmlspecialchars($curso['curso_imagen_url']) ?>" alt="<?= htmlspecialchars($curso['curso_nombre']) ?>" class="w-full h-48 object-cover"/></figure>
                     <div class="card-body">
                         <h2 class="card-title text-orange-400"><?= htmlspecialchars($curso['curso_nombre']) ?></h2>
                         <p><?= htmlspecialchars(substr($curso['curso_descripcion'], 0, 100)) ?>...</p>

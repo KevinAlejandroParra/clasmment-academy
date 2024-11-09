@@ -19,7 +19,7 @@ CREATE TABLE `escuelas` (
   `escuela_direccion` TEXT NOT NULL,
   `escuela_correo` VARCHAR (100)  NOT NULL,
   `escuela_password`  VARCHAR (255) NOT NULL,
-  `escuela_imagen_url` VARCHAR(255) DEFAULT '../../PUBLIC/Img/escuelas/nf.jpg',
+  `escuela_imagen_url` VARCHAR(255) DEFAULT '/PUBLIC/Img/escuelas/nf.jpg',
   `escuela_fecha_creacion` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   `escuela_estado` ENUM('activo', 'inactivo') DEFAULT 'activo'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -64,7 +64,7 @@ CREATE TABLE `cursos` (
   `curso_cupos` INT NOT NULL,
   `curso_capacidad_maxima` INT NOT NULL,
   `curso_edad_minima` INT NOT NULL DEFAULT 0,
-  `curso_imagen_url` VARCHAR(255) DEFAULT '../../PUBLIC/Img/cursos/nf.jpg',
+  `curso_imagen_url` VARCHAR(255) DEFAULT '/PUBLIC/Img/cursos/nf.jpg',
   -- PENDIENTE POR AGREGAR LA GALERIA DEL CURSO`
   `curso_fecha_inicio` DATE NOT NULL,
   `curso_fecha_fin` DATE NOT NULL,
@@ -188,10 +188,10 @@ CREATE INDEX idx_mensaje_destinatario ON `mensajes` (`destinatario_documento`, `
 
 -- Datos de prueba para la tabla `escuelas`
 INSERT INTO `escuelas` (`escuela_nombre`, `escuela_nit`, `escuela_descripcion`, `escuela_telefono`, `escuela_direccion`, `escuela_correo`, `escuela_password`, `escuela_fecha_creacion`, `escuela_estado`, `escuela_imagen_url`) VALUES
-('GO FIT', '123456789-1', 'Entrenamiento y acondicionamiento fisico', '1234567890', 'Calle 123, Bogota D.C.', 'danielbernalg.04@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', '../../PUBLIC/Img/escuelas/gofit.jpeg'),
-('Soy Fitness', '987654321-1', 'Yoga, Pilates y mas', '9876543210', 'Avenida 456, primera de mayo con boyaca', 'soyfitness@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', '../../PUBLIC/Img/escuelas/soyfitness.jpg'),
-('Taekwondo', '555555555-1', 'Cursos de taekwondo para todos los niveles', '5555555555', 'Plaza Principal, Carrera 10 con circunvalar', 'taekwondo@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', '../../PUBLIC/Img/escuelas/taekwondo.jpg'),
-('Administrativo', '1234567891', 'Administracion classment academy', '1234567891', 'sena complejo sur, Bogota D.C.', 'classmentacademy@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', '../../PUBLIC/Img/escuelas/administrativo.jpg');
+('GO FIT', '123456789-1', 'Entrenamiento y acondicionamiento fisico', '1234567890', 'Calle 123, Bogota D.C.', 'danielbernalg.04@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', '/PUBLIC/Img/escuelas/gofit.jpeg'),
+('Soy Fitness', '987654321-1', 'Yoga, Pilates y mas', '9876543210', 'Avenida 456, primera de mayo con boyaca', 'soyfitness@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', '/PUBLIC/Img/escuelas/soyfitness.jpg'),
+('Taekwondo', '555555555-1', 'Cursos de taekwondo para todos los niveles', '5555555555', 'Plaza Principal, Carrera 10 con circunvalar', 'taekwondo@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', '/PUBLIC/Img/escuelas/taekwondo.jpg'),
+('Administrativo', '1234567891', 'Administracion classment academy', '1234567891', 'sena complejo sur, Bogota D.C.', 'classmentacademy@gmail.com', '$2y$10$GqH1TO3tF.2wu5qBzMR/0Oq2vZI4WqI34.3PIT.oxiSf.4OH3kL9C', '2020-01-01 00:00:00', 'activo', '/PUBLIC/Img/escuelas/administrativo.jpg');
 
 -- Datos de prueba para la tabla `usuarios`
 INSERT INTO `usuarios` (`usuario_documento`, `usuario_tipo_documento`, `usuario_nombre`, `usuario_apellido`, `usuario_correo`, `usuario_password`, `usuario_telefono`, `usuario_direccion`, `usuario_nacimiento`, `usuario_imagen_url`, `rol_id`, `escuela_id`) VALUES
@@ -261,9 +261,8 @@ INSERT INTO `ordenes_pagos` (`usuario_documento`, `curso_id`, `metodo_pago_id`, 
 INSERT INTO `facturas` (`orden_pago_id`, `factura_total`, `factura_estado`) VALUES 
 (1, 50000, 'pagada'),
 (2, 75000, 'pagada'),
-(3, 60000, 'emitida'),
-(4, 45000, 'emitida'),  
-(5, 85000, 'anulada');  
+(3, 60000, 'emitida');
+
 
 
 -- Datos de prueba para la tabla `mensajes`
@@ -272,4 +271,4 @@ INSERT INTO `mensajes` (`remitente_documento`, `destinatario_documento`, `mensaj
 ('1002002002', '1004004005', 'RE: Consulta sobre el curso', 'Claro, con gusto. Para el curso necesitarás lo siguiente: [lista de materiales]', FALSE, 1),
 ('1004004004', '1003003003', 'Cambio de horario', '¿Es posible cambiar mi horario del curso de Inglés Intermedio?', FALSE, 2),
 ('1003003003', '1004004004', 'RE: Cambio de horario', 'Podemos discutir las opciones disponibles. ¿Qué horario te convendría más?', FALSE, 2),
-('1005005005', '1004004005', 'Recordatorio de pago', 'Recuerde que tiene un pago pendiente por el curso de Matemáticas Avanzadas.', FALSE, 3);  
+('1025531531', '1004004005', 'Recordatorio de pago', 'Recuerde que tiene un pago pendiente por el curso de Matemáticas Avanzadas.', FALSE, 3); 
