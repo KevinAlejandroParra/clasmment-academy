@@ -144,10 +144,12 @@ $schools = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <!-- Sección Hero -->
     <section class="hero-section flex items-center justify-center relative pb-8 pl-36 " id="hero-section" data-aos="fade-up">
       <div class="hero-content flex-col lg:flex-row-reverse pr-48">
-        <video
-          src="./Img/design/people.webm"
-          class="max-w-sm  pl-32" data-aos="zoom-in"
-          autoplay muted loop></video>
+      <div class="lg:w-1/2 mt-8 lg:mt-0 drop-shadow-[0_0_6px_#F86D31] ">
+        <img
+          src="./Img/design/medallista.png"
+          class="max-w-sm " data-aos="zoom-in"
+        ></img>
+      </div>
         <div class="space-y-4">
           <div>
             <p class="text-xl text-orange-300 font-medium tracking-wide leading-none" data-aos="zoom-in">
@@ -299,24 +301,43 @@ $schools = $stmt->fetchAll(PDO::FETCH_ASSOC);
       </div>
     </div>
     </section>
-    <section>
-      <div class="flex justify-center p-8 " data-aos="fade-up">
-        <div class="grid grid-col-1 gap-4 pr-6">
-          <img class="rounded-lg shadow-lg shadow-orange-500/50"
-            src="../../PUBLIC/Img/design/escuelanew.png"
-            alt="escuela" />
-        </div>
-        <div class="flex flex-col justify-center text-white z-10">
-          <div class="text-4xl tracking-wide leading-tight font-extrabold">Eleva tu emprendimiento a un 200%</div>
-          <div class="text-4xl tracking-wide leading-tight font-bold">Unete a nuestra comunidad</div>
-          <div class="flex mt-6 space-x-4">
-            <a href="../APP/Views/Crud/register_escuela.php" class="w-1/2 btn btn-md rounded-md bg-orange-500 text-white text-lg hover:bg-orange-600 border-none py-2 px-4">Registrar mi escuela</a>
-            <a href="../APP/Views/aliados.php" class="w-1/2 btn btn-md rounded-md bg-orange-500 text-white text-lg hover:bg-orange-600 border-none py-2 px-4">Ver escuelas</a>
-          </div>
-        </div>
-      </div>
-      </div>
 
+    <section class="flex items-center justify-center min-h-screen px-16 py-8" data-aos="fade-up">
+  <div class="flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl">
+    <div class="lg:w-1/2 order-2 lg:order-1 pl-8">
+      <img
+        src="../../PUBLIC/Img/design/escuelanew.png"
+        class="w-full max-w-md mx-auto lg:mt-0 drop-shadow-[0_0_6px_#F86D31] " 
+        data-aos="zoom-in"
+      />
+    </div>
+    
+    <div class="lg:w-1/2 order-1 lg:order-2 mr-8">
+      <div class="space-y-4">
+      <div class="text-4xl tracking-wide leading-tight font-extrabold">
+          Únete a nuestra comunidad
+        </div>
+        <div class="text-3xl tracking-wide leading-tight font-bold">
+          Eleva tu emprendimiento a un 200%
+        </div>
+        <div class="flex mt-6 space-x-4">
+          <a 
+            href="../APP/Views/Crud/register_escuela.php" 
+            class="w-1/2 btn btn-md rounded-md bg-orange-500 text-white text-lg hover:bg-orange-600 border-none py-2 px-4"
+          >
+            Registrar mi escuela
+          </a>
+          <a 
+            href="../APP/Views/aliados.php" 
+            class="w-1/2 btn btn-md rounded-md bg-orange-500 text-white text-lg hover:bg-orange-600 border-none py-2 px-4"
+          >
+            Ver escuelas
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
       <div class="w-full max-w-[1200px] mx-auto p-8 px-4" id="nosotros">
         <h2 class="text-4xl font-bold text-center mb-12 text-white">Sobre Nosotros</h2>
 
